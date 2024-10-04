@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "may-bidet-ba"
+name = "banyuhay"
 version = "0.1.0"
 description = ""
 authors = ["Kenneth V. Domingo <hello@kvd.studio>"]
@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 fastapi = "^0.115.0"
-uvicorn = {extras = ["standard"], version = "^0.31.0"}
+uvicorn = { extras = ["standard"], version = "^0.31.0" }
 sqlalchemy = "^2.0.35"
 alembic = "^1.13.3"
 pydantic = "^2.9.2"
