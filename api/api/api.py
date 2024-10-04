@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
 app = FastAPI(
-    title="May Bidet Ba?",
+    title="Banyuhay",
     version="0.1.0",
     docs_url="/api/docs",
     redoc_url="/api/redoc",
@@ -13,7 +13,7 @@ def index():
     return b"ok"
 
 
-@app.get("/health")
+@app.get("/api/health")
 def health():
     return {"status": "ok"}
 

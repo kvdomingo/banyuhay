@@ -10,6 +10,8 @@ services:
       - venv-data:/app/.venv
     ports:
       - '8000:8000'
+    healthcheck:
+      test: [ 'CMD', 'curl', '-fL', 'http://localhost:8000/api/health' ]
     depends_on:
       db:
         condition: service_healthy
