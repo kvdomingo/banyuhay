@@ -25,6 +25,16 @@
       "recommended": true,
       "style": {
         "noNonNullAssertion": "warn"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "error",
+          "options": {
+            "attributes": ["classList"],
+            "functions": ["clsx", "cva", "tw", "cn"]
+          }
+        }
       }
     }
   },
