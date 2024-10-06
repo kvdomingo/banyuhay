@@ -3,6 +3,9 @@ version: '3'
 env:
   NAME: banyuhay
 
+dotenv:
+  - ./api/.env
+
 tasks:
   default:
     cmd:
@@ -18,6 +21,7 @@ tasks:
 
   logs:
     desc: Follow logs
+    interactive: true
     cmd: docker compose --project-name {{.NAME}} logs --follow {{.CLI_ARGS}}
 
   restart:
@@ -43,3 +47,8 @@ tasks:
   migrate:
     desc: Apply all migrations
     cmd: task exec -- api poetry run alembic upgrade head
+
+  psql:
+    desc: Run psql
+    interactive: true
+    cmd: task exec -- db psql -U {{.POSTGRESQL_USERNAME}} -d {{.POSTGRESQL_DATABASE}}

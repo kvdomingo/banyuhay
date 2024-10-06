@@ -3,14 +3,9 @@ from fastapi import FastAPI
 app = FastAPI(
     title="Banyuhay",
     version="0.1.0",
-    docs_url="/api/docs",
-    redoc_url="/api/redoc",
+    docs_url="/",
+    redoc_url="/redoc",
 )
-
-
-@app.get("/")
-def index():
-    return b"ok"
 
 
 @app.get("/api/health")

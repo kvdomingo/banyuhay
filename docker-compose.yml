@@ -23,6 +23,7 @@ services:
     working_dir: /app
     environment:
       NODE_ENV: development
+    env_file: ./ui/.env
     entrypoint:
       - /bin/sh
       - -c
