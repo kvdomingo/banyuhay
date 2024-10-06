@@ -27,7 +27,9 @@ class Toilet(BaseModel):
 class Review(BaseModel):
     __tablename__ = "reviews"
 
-    toilet_id: Mapped[UUID4] = mapped_column(sa.VARCHAR(36), nullable=False)
+    toilet_id: Mapped[UUID4] = mapped_column(
+        sa.ForeignKey("toilets.id"), nullable=False
+    )
     toilet: Mapped["Toilet"] = relationship(back_populates="reviews")
     content: Mapped[str] = mapped_column()
     rating_water_pressure: Mapped[int] = mapped_column(nullable=False)

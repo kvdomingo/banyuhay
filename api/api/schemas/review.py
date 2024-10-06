@@ -1,4 +1,4 @@
-from pydantic import UUID4, Field, conint
+from pydantic import UUID4, conint
 
 from .base import BaseModel
 from .toilet import Toilet
@@ -11,8 +11,8 @@ class Review(BaseModel):
     rating_water_pressure: conint(ge=0, le=5)
     rating_cleanliness: conint(ge=0, le=5)
     rating_poopability: conint(ge=0, le=5)
-    has_bidet: bool = Field(False)
-    is_approved: bool = Field(False)
-    upvotes: conint(ge=0) = Field(0)
-    downvotes: conint(ge=0) = Field(0)
-    photos: list[str] = Field(default_factory=list)
+    has_bidet: bool
+    is_approved: bool
+    upvotes: conint(ge=0)
+    downvotes: conint(ge=0)
+    photos: list[str]
