@@ -293,3 +293,4 @@ cython_debug/
 package/
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+.vercel/
