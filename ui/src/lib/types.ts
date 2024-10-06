@@ -20,7 +20,8 @@ export const Toilet = z.object({
   photos: z.array(z.string()),
 });
 
-export type Toilet = z.infer;
+// prettier-ignore
+export type Toilet = z.infer<typeof Toilet>;
 
 export const Review = z.object({
   id: z.string().uuid(),
@@ -38,4 +39,5 @@ export const Review = z.object({
   photos: z.array(z.string()),
 });
 
-export type Review = z.infer;
+// prettier-ignore
+export type Review = z.infer<typeof Review>;
