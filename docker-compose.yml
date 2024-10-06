@@ -48,6 +48,18 @@ services:
       interval: 20s
       timeout: 2s
 
+  pgadmin:
+    image: dpage/pgadmin4:8.12
+    environment:
+      PGADMIN_LISTEN_ADDRESS: 0.0.0.0
+      PGADMIN_LISTEN_PORT: 5000
+    env_file: ./api/.env
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    ports:
+      - "5000:5000"
+
 volumes:
   venv-data:
   db-data:
+  pgadmin-data:
