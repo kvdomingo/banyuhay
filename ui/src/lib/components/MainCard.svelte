@@ -8,12 +8,13 @@
     CardHeader,
     CardTitle,
   } from "$lib/components/ui/card";
-  import { Home, Star } from "lucide-svelte";
+  import { Home, Star, SprayCan, MilkOff } from "lucide-svelte";
   import { INITIAL_BEARING, INITIAL_CENTER, INITIAL_PITCH, INITIAL_ZOOM } from "$lib/constants";
   import { onMount } from "svelte";
   import { createQuery } from "@tanstack/svelte-query";
   import { api } from "$lib/api";
   import { cn } from "$lib/utils";
+  import Reviews from "$lib/components/Reviews.svelte";
 
   export let map: Map;
   export let selectedToiletId: string | null;
@@ -84,7 +85,7 @@
           n. compound word lit. <i>bagong anyong buhay</i> (metamorphosis)
         </p>
         <p>
-          Also jokingly referred to as <i>banyo ng buhay</i> (lit. toilet of life)
+          Also referred to in jest as <i>banyo ng buhay</i> (lit. toilet of life)
         </p>
       </CardDescription>
     </CardHeader>
@@ -104,18 +105,25 @@
                 <h2 class="text-2xl font-semibold">{toilet.establishment_name}</h2>
                 <p class="text-gray-400">{toilet.location_information}</p>
               </div>
-              <p
-                class={cn("font-semibold", {
-                  "text-green-500": toilet.has_bidet,
-                  "text-red-500": !toilet.has_bidet,
-                })}
-              >
+              <div class="flex items-center gap-2">
                 {#if toilet.has_bidet}
-                  May bidet!
+                  <SprayCan />
                 {:else}
-                  Walang bidet!
+                  <MilkOff />
                 {/if}
-              </p>
+                <p
+                  class={cn("font-semibold", {
+                    "text-green-500": toilet.has_bidet,
+                    "text-red-500": !toilet.has_bidet,
+                  })}
+                >
+                  {#if toilet.has_bidet}
+                    May bidet!
+                  {:else}
+                    Walang bidet!
+                  {/if}
+                </p>
+              </div>
               <div>
                 <p class="flex items-center gap-1">
                   Water Pressure:
@@ -133,6 +141,10 @@
                   {toilet.avg_rating_poopability.toFixed(1)}
                 </p>
               </div>
+
+              {#key selectedToiletId}
+                <Reviews bind:selectedToiletId />
+              {/key}
             </div>
           {/if}
         {/if}

@@ -10,6 +10,7 @@ export const api = {
   health: (): Promise<AxiosResponse<{ status: string }>> => axi.get("/health"),
   toilets: {
     list: (): Promise<AxiosResponse<Toilet[]>> => axi.get("/toilets"),
+    reviews: (id: string): Promise<AxiosResponse<Review[]>> => axi.get(`/toilets/${id}/reviews`),
   },
   reviews: {
     list: (): Promise<AxiosResponse<Review[]>> => axi.get("/reviews"),
