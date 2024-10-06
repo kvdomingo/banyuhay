@@ -11,6 +11,7 @@ class Toilet(BaseModel):
     avg_rating_water_pressure: confloat(ge=0, le=5) = Field(0)
     avg_rating_cleanliness: confloat(ge=0, le=5) = Field(0)
     avg_rating_poopability: confloat(ge=0, le=5) = Field(0)
+    total_reviews: conint(ge=0) = Field(0)
     has_bidet: bool = Field(False)
     upvotes: conint(ge=0) = Field(0)
     downvotes: conint(ge=0) = Field(0)

@@ -56,3 +56,7 @@ tasks:
     desc: Attach to the db container and run psql
     interactive: true
     cmd: task exec -- db psql -U {{.POSTGRESQL_USERNAME}} -d {{.POSTGRESQL_DATABASE}}
+
+  load-fixtures:
+    desc: Load database fixtures
+    cmd: task exec -- api poetry run python -m scripts.load_fixtures toilets reviews

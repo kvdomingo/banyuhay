@@ -17,6 +17,7 @@ psycopg2-binary = "^2.9.9"
 asyncpg = "^0.29.0"
 geoalchemy2 = "^0.15.2"
 shapely = "^2.0.6"
+loguru = "^0.7.2"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "0.6.4"

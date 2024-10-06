@@ -47,12 +47,14 @@ def upgrade() -> None:
             avg_rating_water_pressure INTEGER NOT NULL DEFAULT 0,
             avg_rating_cleanliness INTEGER NOT NULL DEFAULT 0,
             avg_rating_poopability INTEGER NOT NULL DEFAULT 0,
+            total_reviews INTEGER NOT NULL DEFAULT 0,
             has_bidet BOOLEAN NOT NULL DEFAULT false,
             upvotes INTEGER NOT NULL DEFAULT 0,
             downvotes INTEGER NOT NULL DEFAULT 0,
             photos VARCHAR(255)[],
 
             CONSTRAINT bidets_pk PRIMARY KEY (id),
+            CONSTRAINT valid_range_total_reviews CHECK (total_reviews >= 0),
             CONSTRAINT valid_range_upvotes CHECK (upvotes >= 0),
             CONSTRAINT valid_range_downvotes CHECK (downvotes >= 0)
         );

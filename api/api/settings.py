@@ -1,4 +1,5 @@
 from functools import lru_cache
+from pathlib import Path
 
 from pydantic import PostgresDsn, computed_field
 from pydantic_settings import BaseSettings
@@ -6,10 +7,16 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     PYTHON_ENV: str = "production"
+    BASE_DIR: Path = Path(__file__).parent.parent
 
     POSTGRESQL_USERNAME: str
     POSTGRESQL_PASSWORD: str
     POSTGRESQL_DATABASE: str
+
+    @computed_field
+    @property
+    def IN_PRODUCTION(self) -> bool:
+        return self.PYTHON_ENV == "production"
 
     @computed_field
     @property
