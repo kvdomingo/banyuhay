@@ -1,6 +1,7 @@
 import * as tailwindPlugin from "prettier-plugin-tailwindcss";
 import sveltePlugin from "prettier-plugin-svelte";
 
+/** @type {import("prettier").Options} */
 export default {
   useTabs: false,
   singleQuote: false,

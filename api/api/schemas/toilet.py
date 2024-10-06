@@ -23,4 +23,4 @@ class Toilet(BaseModel):
     @classmethod
     def geometry_as_coordinates(cls, v: WKBElement) -> Coordinates:
         shape: Point = to_shape(v)
-        return Coordinates(lat=shape.y, lng=shape.x)
+        return Coordinates(lat=shape.x, lng=shape.y)

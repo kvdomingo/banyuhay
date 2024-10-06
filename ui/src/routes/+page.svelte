@@ -10,11 +10,14 @@
     INITIAL_PITCH,
     INITIAL_ZOOM,
   } from "$lib/constants";
+  import Markers from "$lib/components/Markers.svelte";
 
   const protocol = new Protocol();
   maplibre.addProtocol("pmtiles", protocol.tile);
 
   let map: Map | undefined;
+
+  let selectedToiletId: string | null = null;
 </script>
 
 <MapLibre
@@ -26,8 +29,12 @@
   style={`https://api.maptiler.com/maps/openstreetmap/style.json?key=${API_KEY}`}
   class="h-dvh w-dvw"
   bind:map
-/>
+>
+  {#if map}
+    <Markers bind:selectedToiletId />
+  {/if}
+</MapLibre>
 
 {#if map}
-  <MainCard {map} />
+  <MainCard {map} bind:selectedToiletId />
 {/if}
