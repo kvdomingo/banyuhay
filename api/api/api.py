@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 
-from api.routes import toilets
+from api.routes import reviews, toilets
 
 app = FastAPI(
     title="Banyuhay",
@@ -18,6 +18,7 @@ def health():
 
 
 app.include_router(toilets.router)
+app.include_router(reviews.router)
 
 
 if __name__ == "__main__":
