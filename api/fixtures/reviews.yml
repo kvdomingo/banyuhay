@@ -1,0 +1,79 @@
+- id: 141fd05a-e0ce-4a44-b9b6-9584af2389be
+  model: Review
+  fields:
+    toilet_id: 9537eb94-2cdc-4ec8-87d3-940b79b8a9a5
+    content: >-
+      Kapag nasa BGC ka pareeehhh around burgos circle eto yung sure na lugar na may bidet. Both restrooms sa taas ng 
+      baba then after 9pm yung male restroom sa ground floor nagiging common na. Lock mo nalang muna pinto para hindi 
+      akward kase kita paa mo 🥲. Malinis at sakto ang pressure 👌🏽
+    rating_water_pressure: 4
+    rating_cleanliness: 5
+    rating_poopability: 5
+    has_bidet: true
+    is_approved: true
+    upvotes: 0
+    downvotes: 0
+    photos: [ ]
+- id: 680fcc7c-c8fc-4437-99db-6e18b1ca4d05
+  model: Review
+  fields:
+    toilet_id: 35883a54-060e-492b-b6be-f6e344077c50
+    content: >-
+      Hindi misyadong malakas pero nakakalinis 👌🏽Minsan sarado minsan bukas. Sana palaging bukas. Ang importante 
+      maliligtas ka neto habang inaantay mo yung order mo sa crispy sisig 😂 basa lang ng slight yung sahig pero may nag 
+      mmop naman 🙂
+    rating_water_pressure: 3
+    rating_cleanliness: 4
+    rating_poopability: 5
+    has_bidet: true
+    is_approved: true
+    upvotes: 0
+    downvotes: 0
+    photos: [ ]
+- id: 02a98d12-bdeb-4134-bcee-ae4036dd6399
+  model: Review
+  fields:
+    toilet_id: e494ba47-837b-4588-be3d-b6ff4d5db422
+    content: >-
+      Pagpasok ko nagulat ako kase dalawa yung bidet may pang bata!😳 meron din silang cubicles na single lang. ganda 
+      rin ng design yung bidet sa harap ang pindutan at may grip siya hindi basta madudulas kamay mo. Sakto lang water 
+      pressure makakalinis naman.
+    rating_water_pressure: 5
+    rating_cleanliness: 4
+    rating_poopability: 5
+    has_bidet: true
+    is_approved: true
+    upvotes: 0
+    downvotes: 0
+    photos: [ ]
+- id: 77aa90ac-0d13-4592-804b-f16186e1e95d
+  model: Review
+  fields:
+    toilet_id: 9b11cb13-e70b-411e-974a-d58b98df245b
+    content: >-
+      *pasintabi sa kumakain*
+      Gusto ko talagang mag mura sa nakita ko. Nangigil ako p*tang*na talaga. Maling move talaga na binuksan ko pa yung 
+      cubicle iba na kase yung amoy. Yung 1 second na yun hindi ko talaga kinaya. Poopability negative 50 stars barado 
+      yung toilet pero shet dalawa pa silang gumamit 😭😭😭😭😭😭😭 ayoko na. Bye. BTW kung tutubos ka ng lisensya dito 
+      super bilis lang.
+    rating_water_pressure: 0
+    rating_cleanliness: 0
+    rating_poopability: 0
+    has_bidet: false
+    is_approved: true
+    upvotes: 0
+    downvotes: 0
+    photos: [ ]
+- id: 58acf881-5012-4e31-a23b-5d6116367d95
+  model: Review
+  fields:
+    toilet_id: 08ab572a-f9a3-4a6b-a663-01d3b172cf25
+    content: ""
+    rating_water_pressure: 4
+    rating_cleanliness: 4
+    rating_poopability: 4
+    has_bidet: true
+    is_approved: true
+    upvotes: 0
+    downvotes: 0
+    photos: [ ]

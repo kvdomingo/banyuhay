@@ -1,0 +1,70 @@
+- id: 9537eb94-2cdc-4ec8-87d3-940b79b8a9a5
+  model: Toilet
+  fields:
+    establishment_name: "Eight Forbes Town Road"
+    location_information: "G/F Eight Forbes Town Road"
+    geometry: POINT(14.55079, 121.04397)
+    avg_rating_water_pressure: 4.0
+    avg_rating_cleanliness: 5.0
+    avg_rating_poopability: 5.0
+    total_reviews: 1
+    has_bidet: true
+    upvotes: 0
+    downvotes: 0
+    photos: [ ]
+- id: 35883a54-060e-492b-b6be-f6e344077c50
+  model: Toilet
+  fields:
+    establishment_name: "Manam SM Megamall"
+    location_information: "3/F Mega Fashion Hall, SM Megamall Bldg. A"
+    geometry: POINT(14.58441, 121.05688)
+    avg_rating_water_pressure: 3.0
+    avg_rating_cleanliness: 4.0
+    avg_rating_poopability: 5.0
+    total_reviews: 1
+    has_bidet: true
+    upvotes: 0
+    downvotes: 0
+    photos: [ ]
+- id: e494ba47-837b-4588-be3d-b6ff4d5db422
+  model: Toilet
+  fields:
+    establishment_name: "IKEA Pasay City"
+    location_information: "IKEA Pasay City"
+    geometry: POINT(14.53290, 120.98249)
+    avg_rating_water_pressure: 5.0
+    avg_rating_cleanliness: 4.0
+    avg_rating_poopability: 5.0
+    total_reviews: 1
+    has_bidet: true
+    upvotes: 0
+    downvotes: 0
+    photos: [ ]
+- id: 9b11cb13-e70b-411e-974a-d58b98df245b
+  model: Toilet
+  fields:
+    establishment_name: "LTO Main Office"
+    location_information: "LTO Main Office, East Avenue, Quezon City"
+    geometry: POINT(14.63562, 121.04668)
+    avg_rating_water_pressure: 0.0
+    avg_rating_cleanliness: 0.0
+    avg_rating_poopability: 0.0
+    total_reviews: 1
+    has_bidet: false
+    upvotes: 0
+    downvotes: 0
+    photos: [ ]
+- id: 08ab572a-f9a3-4a6b-a663-01d3b172cf25
+  model: Toilet
+  fields:
+    establishment_name: "UP NIGS"
+    location_information: "1/F National Institute of Geological Sciences, National Science Complex, UP Diliman"
+    geometry: POINT(14.64830, 121.06950)
+    avg_rating_water_pressure: 4.0
+    avg_rating_cleanliness: 4.0
+    avg_rating_poopability: 4.0
+    total_reviews: 1
+    has_bidet: true
+    upvotes: 0
+    downvotes: 0
+    photos: [ ]

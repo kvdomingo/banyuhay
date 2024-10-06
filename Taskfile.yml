@@ -48,7 +48,11 @@ tasks:
     desc: Apply all migrations
     cmd: task exec -- api poetry run alembic upgrade head
 
+  unmigrate:
+    desc: Undo 1 migration
+    cmd: task exec -- api poetry run alembic downgrade -1
+
   psql:
-    desc: Run psql
+    desc: Attach to the db container and run psql
     interactive: true
     cmd: task exec -- db psql -U {{.POSTGRESQL_USERNAME}} -d {{.POSTGRESQL_DATABASE}}

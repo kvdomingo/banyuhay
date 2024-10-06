@@ -52,7 +52,9 @@ def upgrade() -> None:
             downvotes INTEGER NOT NULL DEFAULT 0,
             photos VARCHAR(255)[],
 
-            CONSTRAINT bidets_pk PRIMARY KEY (id)
+            CONSTRAINT bidets_pk PRIMARY KEY (id),
+            CONSTRAINT valid_range_upvotes CHECK (upvotes >= 0),
+            CONSTRAINT valid_range_downvotes CHECK (downvotes >= 0)
         );
 
         CREATE TRIGGER update_toilets_modified
@@ -64,8 +66,8 @@ def upgrade() -> None:
             id VARCHAR(36) NOT NULL DEFAULT gen_random_uuid(),
             created TIMESTAMP NOT NULL DEFAULT now(),
             modified TIMESTAMP NOT NULL DEFAULT now(),
-            toilet_id VARCHAR(36) NOT NULL REFERENCES toilets ON DELETE CASCADE,
-            content TEXT NOT NULL,
+            toilet_id VARCHAR(36) NOT NULL,
+            content TEXT,
             rating_water_pressure INTEGER NOT NULL DEFAULT 0,
             rating_cleanliness INTEGER NOT NULL DEFAULT 0,
             rating_poopability INTEGER NOT NULL DEFAULT 0,
@@ -75,7 +77,19 @@ def upgrade() -> None:
             downvotes INTEGER NOT NULL DEFAULT 0,
             photos VARCHAR(255)[],
 
-            CONSTRAINT reviews_pk PRIMARY KEY (id)
+            CONSTRAINT reviews_pk PRIMARY KEY (id),
+            CONSTRAINT toilets_fk FOREIGN KEY (toilet_id) REFERENCES toilets ON DELETE CASCADE,
+            CONSTRAINT valid_range_rating_water_pressure CHECK (
+                rating_water_pressure >= 0 AND rating_water_pressure <= 5
+            ),
+            CONSTRAINT valid_range_rating_cleanliness CHECK (
+                rating_cleanliness >= 0 AND rating_cleanliness <= 5
+            ),
+            CONSTRAINT valid_range_rating_poopability CHECK (
+                rating_poopability >= 0 AND rating_poopability <= 5
+            ),
+            CONSTRAINT valid_range_upvotes CHECK (upvotes >= 0),
+            CONSTRAINT valid_range_downvotes CHECK (downvotes >= 0)
         );
 
         CREATE TRIGGER update_reviews_modified
