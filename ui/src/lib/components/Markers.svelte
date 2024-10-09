@@ -4,8 +4,8 @@
   import { Marker } from "svelte-maplibre";
   import { cn } from "$lib/utils";
   import { MapPin, MapPinX } from "lucide-svelte";
-
-  export let selectedToiletId: string | null;
+  import { goto } from "$app/navigation";
+  import { page } from "$app/stores";
 
   const query = createQuery({
     queryKey: ["toilets"],
@@ -18,20 +18,14 @@
   {#if queryData.data}
     {@const data = queryData.data}
     {#each data as marker}
-      {@const isSelected = marker.id === selectedToiletId}
+      {@const isSelected = marker.id === $page.params.toiletId}
       {@const MarkerIcon = marker.has_bidet ? MapPin : MapPinX}
 
       <Marker
         lngLat={[marker.geometry.lng, marker.geometry.lat]}
-        on:click={() => {
-          if (selectedToiletId === marker.id) {
-            selectedToiletId = null;
-          } else {
-            selectedToiletId = marker.id;
-          }
-        }}
+        on:click={async () => await goto(`/${marker.id}`)}
         class={cn("flex h-8 w-8 items-center justify-center rounded-full", {
-          "h-12 w-12": isSelected,
+          "h-16 w-16": isSelected,
         })}
       >
         <span>
@@ -40,7 +34,7 @@
               "fill-sky-500": marker.has_bidet,
               "fill-amber-300": isSelected,
             })}
-            size={isSelected ? "3rem" : "2rem"}
+            size={isSelected ? "4rem" : "2rem"}
           />
         </span>
       </Marker>

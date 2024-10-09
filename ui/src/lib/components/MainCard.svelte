@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Map } from "maplibre-gl";
+  import { type Map } from "maplibre-gl";
   import { Button } from "$lib/components/ui/button";
   import {
     Card,
@@ -9,70 +9,73 @@
     CardTitle,
   } from "$lib/components/ui/card";
   import { Home, Star, SprayCan, MilkOff } from "lucide-svelte";
-  import { INITIAL_BEARING, INITIAL_CENTER, INITIAL_PITCH, INITIAL_ZOOM } from "$lib/constants";
-  import { onMount } from "svelte";
   import { createQuery } from "@tanstack/svelte-query";
   import { api } from "$lib/api";
   import { cn } from "$lib/utils";
+  import { page } from "$app/stores";
+  import { getContext, onMount } from "svelte";
+  import type { Writable } from "svelte/store";
+  import { goto } from "$app/navigation";
   import Reviews from "$lib/components/Reviews.svelte";
+  import { INITIAL_BEARING, INITIAL_CENTER, INITIAL_PITCH, INITIAL_ZOOM } from "$lib/constants";
 
-  export let map: Map;
-  export let selectedToiletId: string | null;
+  const { toiletId } = $page.params;
 
-  let { lat, lng } = map.getCenter();
-  let zoom = map.getZoom();
-  let bearing = map.getBearing();
-  let pitch = map.getPitch();
+  const query = createQuery({
+    queryKey: ["toilets"],
+    queryFn: api.toilets.list,
+  });
+
+  const map = getContext<Writable<Map>>("map");
+  let { lat, lng } = $map.getCenter();
+  let zoom = $map.getZoom();
+  let bearing = $map.getBearing();
+  let pitch = $map.getPitch();
 
   function onMove() {
-    const center = map.getCenter();
+    const center = $map.getCenter();
     lat = center.lat;
     lng = center.lng;
   }
 
   function onZoom() {
-    zoom = map.getZoom();
+    zoom = $map.getZoom();
   }
 
   function onRotate() {
-    bearing = map.getBearing();
+    bearing = $map.getBearing();
   }
 
   function onPitch() {
-    pitch = map.getPitch();
+    pitch = $map.getPitch();
   }
 
-  function onClick() {
-    selectedToiletId = null;
+  async function onClick() {
+    await goto("/");
   }
 
-  function resetMap() {
-    map.setCenter(INITIAL_CENTER);
-    map.setZoom(INITIAL_ZOOM);
-    map.setBearing(INITIAL_BEARING);
-    map.setPitch(INITIAL_PITCH);
-    selectedToiletId = null;
+  async function resetMap() {
+    $map.setCenter(INITIAL_CENTER);
+    $map.setZoom(INITIAL_ZOOM);
+    $map.setBearing(INITIAL_BEARING);
+    $map.setPitch(INITIAL_PITCH);
+    await goto("/");
   }
 
   onMount(() => {
-    map.on("move", onMove);
-    map.on("zoom", onZoom);
-    map.on("rotate", onRotate);
-    map.on("pitch", onPitch);
-    map.on("click", onClick);
+    $map.on("move", onMove);
+    $map.on("zoom", onZoom);
+    $map.on("rotate", onRotate);
+    $map.on("pitch", onPitch);
+    $map.on("click", onClick);
 
     return () => {
-      map.off("move", onMove);
-      map.off("zoom", onZoom);
-      map.off("rotate", onRotate);
-      map.off("pitch", onPitch);
-      map.off("click", onClick);
+      $map.off("move", onMove);
+      $map.off("zoom", onZoom);
+      $map.off("rotate", onRotate);
+      $map.off("pitch", onPitch);
+      $map.off("click", onClick);
     };
-  });
-
-  const query = createQuery({
-    queryKey: ["toilets"],
-    queryFn: api.toilets.list,
   });
 </script>
 
@@ -94,59 +97,54 @@
         <Home />
       </Button>
 
-      {#if $query.data && selectedToiletId}
-        {@const queryData = $query.data}
-        {#if queryData.data}
-          {@const data = queryData.data}
-          {@const toilet = data.find(d => d.id === selectedToiletId)}
-          {#if toilet}
-            <div class="flex flex-col gap-4">
-              <div>
-                <h2 class="text-2xl font-semibold">{toilet.establishment_name}</h2>
-                <p class="text-gray-400">{toilet.location_information}</p>
-              </div>
-              <div class="flex items-center gap-2">
-                {#if toilet.has_bidet}
-                  <SprayCan />
-                {:else}
-                  <MilkOff />
-                {/if}
-                <p
-                  class={cn("font-semibold", {
-                    "text-green-500": toilet.has_bidet,
-                    "text-red-500": !toilet.has_bidet,
-                  })}
-                >
-                  {#if toilet.has_bidet}
-                    May bidet!
-                  {:else}
-                    Walang bidet!
-                  {/if}
-                </p>
-              </div>
-              <div>
-                <p class="flex items-center gap-1">
-                  Water Pressure:
-                  <Star size="1rem" class="fill-amber-500 text-amber-500" />
-                  {toilet.avg_rating_water_pressure.toFixed(1)}
-                </p>
-                <p class="flex items-center gap-1">
-                  Cleanliness:
-                  <Star size="1rem" class="fill-amber-500 text-amber-500" />
-                  {toilet.avg_rating_cleanliness.toFixed(1)}
-                </p>
-                <p class="flex items-center gap-1">
-                  Poopability:
-                  <Star size="1rem" class="fill-amber-500 text-amber-500" />
-                  {toilet.avg_rating_poopability.toFixed(1)}
-                </p>
-              </div>
-
-              {#key selectedToiletId}
-                <Reviews bind:selectedToiletId />
-              {/key}
+      {#if $query.data?.data}
+        {@const data = $query.data?.data}
+        {@const toilet = data.find(d => d.id === toiletId)}
+        {#if toilet}
+          <div class="flex flex-col gap-4">
+            <div>
+              <h2 class="text-2xl font-semibold">{toilet.establishment_name}</h2>
+              <p class="text-gray-400">{toilet.location_information}</p>
             </div>
-          {/if}
+            <div class="flex items-center gap-2">
+              {#if toilet.has_bidet}
+                <SprayCan />
+              {:else}
+                <MilkOff />
+              {/if}
+              <p
+                class={cn("font-semibold", {
+                  "text-green-500": toilet.has_bidet,
+                  "text-red-500": !toilet.has_bidet,
+                })}
+              >
+                {#if toilet.has_bidet}
+                  May bidet!
+                {:else}
+                  Walang bidet!
+                {/if}
+              </p>
+            </div>
+            <div>
+              <p class="flex items-center gap-1">
+                Water Pressure:
+                <Star size="1rem" class="fill-amber-500 text-amber-500" />
+                {toilet.avg_rating_water_pressure.toFixed(1)}
+              </p>
+              <p class="flex items-center gap-1">
+                Cleanliness:
+                <Star size="1rem" class="fill-amber-500 text-amber-500" />
+                {toilet.avg_rating_cleanliness.toFixed(1)}
+              </p>
+              <p class="flex items-center gap-1">
+                Poopability:
+                <Star size="1rem" class="fill-amber-500 text-amber-500" />
+                {toilet.avg_rating_poopability.toFixed(1)}
+              </p>
+            </div>
+
+            <Reviews />
+          </div>
         {/if}
       {/if}
 
