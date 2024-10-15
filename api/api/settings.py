@@ -7,7 +7,7 @@ from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     PYTHON_ENV: str = "production"
-    BASE_DIR: Path = Path(__file__).parent.parent
+    BASE_DIR: Path = Path(__file__).resolve().parent.parent
 
     POSTGRESQL_USERNAME: str
     POSTGRESQL_PASSWORD: str
@@ -17,6 +17,11 @@ class Settings(BaseSettings):
     @property
     def IN_PRODUCTION(self) -> bool:
         return self.PYTHON_ENV == "production"
+
+    @computed_field
+    @property
+    def STATICFILES_DIR(self) -> Path:
+        return self.BASE_DIR / "static"
 
     @computed_field
     @property
