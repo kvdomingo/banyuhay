@@ -8,8 +8,8 @@ from api.settings import settings
 app = FastAPI(
     title="Banyuhay",
     version="0.1.0",
-    docs_url="/",
-    redoc_url="/redoc",
+    docs_url="/api/docs",
+    redoc_url="/api/redoc",
     default_response_class=ORJSONResponse,
 )
 
