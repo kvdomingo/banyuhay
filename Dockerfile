@@ -16,4 +16,4 @@ RUN apt-get update && \
 
 WORKDIR /app
 
-ENTRYPOINT [ "/app/docker-entrypoint.dev.sh" ]
+ENTRYPOINT [ "/bin/bash", "-c" ]

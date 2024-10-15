@@ -1,10 +1,17 @@
 services:
   api:
-    build: ./api
-    image: kvdomingo/may-bidet-ba
+    build:
+      context: ./api
+      dockerfile: ../Dockerfile
+    image: kvdomingo/banyuhay-api
     restart: unless-stopped
     init: true
     env_file: ./api/.env
+    command:
+      - |
+        poetry install --no-root
+        poetry run alembic upgrade head
+        exec poetry run uvicorn api:app --host 0.0.0.0 --port 8000 --reload
     volumes:
       - ./api:/app
       - venv-data:/app/.venv
@@ -48,6 +55,44 @@ services:
       interval: 20s
       timeout: 2s
 
+  dagster:
+    build:
+      context: ./pipelines
+      dockerfile: ../Dockerfile
+    image: kvdomingo/banyuhay-pipelines
+    restart: unless-stopped
+    init: true
+    env_file: ./pipelines/.env
+    environment:
+      DAGSTER_HOME: /opt/dagster
+    command:
+      - |
+        poetry install --no-root
+        mkdir -p $${DAGSTER_HOME}
+        cp /app/dagster.yaml $${DAGSTER_HOME}/dagster.yaml
+        exec poetry run dagster dev -h 0.0.0.0 -p 3030
+    volumes:
+      - ./pipelines:/app
+      - dagster-venv-data:/app/.venv
+    ports:
+      - '3030:3030'
+    depends_on:
+      dagster-db:
+        condition: service_healthy
+
+  dagster-db:
+    image: bitnami/postgresql:16.4.0-debian-12-r8
+    restart: unless-stopped
+    env_file: ./pipelines/.env
+    volumes:
+      - dagster-db-data:/bitnami/postgresql
+    healthcheck:
+      test: [ 'CMD', 'pg_isready', '-U', '$${POSTGRESQL_USERNAME}', '-d', '$${POSTGRESQL_DATABASE}' ]
+      start_period: 10s
+      retries: 3
+      interval: 20s
+      timeout: 2s
+
   pgadmin:
     image: dpage/pgadmin4:8.12
     environment:
@@ -61,5 +106,7 @@ services:
 
 volumes:
   venv-data:
+  dagster-venv-data:
   db-data:
+  dagster-db-data:
   pgadmin-data:
