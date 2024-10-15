@@ -1,9 +1,9 @@
-- id: 130cd3e1-c084-4831-858c-cb7356b031a0
+- id: 899f6a98-cc24-484e-b055-29c8af15813e
   model: Toilet
   fields:
     establishment_name: The Peak, Grand Hyatt
     location_information: The Peak, Grand Hyatt
-    geometry: POINT(14.556366 121.0517549:.6f)
+    geometry: POINT(14.556366 121.051755)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 5
     avg_rating_poopability: 0
@@ -12,12 +12,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 8724a1cf-82a0-4851-b1b4-19852c05eca4
+- id: 10eb0536-3151-44c9-aad0-0fa250a25aa8
   model: Toilet
   fields:
     establishment_name: Tagaytay Midlands
     location_information: Tagaytay Midlands
-    geometry: POINT(14.128454 121.0478433:.6f)
+    geometry: POINT(14.128454 121.047843)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -26,12 +26,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 83244129-874b-490a-8570-69b3718b0dd3
+- id: 45ffc6c2-07e2-409e-b0a5-e210d0621f4f
   model: Toilet
   fields:
     establishment_name: Okada Manila
     location_information: Okada Manila
-    geometry: POINT(14.514393 120.9801374:.6f)
+    geometry: POINT(14.514393 120.980137)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -40,12 +40,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 557fa5aa-1da6-4eba-b23f-2a40c40ca8fe
+- id: 06d27444-856e-48a1-bacf-dcc6125c9bf4
   model: Toilet
   fields:
     establishment_name: Villamor Airbase Golf Club
     location_information: Villamor Airbase Golf Club
-    geometry: POINT(14.524987 121.020956:.6f)
+    geometry: POINT(14.524987 121.020956)
     avg_rating_water_pressure: 3
     avg_rating_cleanliness: 3
     avg_rating_poopability: 3
@@ -54,12 +54,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: f7f0aacb-2449-4739-980e-749971e57a7d
+- id: f6d162bf-97b6-4ea0-9254-ab0adaa9c78f
   model: Toilet
   fields:
     establishment_name: Century City Mall
     location_information: Century City Mall
-    geometry: POINT(14.565466 121.0276651:.6f)
+    geometry: POINT(14.565466 121.027665)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 3
     avg_rating_poopability: 0
@@ -68,12 +68,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: ee9c6fa1-588e-45b7-9e27-660a251bae81
+- id: 5cf44c32-2053-423e-9098-d6b3c24c7c92
   model: Toilet
   fields:
     establishment_name: Venice Grand Canal, Mckinley Hill
     location_information: Venice Grand Canal, Mckinley Hill
-    geometry: POINT(14.534111 121.0517966:.6f)
+    geometry: POINT(14.534111 121.051797)
     avg_rating_water_pressure: 3
     avg_rating_cleanliness: 2
     avg_rating_poopability: 3
@@ -82,12 +82,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: c10142f8-ef48-49ea-b1a9-5a043398d873
+- id: acf8da11-8357-4047-8fab-f0a09d927d86
   model: Toilet
   fields:
     establishment_name: Uptown Place Mall - Food Hall
     location_information: Uptown Place Mall - Food Hall
-    geometry: POINT(14.556584 121.0551609:.6f)
+    geometry: POINT(14.556584 121.055161)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 3
     avg_rating_poopability: 0
@@ -96,12 +96,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 653d76af-e4b6-4794-9bcb-768da892d22b
+- id: efe661cf-7671-4a2f-a1d7-57070739332e
   model: Toilet
   fields:
     establishment_name: Eastwood Mall
     location_information: Eastwood Mall
-    geometry: POINT(14.610551 121.0799139:.6f)
+    geometry: POINT(14.610551 121.079914)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 3
     avg_rating_poopability: 2
@@ -110,12 +110,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: e537866f-b220-41fe-a54e-5921b3f4a399
+- id: e5e1ab0b-970b-4c36-a922-f8a32bd2c5a6
   model: Toilet
   fields:
     establishment_name: Diamond Hotel Roxas Blvd
     location_information: Diamond Hotel Roxas Blvd
-    geometry: POINT(14.572442 120.982176:.6f)
+    geometry: POINT(14.572442 120.982176)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -124,12 +124,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 55bffbde-9d3f-4073-b51c-d99c80a4446d
+- id: 30e9d241-1d37-4ec6-a195-5fc9585ad8f1
   model: Toilet
   fields:
     establishment_name: Makati Medical Center Tower 8Th Floor/Roof Deck
     location_information: Makati Medical Center Tower 8Th Floor/Roof Deck
-    geometry: POINT(14.559146 121.0145867:.6f)
+    geometry: POINT(14.559146 121.014587)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 4
     avg_rating_poopability: 0
@@ -138,12 +138,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: b4df8983-a7e7-481c-8d3f-a27812e897ce
+- id: 598ec5ff-e3df-4838-9bae-adb9b62aedb7
   model: Toilet
   fields:
     establishment_name: Chardonnay By Astoria
     location_information: Chardonnay By Astoria
-    geometry: POINT(14.573771 121.0670672:.6f)
+    geometry: POINT(14.573771 121.067067)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 4
     avg_rating_poopability: 4
@@ -152,12 +152,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: c03c5020-286b-42e2-b729-1e4eda606321
+- id: a19afd32-0b68-4bc0-9772-268a006fa8cd
   model: Toilet
   fields:
     establishment_name: Dean And Deluca - Rockwell
     location_information: Dean And Deluca - Rockwell
-    geometry: POINT(14.557593 121.0177991:.6f)
+    geometry: POINT(14.557593 121.017799)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 2
     avg_rating_poopability: 0
@@ -166,12 +166,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 5fb3f973-8793-4c6b-84c0-a73165e403bf
+- id: bc93b863-4368-449c-a0bb-a8f23939ef2e
   model: Toilet
   fields:
     establishment_name: Nihonbashitei Arnaiz Ave
     location_information: Nihonbashitei Arnaiz Ave
-    geometry: POINT(14.551170 121.0158421:.6f)
+    geometry: POINT(14.551170 121.015842)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 2
     avg_rating_poopability: 2
@@ -180,26 +180,26 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 5097dadd-c628-436f-979b-c91c4c142876
+- id: f48fd3f1-dae8-489b-b6d5-a0c50b113aa1
   model: Toilet
   fields:
     establishment_name: La Faite Home And Country Garden
     location_information: La Faite Home And Country Garden
-    geometry: POINT(14.352630 121.0310286:.6f)
+    geometry: POINT(14.352630 121.031029)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 3
     avg_rating_poopability: 0
     total_reviews: 1
-    has_bidet: null
+    has_bidet: false
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 8316cdb5-9bf6-4e00-a810-08d77ec0ad46
+- id: 80879014-75fe-41c4-8ebd-3ded11797a61
   model: Toilet
   fields:
     establishment_name: Ababu Persian Kitchen - Xavierville Branch
     location_information: Ababu Persian Kitchen - Xavierville Branch
-    geometry: POINT(14.634976 121.0705908:.6f)
+    geometry: POINT(14.634976 121.070591)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 2
     avg_rating_poopability: 0
@@ -208,12 +208,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 9c43a1b0-f1eb-4a6b-807e-a790494bb8d2
+- id: 0632d2b8-99cb-4e2f-8f6e-8c889f06691a
   model: Toilet
   fields:
     establishment_name: Goodah!!! Timog Branch
     location_information: Goodah!!! Timog Branch
-    geometry: POINT(14.634864 121.0360006:.6f)
+    geometry: POINT(14.634864 121.036001)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -222,12 +222,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 827e3187-00ad-4007-b1ef-32e17599261e
+- id: 62193f62-5295-4247-a93c-59d18b3ad7cb
   model: Toilet
   fields:
     establishment_name: Kanto Freestyle Pburgos Poblacion Makati
     location_information: Kanto Freestyle Pburgos Poblacion Makati
-    geometry: POINT(14.566657 121.0310662:.6f)
+    geometry: POINT(14.566657 121.031066)
     avg_rating_water_pressure: 3
     avg_rating_cleanliness: 0
     avg_rating_poopability: 2
@@ -236,12 +236,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: c949f6e4-878c-42d9-be36-df6960f1c69a
+- id: ddd6ac52-d379-432b-9fcf-13811a4195ca
   model: Toilet
   fields:
     establishment_name: Game Over, Xavierville
     location_information: Game Over, Xavierville
-    geometry: POINT(14.635915 121.0665498:.6f)
+    geometry: POINT(14.635915 121.066550)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 4
     avg_rating_poopability: 5
@@ -250,12 +250,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: f29b14ce-a530-4596-8323-2c5d415c10aa
+- id: 9c03d2b5-1a27-4ee0-bfe8-4b1f15ee83d8
   model: Toilet
   fields:
     establishment_name: Incheon International Airport, South Korea
     location_information: Incheon International Airport, South Korea
-    geometry: POINT(37.458666 126.4419679:.6f)
+    geometry: POINT(37.458666 126.441968)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 4
     avg_rating_poopability: 0
@@ -264,12 +264,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: abfff833-c15c-4443-9f0b-42cc81e9c4b8
+- id: e185f6ca-67f5-4db5-809d-82e3d1698ecb
   model: Toilet
   fields:
     establishment_name: World Trade Center Manila
     location_information: World Trade Center Manila
-    geometry: POINT(14.551022 120.9872126:.6f)
+    geometry: POINT(14.551022 120.987213)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 3
     avg_rating_poopability: 0
@@ -278,12 +278,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: c2684f9a-04ab-4597-ab48-807a4d078832
+- id: 56a0bfa0-44f8-4cba-bac0-42ca7aad016e
   model: Toilet
   fields:
     establishment_name: Brooklyn Pizza Tomas Morato
     location_information: Brooklyn Pizza Tomas Morato
-    geometry: POINT(14.617500 121.0404851:.6f)
+    geometry: POINT(14.617500 121.040485)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 0
     avg_rating_poopability: 0
@@ -292,12 +292,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 43b63feb-7979-4fad-84b5-8bec38877fe6
+- id: 2c0e90d2-015b-4b52-9d96-49d4010c0ee0
   model: Toilet
   fields:
     establishment_name: Petron 29Km Slex South Bound
     location_information: Petron 29Km Slex South Bound
-    geometry: POINT(14.355714 121.0448153:.6f)
+    geometry: POINT(14.355714 121.044815)
     avg_rating_water_pressure: 2
     avg_rating_cleanliness: 3
     avg_rating_poopability: 3
@@ -306,12 +306,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 89b839ca-5b38-476e-a97b-55b8c320bb3f
+- id: 1269d07d-3321-4b18-a57e-653caa13f824
   model: Toilet
   fields:
     establishment_name: Somerset Alabang
     location_information: Somerset Alabang
-    geometry: POINT(14.420049 121.0375013:.6f)
+    geometry: POINT(14.420049 121.037501)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 5
     avg_rating_poopability: 0
@@ -320,12 +320,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: f2dba7cb-f541-46ef-a223-fcb303e6814a
+- id: f227da37-0ccc-443f-8747-faa1fdbe7153
   model: Toilet
   fields:
     establishment_name: Sofitel Philippine Plaza Manila
     location_information: Sofitel Philippine Plaza Manila
-    geometry: POINT(14.552781 120.9816652:.6f)
+    geometry: POINT(14.552781 120.981665)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -334,26 +334,26 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 3a298837-3741-4c17-b5ea-113807bd85d3
+- id: e415dd78-d6c0-4acf-a175-61c228673ce0
   model: Toilet
   fields:
     establishment_name: Mandaluyong?
     location_information: Mandaluyong?
-    geometry: POINT(14.579444 121.0359174:.6f)
+    geometry: POINT(14.579444 121.035917)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 0
     avg_rating_poopability: 0
     total_reviews: 1
-    has_bidet: null
+    has_bidet: false
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 459f11e0-970f-4c8f-a42b-ae56d7ae179f
+- id: 9d100386-718f-4d04-8cf2-a8ad03d18b1f
   model: Toilet
   fields:
     establishment_name: Podium Mall (Director’S Club Cinema Hall)
     location_information: Podium Mall (Director’S Club Cinema Hall)
-    geometry: POINT(14.585116 121.0588049:.6f)
+    geometry: POINT(14.585116 121.058805)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 4
     avg_rating_poopability: 4
@@ -362,12 +362,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: d8157284-81bf-4ac4-b440-d313228ffc98
+- id: d5b211a5-d47a-4939-8032-721731a36855
   model: Toilet
   fields:
     establishment_name: Angelfields - Magnificat
     location_information: Angelfields - Magnificat
-    geometry: POINT(14.168117 121.0001837:.6f)
+    geometry: POINT(14.168117 121.000184)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -376,12 +376,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 8a2eb2b6-36a7-4f25-9d9e-a47ec96af17f
+- id: 5a8d441e-41ba-4f05-a263-c6d12f5a51b4
   model: Toilet
   fields:
     establishment_name: Ooma - Rockwell
     location_information: Ooma - Rockwell
-    geometry: POINT(14.564717 121.0364152:.6f)
+    geometry: POINT(14.564717 121.036415)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 2
     avg_rating_poopability: 0
@@ -390,12 +390,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 1b34b2a8-af3a-4ab9-9f84-696a825518fe
+- id: dd7e28ef-808a-43b4-8c50-4115b1b8c921
   model: Toilet
   fields:
     establishment_name: Luxent Hotel
     location_information: Luxent Hotel
-    geometry: POINT(14.635249 121.034368:.6f)
+    geometry: POINT(14.635249 121.034368)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 4
     avg_rating_poopability: 0
@@ -404,26 +404,26 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 3f294c54-905c-43e9-97ec-8b32004c9132
+- id: e15b0bba-a822-4dd6-b9b7-43743b6a649d
   model: Toilet
   fields:
     establishment_name: Narra Hill
     location_information: Narra Hill
-    geometry: POINT(14.077835 120.8837351:.6f)
+    geometry: POINT(14.077835 120.883735)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
     total_reviews: 1
-    has_bidet: null
+    has_bidet: false
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 7b05597a-3bc9-4636-9da9-15f36d7fda35
+- id: b65b02a7-9159-4f5e-8cd1-6da8922898ad
   model: Toilet
   fields:
     establishment_name: National University 551 Mf Jhocson St
     location_information: National University 551 Mf Jhocson St
-    geometry: POINT(14.604316 120.9946287:.6f)
+    geometry: POINT(14.604316 120.994629)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 2
     avg_rating_poopability: 0
@@ -432,12 +432,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: a6efa2d2-9dc2-43ca-acfe-f110ffb7eadb
+- id: c54c13be-05ab-45c1-86ea-89ba8f2e4a2c
   model: Toilet
   fields:
     establishment_name: Starfield Coex Mall, Seoul, South Korea
     location_information: Starfield Coex Mall, Seoul, South Korea
-    geometry: POINT(37.511369 127.0595931:.6f)
+    geometry: POINT(37.511369 127.059593)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 4
@@ -446,12 +446,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: df189cfb-1c6a-493b-b92b-896eef6c7139
+- id: bd410e5f-d943-4dbc-a550-2c1d5a0137c5
   model: Toilet
   fields:
     establishment_name: Fitness First - Megamall
     location_information: Fitness First - Megamall
-    geometry: POINT(14.585434 121.0571801:.6f)
+    geometry: POINT(14.585434 121.057180)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 3
     avg_rating_poopability: 4
@@ -460,12 +460,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 03854dab-de05-4633-977f-203b8b4cde02
+- id: c9238917-8f19-406a-8ef5-ef8357a626a1
   model: Toilet
   fields:
     establishment_name: Hap Chan Makati Ave
     location_information: Hap Chan Makati Ave
-    geometry: POINT(14.590998 121.0333949:.6f)
+    geometry: POINT(14.590998 121.033395)
     avg_rating_water_pressure: 3
     avg_rating_cleanliness: 1
     avg_rating_poopability: 1
@@ -474,12 +474,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: ce944db9-6d56-4b88-8a18-40bd5a5512e5
+- id: 72ef6f70-badc-4dbb-af15-e57f179c0154
   model: Toilet
   fields:
     establishment_name: The Blue Leaf Cosmopolitan
     location_information: The Blue Leaf Cosmopolitan
-    geometry: POINT(14.591922 121.081658:.6f)
+    geometry: POINT(14.591922 121.081658)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -488,12 +488,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: dd7cd307-7721-44a6-8a77-3c59a0fe5df8
+- id: 38bb657d-89a6-4ff6-a5e1-120b6a4b34e6
   model: Toilet
   fields:
     establishment_name: Wingzone Megamall
     location_information: Wingzone Megamall
-    geometry: POINT(14.585304 121.0569496:.6f)
+    geometry: POINT(14.585304 121.056950)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 2
     avg_rating_poopability: 0
@@ -502,12 +502,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: b7170059-ce2e-453b-bcac-c0f3f8a34432
+- id: 1d7475d3-0c75-465b-97df-32b34da5fc24
   model: Toilet
   fields:
     establishment_name: Manam Sm Megamall
     location_information: Manam Sm Megamall
-    geometry: POINT(14.584318 121.0568864:.6f)
+    geometry: POINT(14.584318 121.056886)
     avg_rating_water_pressure: 3
     avg_rating_cleanliness: 4
     avg_rating_poopability: 5
@@ -516,12 +516,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 5bb6f434-8cc0-42c7-bb73-5aa77d84af3b
+- id: de8d5fda-6191-46f7-a13a-1c840194810d
   model: Toilet
   fields:
     establishment_name: The Blue Leaf Events Pavillion - Taguig
     location_information: The Blue Leaf Events Pavillion - Taguig
-    geometry: POINT(14.534343 121.053195:.6f)
+    geometry: POINT(14.534343 121.053195)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -530,54 +530,54 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 4a63d9d8-0f3d-4d68-a9a3-37f5ad134d4e
+- id: f6491fa6-47ee-4f6c-ac0f-13b43725089d
   model: Toilet
   fields:
     establishment_name: Mango Farm, Antipolo City
     location_information: Mango Farm, Antipolo City
-    geometry: POINT(14.612015 121.1254967:.6f)
+    geometry: POINT(14.612015 121.125497)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 4
     avg_rating_poopability: 4
     total_reviews: 1
-    has_bidet: null
+    has_bidet: false
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 6a01afee-678a-4ea7-9af7-650cdedab5a4
+- id: 3cfe6ac2-f860-417e-890b-3a849f9f6103
   model: Toilet
   fields:
     establishment_name: Fitness First Metro East
     location_information: Fitness First Metro East
-    geometry: POINT(14.619143 121.1000272:.6f)
+    geometry: POINT(14.619143 121.100027)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 4
     avg_rating_poopability: 5
     total_reviews: 1
-    has_bidet: null
+    has_bidet: false
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 2bf66bcf-9630-48d3-b12a-3d06d61b7e96
+- id: 6a9aa7a8-927a-45ff-b722-c6d2f71c22ff
   model: Toilet
   fields:
     establishment_name: Spaces By Babyland
     location_information: Spaces By Babyland
-    geometry: POINT(14.586090 121.047358:.6f)
+    geometry: POINT(14.586090 121.047358)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 4
     avg_rating_poopability: 3
     total_reviews: 1
-    has_bidet: null
+    has_bidet: false
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 7f12a216-8f10-41d5-936e-c9c02f3ba9d3
+- id: c87d3934-27e1-403b-af2c-7f796b94c042
   model: Toilet
   fields:
     establishment_name: La Pergola Verde
     location_information: La Pergola Verde
-    geometry: POINT(14.553106 120.987619:.6f)
+    geometry: POINT(14.553106 120.987619)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 1
     avg_rating_poopability: 0
@@ -586,12 +586,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: cc48497d-84ed-4de5-8946-7b3f94706740
+- id: 755185ef-7c4e-4aa4-9483-1409b8707c1e
   model: Toilet
   fields:
     establishment_name: Ikea Pasay
     location_information: Ikea Pasay
-    geometry: POINT(14.532830 120.9824917:.6f)
+    geometry: POINT(14.532830 120.982492)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 4
     avg_rating_poopability: 5
@@ -600,12 +600,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 5757491b-0bfa-4bd7-b15e-202ab09691f0
+- id: dd75022e-a4ac-417d-8ed7-0cfe7e78d2cb
   model: Toilet
   fields:
     establishment_name: Eight Forbes Town
     location_information: Eight Forbes Town
-    geometry: POINT(14.550731 121.0439466:.6f)
+    geometry: POINT(14.550731 121.043947)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -614,12 +614,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: f9ec11e9-0edf-48f8-8e52-3f85ba24711b
+- id: b7c7d965-8bdc-46c7-9620-ee15853bfcb6
   model: Toilet
   fields:
     establishment_name: Cinema ‘76 Film Society, San Juan
     location_information: Cinema ‘76 Film Society, San Juan
-    geometry: POINT(14.592474 121.0378307:.6f)
+    geometry: POINT(14.592474 121.037831)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -628,12 +628,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: a3bd5c2f-70b7-493f-a307-c6362a9de420
+- id: 0f492eb1-8cca-4a67-9c32-6fce304eb7a0
   model: Toilet
   fields:
     establishment_name: Rockwell (New Wing)
     location_information: Rockwell (New Wing)
-    geometry: POINT(14.562903 121.0364276:.6f)
+    geometry: POINT(14.562903 121.036428)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -642,12 +642,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 1d548fd3-fc58-48a7-93c3-3da9e8092936
+- id: 2da01963-37e1-4051-b9c3-62b96a35ff9e
   model: Toilet
   fields:
     establishment_name: Decathlon Marcos Highway
     location_information: Decathlon Marcos Highway
-    geometry: POINT(14.625514 121.1230081:.6f)
+    geometry: POINT(14.625514 121.123008)
     avg_rating_water_pressure: 3
     avg_rating_cleanliness: 0
     avg_rating_poopability: 1
@@ -656,12 +656,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 41cade23-d8b3-44d5-9726-90bb7238f34e
+- id: 29d0770a-200c-4420-b029-c4b71248539c
   model: Toilet
   fields:
     establishment_name: Tejeros
     location_information: Tejeros
-    geometry: POINT(14.571537 121.0141574:.6f)
+    geometry: POINT(14.571537 121.014157)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 3
     avg_rating_poopability: 4
@@ -670,12 +670,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 8a078a4a-0863-4e9c-b806-c5c511423b93
+- id: 88c187a7-fb05-49fa-a8f9-2c27718368bf
   model: Toilet
   fields:
     establishment_name: Lto Main Office - East Ave
     location_information: Lto Main Office - East Ave
-    geometry: POINT(14.635473 121.0464147:.6f)
+    geometry: POINT(14.635473 121.046415)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 0
     avg_rating_poopability: 0
@@ -684,26 +684,26 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 89bff203-4b63-4b95-8c7f-fd948655eefe
+- id: 68e164b1-1013-4b2e-a13b-41241e0cf035
   model: Toilet
   fields:
     establishment_name: Samgyupsalamat - Katipunan
     location_information: Samgyupsalamat - Katipunan
-    geometry: POINT(14.636879 121.0740725:.6f)
+    geometry: POINT(14.636879 121.074072)
     avg_rating_water_pressure: 3
     avg_rating_cleanliness: 3
     avg_rating_poopability: 4
     total_reviews: 1
-    has_bidet: null
+    has_bidet: false
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 571319b3-2c5f-45b8-81bd-6c5a8871e28d
+- id: 0cc5c9eb-3859-4b13-8dd9-a9e27edf24c3
   model: Toilet
   fields:
     establishment_name: Starbucks - Katipunan
     location_information: Starbucks - Katipunan
-    geometry: POINT(14.636799 121.0740842:.6f)
+    geometry: POINT(14.636799 121.074084)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 3
     avg_rating_poopability: 0
@@ -712,14 +712,14 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: cdcd1e5d-9ee5-4abe-9eea-d34493145e5d
+- id: b3b6c1f8-d855-4b5b-b430-03c190bd6d3e
   model: Toilet
   fields:
     establishment_name: De La Salle - College Of Saint Benilde School Of Design And
       Arts
     location_information: De La Salle - College Of Saint Benilde School Of Design
       And Arts
-    geometry: POINT(14.563319 120.9969893:.6f)
+    geometry: POINT(14.563319 120.996989)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 4
     avg_rating_poopability: 5
@@ -728,12 +728,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: fca5ce99-e6cb-4d90-a17e-011fba70797e
+- id: a4ead7a1-fb11-4508-9623-ea341254fd1c
   model: Toilet
   fields:
     establishment_name: Tim Horton’S Eastwood
     location_information: Tim Horton’S Eastwood
-    geometry: POINT(14.610086 121.0789819:.6f)
+    geometry: POINT(14.610086 121.078982)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 3
     avg_rating_poopability: 4
@@ -742,12 +742,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 6a9d38ee-0337-46c2-ad32-4ea06fff9142
+- id: a8002f8a-4434-4cbb-8097-5cca7ca36577
   model: Toilet
   fields:
     establishment_name: Quinta Market, Quiapo Manila
     location_information: Quinta Market, Quiapo Manila
-    geometry: POINT(14.598089 120.9833211:.6f)
+    geometry: POINT(14.598089 120.983321)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 2
     avg_rating_poopability: 0
@@ -756,26 +756,26 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 978f7373-92b3-4c8d-880a-24f43ba08ef9
+- id: 96c6133d-454f-44fd-911d-3a4b90be5c70
   model: Toilet
   fields:
     establishment_name: Manila Polo Club
     location_information: Manila Polo Club
-    geometry: POINT(14.544168 121.0396413:.6f)
+    geometry: POINT(14.544168 121.039641)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
     total_reviews: 1
-    has_bidet: null
+    has_bidet: false
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 348268e4-4d14-4f3c-9fa4-7763aeb351b4
+- id: f820d535-5832-45ac-a105-d62a9a84c697
   model: Toilet
   fields:
     establishment_name: Angelfields Nature Sanctuary, Tagaytay
     location_information: Angelfields Nature Sanctuary, Tagaytay
-    geometry: POINT(14.168117 121.0001837:.6f)
+    geometry: POINT(14.168117 121.000184)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -784,12 +784,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: bffeab24-8300-44e3-903b-d53a85169a96
+- id: 8024badc-a8b8-4928-88cb-aaba142bcf4c
   model: Toilet
   fields:
     establishment_name: Tabi Ng Pandango Hall
     location_information: Tabi Ng Pandango Hall
-    geometry: POINT(10.446807 122.8238761:.6f)
+    geometry: POINT(10.446807 122.823876)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 3
     avg_rating_poopability: 0
@@ -798,12 +798,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 42501d44-d18d-4002-8304-e00be30d0f80
+- id: b8a8827c-92a3-4678-b7ab-8aa020c5b930
   model: Toilet
   fields:
     establishment_name: Grand Palazzo Royale, Angeles Pampanga
     location_information: Grand Palazzo Royale, Angeles Pampanga
-    geometry: POINT(15.139435 120.560775:.6f)
+    geometry: POINT(15.139435 120.560775)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -812,12 +812,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 09935fd2-9f3c-4e9b-8f2f-dc73b8a2225e
+- id: 282a1691-6efb-4e0f-82b3-9b1c54b00752
   model: Toilet
   fields:
     establishment_name: Escala Tagaytay
     location_information: Escala Tagaytay
-    geometry: POINT(14.094359 120.9411011:.6f)
+    geometry: POINT(14.094359 120.941101)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 4
@@ -826,12 +826,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 325825ce-0581-4e03-88ad-3fe938e25d8f
+- id: 71550413-7137-42f8-ac8e-dd94df00fc28
   model: Toilet
   fields:
     establishment_name: Rockwell Powerplant Mall
     location_information: Rockwell Powerplant Mall
-    geometry: POINT(14.564648 121.0364352:.6f)
+    geometry: POINT(14.564648 121.036435)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 2
     avg_rating_poopability: 0
@@ -840,12 +840,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: e58345b1-2458-4771-b184-dd866683e36d
+- id: f1139a34-8054-4ef8-8556-4d1d6626d74a
   model: Toilet
   fields:
     establishment_name: Hilton Manila
     location_information: Hilton Manila
-    geometry: POINT(14.518512 121.0192807:.6f)
+    geometry: POINT(14.518512 121.019281)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -854,12 +854,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 565d2cc6-1b97-4d6d-b412-c675f179e2de
+- id: cdc7fe87-579d-4944-b328-4182ebd690ed
   model: Toilet
   fields:
     establishment_name: Denny’S Uptown Parkade Tapat Ng The Palace
     location_information: Denny’S Uptown Parkade Tapat Ng The Palace
-    geometry: POINT(14.557569 121.0540099:.6f)
+    geometry: POINT(14.557569 121.054010)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 4
     avg_rating_poopability: 4
@@ -868,12 +868,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 6525a594-b0e5-4688-8562-0878ce1e994a
+- id: 559f3220-d85c-42d7-b1c4-b956864311c5
   model: Toilet
   fields:
     establishment_name: Mazzo
     location_information: Mazzo
-    geometry: POINT(17.452687 78.3635767:.6f)
+    geometry: POINT(17.452687 78.363577)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 4
     avg_rating_poopability: 4
@@ -882,12 +882,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 292f397a-6e5c-4ca6-a971-6021058ae110
+- id: 8bd7e3eb-cfaa-446e-906c-e4dc8600ee65
   model: Toilet
   fields:
     establishment_name: Yellow Cab Santana Grove Sucat, Paranaque
     location_information: Yellow Cab Santana Grove Sucat, Paranaque
-    geometry: POINT(14.456849 121.0362768:.6f)
+    geometry: POINT(14.456849 121.036277)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 1
     avg_rating_poopability: 0
@@ -896,12 +896,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: c258032e-3790-495b-b5c1-9c8bc0ee8c37
+- id: c890cb64-3955-4520-87de-4a7b5382809b
   model: Toilet
   fields:
     establishment_name: Starbucks - Santana Grove, Sucat
     location_information: Starbucks - Santana Grove, Sucat
-    geometry: POINT(14.456715 121.0361265:.6f)
+    geometry: POINT(14.456715 121.036126)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 2
     avg_rating_poopability: 0
@@ -910,12 +910,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: b5504d99-d0e3-447d-be9e-c8a65738c497
+- id: b13ce471-3e3f-4575-8d33-6b7a0ccdf85c
   model: Toilet
   fields:
     establishment_name: Tryp By Wyndham Mall Of Asia
     location_information: Tryp By Wyndham Mall Of Asia
-    geometry: POINT(14.541951 120.9825225:.6f)
+    geometry: POINT(14.541951 120.982523)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -924,12 +924,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: ffe1db2a-5fb4-415e-a511-e8352b23b202
+- id: 5e8b414a-eb5c-489b-979f-4a2a75567686
   model: Toilet
   fields:
     establishment_name: Sm Marikina
     location_information: Sm Marikina
-    geometry: POINT(14.626040 121.0837833:.6f)
+    geometry: POINT(14.626040 121.083783)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 1
     avg_rating_poopability: 0
@@ -938,12 +938,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 7e15165d-1c46-4bec-a34f-f4b21107f905
+- id: 7303067c-2cc4-4c9f-9b87-ff3562e7c9fa
   model: Toilet
   fields:
     establishment_name: Mendokoro Ramenba Makati
     location_information: Mendokoro Ramenba Makati
-    geometry: POINT(14.560443 121.0246281:.6f)
+    geometry: POINT(14.560443 121.024628)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -952,12 +952,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 1e1f9194-8b9f-44f1-b4bf-22ca77c7372c
+- id: a3fae5e7-283b-4584-b29c-7d2a929bbb36
   model: Toilet
   fields:
     establishment_name: The Blue Leaf Filipinas
     location_information: The Blue Leaf Filipinas
-    geometry: POINT(14.522605 120.9915787:.6f)
+    geometry: POINT(14.522605 120.991579)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 4
@@ -966,12 +966,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 5e76c79e-629b-4d2d-8a22-743b8dff2792
+- id: a3e14990-98c8-4f81-a030-2de51526b666
   model: Toilet
   fields:
     establishment_name: I Darts Dash
     location_information: I Darts Dash
-    geometry: POINT(14.551938 121.0496749:.6f)
+    geometry: POINT(14.551938 121.049675)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 5
     avg_rating_poopability: 0
@@ -980,12 +980,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 40003fed-fa54-4414-95ed-8201c8827082
+- id: a1dcf43e-5571-4f86-9e0e-cfc62c87bb36
   model: Toilet
   fields:
     establishment_name: Naia Terminal 2
     location_information: Naia Terminal 2
-    geometry: POINT(14.510326 121.012201:.6f)
+    geometry: POINT(14.510326 121.012201)
     avg_rating_water_pressure: 3
     avg_rating_cleanliness: 4
     avg_rating_poopability: 4
@@ -994,12 +994,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: b45a2e61-d865-4339-9949-34d29b8b961a
+- id: 78d027a4-c832-4f54-a337-dc8549f8912c
   model: Toilet
   fields:
     establishment_name: Kimpura Greenhills
     location_information: Kimpura Greenhills
-    geometry: POINT(14.601031 121.0490247:.6f)
+    geometry: POINT(14.601031 121.049025)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 5
     avg_rating_poopability: 4
@@ -1008,12 +1008,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: d631804b-a2c7-4561-9857-c1615e67b66d
+- id: e77e04b6-12c1-4cc2-b9cc-d4e022be41fc
   model: Toilet
   fields:
     establishment_name: Wings On The Wheels Ph
     location_information: Wings On The Wheels Ph
-    geometry: POINT(14.596813 121.0352966:.6f)
+    geometry: POINT(14.596813 121.035297)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -1022,12 +1022,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 28bc57f8-379c-446e-a2fc-157800ad7354
+- id: cac925cb-beb1-4173-b3ef-312c745573e1
   model: Toilet
   fields:
     establishment_name: Manila Marriott Hotel *Resortsworldmanila
     location_information: Manila Marriott Hotel *Resortsworldmanila
-    geometry: POINT(14.520466 121.018499:.6f)
+    geometry: POINT(14.520466 121.018499)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
@@ -1036,12 +1036,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 3fbd0b79-d03a-4782-9ad0-8baba1a622af
+- id: 74e44c16-ece8-40dc-96f5-0261014e2a97
   model: Toilet
   fields:
     establishment_name: Revel At The Palace
     location_information: Revel At The Palace
-    geometry: POINT(14.558266 121.0547947:.6f)
+    geometry: POINT(14.558266 121.054795)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 4
     avg_rating_poopability: 4
@@ -1050,12 +1050,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: ff76ab65-8fe6-42ee-92ca-457a3cf42f2f
+- id: e7d2c387-c91e-4481-9f06-18b26a9720ef
   model: Toilet
   fields:
     establishment_name: Marquis Events Place
     location_information: Marquis Events Place
-    geometry: POINT(14.553303 121.0551421:.6f)
+    geometry: POINT(14.553303 121.055142)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 5
     avg_rating_poopability: 0
@@ -1064,26 +1064,26 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 7a7cfbe3-6649-430c-8fcc-cbd855a72718
+- id: a7032b16-b9bd-4117-be5d-2b8c8e426d7e
   model: Toilet
   fields:
     establishment_name: Marriot Grand Ballroom
     location_information: Marriot Grand Ballroom
-    geometry: POINT(14.521192 121.0171586:.6f)
+    geometry: POINT(14.521192 121.017159)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 5
     avg_rating_poopability: 5
     total_reviews: 1
-    has_bidet: null
+    has_bidet: false
     upvotes: 0
     downvotes: 0
     photos: []
-- id: f9aaa860-6699-4185-85c4-ee7266a150ce
+- id: 757ce3fe-bb1c-478a-8472-c645d8b47d61
   model: Toilet
   fields:
     establishment_name: Coffee Bean And Tea Leaf - Petron 29Km Slex South Bound
     location_information: Coffee Bean And Tea Leaf - Petron 29Km Slex South Bound
-    geometry: POINT(14.355491 121.0441436:.6f)
+    geometry: POINT(14.355491 121.044144)
     avg_rating_water_pressure: 0
     avg_rating_cleanliness: 5
     avg_rating_poopability: 0
@@ -1092,12 +1092,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 4af8b7ab-7116-46f8-ba1a-3eaf8f953083
+- id: 257b7273-8ffe-4c97-8167-5f059853cf18
   model: Toilet
   fields:
     establishment_name: Oto Poblacion Makati City
     location_information: Oto Poblacion Makati City
-    geometry: POINT(14.563797 121.0321859:.6f)
+    geometry: POINT(14.563797 121.032186)
     avg_rating_water_pressure: 3
     avg_rating_cleanliness: 3
     avg_rating_poopability: 3
@@ -1106,12 +1106,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 275a29b9-6676-4007-b14a-2442acacf62c
+- id: 705c82e4-fdb4-4d14-a5e4-01716ebcb57f
   model: Toilet
   fields:
     establishment_name: Grand Cobo Events Place Marikina
     location_information: Grand Cobo Events Place Marikina
-    geometry: POINT(14.628961 121.1044872:.6f)
+    geometry: POINT(14.628961 121.104487)
     avg_rating_water_pressure: 4
     avg_rating_cleanliness: 4
     avg_rating_poopability: 4
@@ -1120,12 +1120,12 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 4f6a02d1-3008-433c-8569-54ff537eb572
+- id: 1a8969c9-b296-4e43-ac81-68878cbd12e5
   model: Toilet
   fields:
     establishment_name: Samgyupsalamat - Circulo Verde Branch
     location_information: Samgyupsalamat - Circulo Verde Branch
-    geometry: POINT(14.600658 121.0880656:.6f)
+    geometry: POINT(14.600658 121.088066)
     avg_rating_water_pressure: 5
     avg_rating_cleanliness: 4
     avg_rating_poopability: 5

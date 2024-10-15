@@ -39,8 +39,4 @@ def get_establishment_name(entry: list[str]):
 
 def get_has_bidet(entry: list[str]):
     ent = entry[0].lower()
-    if ent.startswith("meron"):
-        return True
-    elif ent.startswith("wala"):
-        return False
-    return None
+    return ent.startswith("meron") or ent.startswith("may")

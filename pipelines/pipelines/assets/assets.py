@@ -82,6 +82,7 @@ def meta_with_geo(
                 lat = lng = None
         else:
             lat = lng = None
+
         out.append(
             {
                 **m,

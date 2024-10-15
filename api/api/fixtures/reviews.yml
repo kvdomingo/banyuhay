@@ -1,7 +1,7 @@
-- id: a213ef55-34cb-42a8-b503-99039ddd8899
+- id: e603106a-d9c1-439a-9116-f9413df30560
   model: Review
   fields:
-    toilet_id: 130cd3e1-c084-4831-858c-cb7356b031a0
+    toilet_id: 899f6a98-cc24-484e-b055-29c8af15813e
     content: 'Walang Bidet sa The Peak, Grand Hyatt. *sa sobrang lasing ko hindi ko
       sinunod sarili kong layout :(*
 
@@ -17,10 +17,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: d0a66e97-b6ca-4280-a1e9-4ce0a68c6a3e
+- id: 59283cfe-5560-48a9-8d9e-865163bbc95d
   model: Review
   fields:
-    toilet_id: 8724a1cf-82a0-4851-b1b4-19852c05eca4
+    toilet_id: 10eb0536-3151-44c9-aad0-0fa250a25aa8
     content: 'Merong bidet sa Tagaytay Midlands.
 
       Bagong renovate yung banyo. May aircon and lamig. Sobrang linis. Ang lakas din
@@ -36,10 +36,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: f394846e-7683-43cb-93fc-09760ff50274
+- id: ed0ea865-9e49-4197-9190-ec43f18ccd7a
   model: Review
   fields:
-    toilet_id: 83244129-874b-490a-8570-69b3718b0dd3
+    toilet_id: 45ffc6c2-07e2-409e-b0a5-e210d0621f4f
     content: 'Merong Bidet sa Okada Manila.
 
       Sarap mag jebs dito. Para kang nasa japan. Marble yung walls. Super solid banyo
@@ -55,10 +55,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 359636ef-d5c6-4955-87e0-04366e45e773
+- id: cd9956c4-9272-4985-b4c9-eedc8c30e238
   model: Review
   fields:
-    toilet_id: 557fa5aa-1da6-4eba-b23f-2a40c40ca8fe
+    toilet_id: 06d27444-856e-48a1-bacf-dcc6125c9bf4
     content: 'Merong bidet sa Villamor Airbase Golf Club.
 
       Luma na yung banyo 90’s vibes. Pwede mong dayain sa 10 year challenge ang naiba
@@ -73,10 +73,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: bfbe8c3e-6951-4f03-8343-66401236322b
+- id: c8cf5afe-e8af-4ee2-a18a-7a661235743d
   model: Review
   fields:
-    toilet_id: f7f0aacb-2449-4739-980e-749971e57a7d
+    toilet_id: f6d162bf-97b6-4ea0-9254-ab0adaa9c78f
     content: 'Walang bidet sa Century City Mall.
 
       Notes: pigil nalang muna :(
@@ -90,10 +90,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 84a0b2fe-0894-407d-ae4b-ff41ec7faa89
+- id: af957796-f68a-450b-80b9-3b3844ad620a
   model: Review
   fields:
-    toilet_id: ee9c6fa1-588e-45b7-9e27-660a251bae81
+    toilet_id: 5cf44c32-2053-423e-9098-d6b3c24c7c92
     content: 'Merong bidet sa Venice Grand Canal, Mckinley Hill.
 
       Notes: Always check for water pressure bago ka mag jebs. Merong mga restrooms
@@ -110,10 +110,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 1ef750ec-f4e3-40fb-8f4d-3565979384cd
+- id: 438e957f-e5ff-4669-9a45-b9ac289e3728
   model: Review
   fields:
-    toilet_id: c10142f8-ef48-49ea-b1a9-5a043398d873
+    toilet_id: acf8da11-8357-4047-8fab-f0a09d927d86
     content: "Walang Bidet sa Uptown Place Mall - Food Hall.\nNotes: kapag medyo kakabakaba\
       \ ka with sa lagay ng tiyan mo hinay hinay ka muna ng kain with officemates.\
       \ *inikot ko yung mall merong provision for bidet soon magkakaroon yan. \n"
@@ -125,10 +125,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 2d6d83f4-c941-4625-9308-d95bdf29e076
+- id: e23ec2dc-253a-4b71-9295-b5837e96ab28
   model: Review
   fields:
-    toilet_id: 653d76af-e4b6-4794-9bcb-768da892d22b
+    toilet_id: efe661cf-7671-4a2f-a1d7-57070739332e
     content: 'Merong Bidet sa Eastwood Mall.
 
       Hindi misyadong malinis may nakaabang naman kwentuhan lang sila. Meron din mga
@@ -143,10 +143,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: bf367207-c778-44b6-9cb9-25e506bc2521
+- id: ee291e0b-514f-4e51-8aa1-4c053c728dab
   model: Review
   fields:
-    toilet_id: e537866f-b220-41fe-a54e-5921b3f4a399
+    toilet_id: e5e1ab0b-970b-4c36-a922-f8a32bd2c5a6
     content: 'Merong Bidet sa Diamond Hotel Roxas Blvd. Manila.
 
       '
@@ -158,10 +158,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 156537d1-f1cb-4119-a20f-61b0940d4d3b
+- id: 06eda487-fadd-4218-b4cb-eb6eea04d91a
   model: Review
   fields:
-    toilet_id: 55bffbde-9d3f-4073-b51c-d99c80a4446d
+    toilet_id: 30e9d241-1d37-4ec6-a195-5fc9585ad8f1
     content: 'Walang bidet sa Makati Medical Center Tower 8th floor/Roof Deck.
 
       Notes: nakaharang yung trash can sa pinto. merong accessibility railings. *may
@@ -176,10 +176,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: b7b25a20-ec54-4905-899f-65423e077983
+- id: e201c2df-effe-4094-8a81-2c6cf1fa2bae
   model: Review
   fields:
-    toilet_id: b4df8983-a7e7-481c-8d3f-a27812e897ce
+    toilet_id: 598ec5ff-e3df-4838-9bae-adb9b62aedb7
     content: 'Merong bidet sa Chardonnay by Astoria.
 
       Notes: malinis. mabango. Amoy oranges sa loob. Palaging mag naglilinis. Sana
@@ -195,10 +195,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 2c611fbc-2dd5-402e-9f35-68f9c5c83a34
+- id: c814cc61-6ff9-4856-ab10-d8a70c490658
   model: Review
   fields:
-    toilet_id: c03c5020-286b-42e2-b729-1e4eda606321
+    toilet_id: a19afd32-0b68-4bc0-9772-268a006fa8cd
     content: 'Walang bidet sa Dean and Deluca - Rockwell.
 
       Notes: Toilet Rules: Pakabit ng Bidet. Kalat kalat yung tissue mga tao talagang
@@ -213,10 +213,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: a4a58ec9-a9ae-462a-a063-b811b48094c1
+- id: dee4f365-65b2-4678-acd0-e8825ae1e189
   model: Review
   fields:
-    toilet_id: 5fb3f973-8793-4c6b-84c0-a73165e403bf
+    toilet_id: bc93b863-4368-449c-a0bb-a8f23939ef2e
     content: 'Merong Bidet sa Nihonbashitei Arnaiz Ave.
 
       Solid Japanese food. Kaso hindi ganun kaganda yung banyo. Pero still may bidet
@@ -232,10 +232,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 2b62decf-bae5-4017-b295-44c69bf72eed
+- id: 266d88c7-c056-4de6-ac43-47a61f1ff703
   model: Review
   fields:
-    toilet_id: 5097dadd-c628-436f-979b-c91c4c142876
+    toilet_id: f48fd3f1-dae8-489b-b6d5-a0c50b113aa1
     content: 'May bidet sa La Faite Home and Country Garden. KASO SIRA.
 
       Notes: medyo madilim. Pero ayun hindi ka naman makakatae kase walang tubig.
@@ -244,15 +244,15 @@
     rating_water_pressure: 0
     rating_cleanliness: 3
     rating_poopability: 0
-    has_bidet: null
+    has_bidet: false
     is_approved: true
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 07c08dab-63a0-42ec-a4a6-3f70df2e7c11
+- id: 6767bf66-9194-4758-a809-891a3e259818
   model: Review
   fields:
-    toilet_id: 8316cdb5-9bf6-4e00-a810-08d77ec0ad46
+    toilet_id: 80879014-75fe-41c4-8ebd-3ded11797a61
     content: 'Walang Bidet sa Ababu Persian Kitchen - Xavierville Branch.
 
       Notes: Basa yung sahig. Masikip sa loob. Sira din yung lock. Kanin ka nalang
@@ -267,10 +267,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: e7155946-81a1-42eb-902d-24a983208db2
+- id: 88e0a25b-fd20-44df-b2fc-412f2acb7228
   model: Review
   fields:
-    toilet_id: 9c43a1b0-f1eb-4a6b-807e-a790494bb8d2
+    toilet_id: 0632d2b8-99cb-4e2f-8f6e-8c889f06691a
     content: 'Merong Bidet sa GOODAH!!! Timog Branch.
 
       Hindi masarap yung lugaw nila. Pero may bidet yung banyo nila. Sakto yung pressure,
@@ -285,10 +285,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 2382d923-1cfd-4c10-a227-25ac1fe49492
+- id: e16dda2e-0015-4f53-8916-96051aff7ae1
   model: Review
   fields:
-    toilet_id: 827e3187-00ad-4007-b1ef-32e17599261e
+    toilet_id: 62193f62-5295-4247-a93c-59d18b3ad7cb
     content: "Merong Bidet sa Kanto Freestyle PBurgos Poblacion Makati.\nMaliit, mainit,\
       \ madumi. Pero may bidet gamitin mo nalang kung taengtae ka na talaga promise.\
       \ \n"
@@ -300,10 +300,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 8f055d34-a4b0-4142-9788-20660fc3b117
+- id: fc0e058e-973a-44d4-872e-a82327842a78
   model: Review
   fields:
-    toilet_id: c949f6e4-878c-42d9-be36-df6960f1c69a
+    toilet_id: ddd6ac52-d379-432b-9fcf-13811a4195ca
     content: 'Merong Bidet sa Game Over, Xavierville.
 
       '
@@ -315,10 +315,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: f5826902-84b8-4af6-ab5a-b82dc9d0b85c
+- id: 2be73eaa-64d7-4677-90c9-aa4fb0237cde
   model: Review
   fields:
-    toilet_id: f29b14ce-a530-4596-8323-2c5d415c10aa
+    toilet_id: 9c03d2b5-1a27-4ee0-bfe8-4b1f15ee83d8
     content: 'Walang Bidet sa Incheon International Airport, South Korea.
 
       Hassle!! Yung feeling na pinigil mo tae mo sa eroplano kase nahihiya ka sa susunod
@@ -334,10 +334,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 90d0d78b-377e-4e5e-b926-642762a5f79d
+- id: 2ac0d395-54d3-4396-b600-e43a7c2af66a
   model: Review
   fields:
-    toilet_id: abfff833-c15c-4443-9f0b-42cc81e9c4b8
+    toilet_id: e185f6ca-67f5-4db5-809d-82e3d1698ecb
     content: 'Walang bidet sa World Trade Center Manila.
 
       Ang laki ng venue pero bakit dalawa lang yung cubicle per banyo? Hindi misyadong
@@ -355,10 +355,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: eb70bad8-54ba-4732-b266-12102b130656
+- id: 27d7fb0d-05c7-4aad-95be-51f007056f64
   model: Review
   fields:
-    toilet_id: c2684f9a-04ab-4597-ab48-807a4d078832
+    toilet_id: 56a0bfa0-44f8-4cba-bac0-42ca7aad016e
     content: 'Walang Bidet sa Brooklyn Pizza Tomas Morato.
 
       Ang ganda ng banyo malawak kaso walang bidet. Masarap yung buffalo wings at
@@ -380,10 +380,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 859edc4e-0ab2-46b9-ad74-75870623d616
+- id: b24213f8-069f-4a35-ada6-214609a2c37d
   model: Review
   fields:
-    toilet_id: 43b63feb-7979-4fad-84b5-8bec38877fe6
+    toilet_id: 2c0e90d2-015b-4b52-9d96-49d4010c0ee0
     content: 'Merong Bidet sa Petron 29km SLEX South Bound.
 
       Notes: medyo mahina yung tubig. Tapos basa yung sahig. Pwede na kung nagjjebs
@@ -398,10 +398,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: c0b5b708-0bfd-41fa-a94b-820e5a40ddeb
+- id: 4a771eb4-8f8b-4bd9-9dac-bb14a4fc659c
   model: Review
   fields:
-    toilet_id: 89b839ca-5b38-476e-a97b-55b8c320bb3f
+    toilet_id: 1269d07d-3321-4b18-a57e-653caa13f824
     content: "Walang Bidet sa Somerset Alabang.\nNotes: Malinis Mabango siya kaso\
       \ bat ganun. Walang bidet. Toto pa naman yung brand ng toilets nila sana lagyan\
       \ nila ng toto washlet \n"
@@ -413,10 +413,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 2166ab75-b2ea-478a-949b-e0ea9d54ae4a
+- id: 5c1257d3-9ed9-43be-a8d3-2aa441974518
   model: Review
   fields:
-    toilet_id: f2dba7cb-f541-46ef-a223-fcb303e6814a
+    toilet_id: f227da37-0ccc-443f-8747-faa1fdbe7153
     content: 'Merong Bidet sa Sofitel Philippine Plaza Manila.
 
       Notes: Makikita mo na nagupgrade sila from bidet shower to expert mode bidet.
@@ -434,10 +434,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 5e69786a-a1a8-4e42-9bb5-f18ee949caea
+- id: dfec5a7f-7f87-4405-9250-f9d6d6c02dd7
   model: Review
   fields:
-    toilet_id: 3a298837-3741-4c17-b5ea-113807bd85d3
+    toilet_id: e415dd78-d6c0-4acf-a175-61c228673ce0
     content: 'Breaking News! Kaso may tubig na ba sa mandaluyong?
 
       Breaking News! Kaso may tubig na ba sa mandaluyong?
@@ -446,15 +446,15 @@
     rating_water_pressure: 0
     rating_cleanliness: 0
     rating_poopability: 0
-    has_bidet: null
+    has_bidet: false
     is_approved: true
     upvotes: 0
     downvotes: 0
     photos: []
-- id: fd5f63d4-aa6d-43a3-b3ca-d918fb6f640b
+- id: 8a883e79-db00-41de-838d-8445bfbc4f60
   model: Review
   fields:
-    toilet_id: 459f11e0-970f-4c8f-a42b-ae56d7ae179f
+    toilet_id: 9d100386-718f-4d04-8cf2-a8ad03d18b1f
     content: "Merong bidet sa Podium Mall (Director’s Club Cinema Hall)\nNote: Walang\
       \ bidet doon sa mga CR sa main mall. Etong specific sa harap ng director’s club\
       \ tabi ng sebastian’s ice cream. Malinis merong nakaabang na housekeeping sa\
@@ -467,10 +467,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: dd9bf5b5-1843-4e9a-a77e-5284952a6df6
+- id: a31ae37d-eca6-4d59-8ec7-3244c9efe903
   model: Review
   fields:
-    toilet_id: d8157284-81bf-4ac4-b440-d313228ffc98
+    toilet_id: d5b211a5-d47a-4939-8032-721731a36855
     content: "Merong Bidet sa Angelfields - Magnificat.\nEto na ata pinaka paborito\
       \ kong banyo same toilet at bidet ng meron sa bahay haha so parang na bahay\
       \ lang din ako. Sobrang linis paranv bago palagi. Walo yung cubicle sa pagkakaalala\
@@ -484,10 +484,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 099f6aed-1ef8-4fb6-a59c-d602c7595dee
+- id: 9c39c48d-0c10-4044-be48-98b982f0a097
   model: Review
   fields:
-    toilet_id: 8a2eb2b6-36a7-4f25-9d9e-a47ec96af17f
+    toilet_id: 5a8d441e-41ba-4f05-a263-c6d12f5a51b4
     content: "Walang bidet sa OOMA - Rockwell.\nNotes: Maganda sa loob industrial\
       \ yung feel. Isa sa mga Japanese restaurant na walang bidet. sad. Kumpleto na\
       \ sana sila masarap yung food, unli rice, bottomless iced tea. \n"
@@ -499,10 +499,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: a332bac9-1371-4615-bf3d-ee74c372a8e2
+- id: 9e71c06d-77af-40b2-b1fa-19f733f887b1
   model: Review
   fields:
-    toilet_id: 1b34b2a8-af3a-4ab9-9f84-696a825518fe
+    toilet_id: dd7e28ef-808a-43b4-8c50-4115b1b8c921
     content: 'Walang Bidet sa Luxent Hotel.
 
       Ang ganda sana ng banyo. Kaso no bidet :( sad place to be sa taong natatae.
@@ -516,25 +516,25 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: aca9f8a9-bb7e-4e4e-ae6b-0f37053468d2
+- id: 6f5b5eb1-20d2-4eb4-91fb-49e7850ca054
   model: Review
   fields:
-    toilet_id: 3f294c54-905c-43e9-97ec-8b32004c9132
+    toilet_id: e15b0bba-a822-4dd6-b9b7-43743b6a649d
     content: "May bidet sa Narra Hill.\nNotes: malakas yung pressure. Linis kung linis\
       \ ang paguusapan. kung aattend ka ng kasal dito tapos bigla kang na jebs walang\
       \ problema. \n"
     rating_water_pressure: 5
     rating_cleanliness: 5
     rating_poopability: 5
-    has_bidet: null
+    has_bidet: false
     is_approved: true
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 53ee5c88-49e5-4ff3-a3c2-4354bef171cf
+- id: e6dffda9-2128-4c7a-a97d-9cd8f9a504cb
   model: Review
   fields:
-    toilet_id: 7b05597a-3bc9-4636-9da9-15f36d7fda35
+    toilet_id: b65b02a7-9159-4f5e-8cd1-6da8922898ad
     content: 'Walang Bidet sa National University 551 MF Jhocson St. Sampaloc, Manila
       City
 
@@ -559,10 +559,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: f43ecdac-e5e9-4fbe-871a-fc6860ddda95
+- id: 9bed81e0-325d-4884-8d2b-dff4967d0633
   model: Review
   fields:
-    toilet_id: a6efa2d2-9dc2-43ca-acfe-f110ffb7eadb
+    toilet_id: c54c13be-05ab-45c1-86ea-89ba8f2e4a2c
     content: 'Merong Bidet sa Starfield COEX Mall, Seoul, South Korea.
 
       Eto yung lugar kung saan may sikat na library. Malinis yung mga banyo at maraming
@@ -577,10 +577,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: ecb472d3-9935-430e-b141-5daab8859827
+- id: 55dbd5f9-ca2d-4b85-8886-5d417ba2a116
   model: Review
   fields:
-    toilet_id: df189cfb-1c6a-493b-b92b-896eef6c7139
+    toilet_id: bd410e5f-d943-4dbc-a550-2c1d5a0137c5
     content: 'Merong bidet sa Fitness First - Megamall.
 
       Notes: madalas basa yung sahig. Medyo hassle pero ayun ang hirap naman ng magwworkout
@@ -595,10 +595,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: c1010b8a-a8ff-42fd-bb00-9355fc4dcbfb
+- id: 8f95e4d6-f2f8-4c6f-a9e7-b7b6b4d336cb
   model: Review
   fields:
-    toilet_id: 03854dab-de05-4633-977f-203b8b4cde02
+    toilet_id: c9238917-8f19-406a-8ef5-ef8357a626a1
     content: 'Merong Bidet sa Hap Chan Makati ave.
 
       Madumi. Walang naglilinis. Medium yung pressure pero hindi ka naman makaajebs
@@ -614,10 +614,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: d8513fae-b6c9-4fff-b682-3683fa1b804f
+- id: a67d898e-ba86-4355-9bd3-36a0d736d285
   model: Review
   fields:
-    toilet_id: ce944db9-6d56-4b88-8a18-40bd5a5512e5
+    toilet_id: 72ef6f70-badc-4dbb-af15-e57f179c0154
     content: "Merong Bidet sa The Blue Leaf Cosmopolitan.\nThe usual ng blue leaf.\
       \ Malinis at mabango ang banyo nila sa lahat ng branches. Pero eto yung pinaka\
       \ maluwag na banyo nila. Pagpasok mo maamoy yung yung signature Lemon Grass\
@@ -630,10 +630,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 571b6320-fd7c-44cc-9e71-5ccfb67e3385
+- id: 606a0c0d-c945-41c2-96d4-a2e910c26869
   model: Review
   fields:
-    toilet_id: dd7cd307-7721-44a6-8a77-3c59a0fe5df8
+    toilet_id: 38bb657d-89a6-4ff6-a5e1-120b6a4b34e6
     content: 'Walang Bidet sa Wingzone Megamall.
 
       Basa basa yung sahig. Wala pa siguro naglilinis kase palit ng shift. Wala namang
@@ -648,10 +648,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 5cff8813-1f37-4ecb-9006-3fafddaa6b71
+- id: 965ea367-9876-4f49-8a70-58c2317d5c93
   model: Review
   fields:
-    toilet_id: b7170059-ce2e-453b-bcac-c0f3f8a34432
+    toilet_id: 1d7475d3-0c75-465b-97df-32b34da5fc24
     content: 'Merong Bidet sa Manam Sm Megamall.
 
       Hindi misyadong malakas pero nakakalinis 👌🏽Minsan sarado minsan bukas. Sana
@@ -668,10 +668,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: be7e8dad-cc03-4d54-a799-5a8bb43cec72
+- id: 89679701-47f0-4522-8568-bce0b09215da
   model: Review
   fields:
-    toilet_id: 5bb6f434-8cc0-42c7-bb73-5aa77d84af3b
+    toilet_id: de8d5fda-6191-46f7-a13a-1c840194810d
     content: 'Merong bidet sa The Blue Leaf Events Pavillion - Taguig.
 
       Notes: Ang lakas ng pressure grabe may recoil siya. Malamig sa loob de aircon.
@@ -687,10 +687,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 9e2a2e5e-6e4b-4820-86c8-65b4f2248983
+- id: aba7493d-2f48-4f36-b3fc-30f39188553b
   model: Review
   fields:
-    toilet_id: 4a63d9d8-0f3d-4d68-a9a3-37f5ad134d4e
+    toilet_id: f6491fa6-47ee-4f6c-ac0f-13b43725089d
     content: 'May bidet sa Mango Farm, Antipolo City.
 
       Notes: sobrang lakas tangal ang bakas. Safe ka kapag may friend kang dito ang
@@ -700,15 +700,15 @@
     rating_water_pressure: 5
     rating_cleanliness: 4
     rating_poopability: 4
-    has_bidet: null
+    has_bidet: false
     is_approved: true
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 9ca8cca1-5e81-4253-94fb-0da5536f57e2
+- id: 135eb45a-2875-4de1-9c18-fe9791793881
   model: Review
   fields:
-    toilet_id: 6a01afee-678a-4ea7-9af7-650cdedab5a4
+    toilet_id: 3cfe6ac2-f860-417e-890b-3a849f9f6103
     content: 'May bidet sa Fitness First Metro East.
 
       Notes: malinis nung time of visit. yung linis depende sa sipag ng maintence.
@@ -718,30 +718,30 @@
     rating_water_pressure: 4
     rating_cleanliness: 4
     rating_poopability: 5
-    has_bidet: null
+    has_bidet: false
     is_approved: true
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 8d4ed8a0-1fd0-4439-ba8e-d765d68f762a
+- id: e3801656-5d61-4d1c-bad8-b53946db2094
   model: Review
   fields:
-    toilet_id: 2bf66bcf-9630-48d3-b12a-3d06d61b7e96
+    toilet_id: 6a9aa7a8-927a-45ff-b722-c6d2f71c22ff
     content: 'May bidet sa Spaces by Babyland.
 
       '
     rating_water_pressure: 4
     rating_cleanliness: 4
     rating_poopability: 3
-    has_bidet: null
+    has_bidet: false
     is_approved: true
     upvotes: 0
     downvotes: 0
     photos: []
-- id: bb9855a0-bc04-4344-af9e-68ba051786df
+- id: 684ef4e0-00a1-4836-a022-b3e50b6d9e52
   model: Review
   fields:
-    toilet_id: 7f12a216-8f10-41d5-936e-c9c02f3ba9d3
+    toilet_id: c87d3934-27e1-403b-af2c-7f796b94c042
     content: 'Walang bidet sa La Pergola Verde
 
       Notes: hehe 90’s vibes yung banyo. due for renovation hindi na enough yung repaint
@@ -757,10 +757,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: d5c8cef7-061f-49e0-aeda-c1bb50644dc1
+- id: 6203600b-c1a1-4af3-96de-4e4658632350
   model: Review
   fields:
-    toilet_id: cc48497d-84ed-4de5-8946-7b3f94706740
+    toilet_id: 755185ef-7c4e-4aa4-9483-1409b8707c1e
     content: 'Meron(s)g(s) Bidet sa Ikea Pasay.
 
       '
@@ -772,10 +772,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: b884bd11-7f1f-4216-802b-1b8e2ad57d2b
+- id: 748febbd-7ccc-4928-a3db-7e610acd20f4
   model: Review
   fields:
-    toilet_id: 5757491b-0bfa-4bd7-b15e-202ab09691f0
+    toilet_id: dd75022e-a4ac-417d-8ed7-0cfe7e78d2cb
     content: 'Merong Bidet sa Eight Forbes Town.
 
       Kapag nasa BGC ka pareeehhh around burgos circle eto yung sure na lugar na may
@@ -792,10 +792,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 61b259bd-b4ae-4bd1-8c89-d08f63a29e56
+- id: b0775ef2-8944-4d29-993e-0451e840929f
   model: Review
   fields:
-    toilet_id: f9ec11e9-0edf-48f8-8e52-3f85ba24711b
+    toilet_id: b7c7d965-8bdc-46c7-9620-ee15853bfcb6
     content: 'Merong Bidet sa Cinema ‘76 Film Society, San Juan.
 
       '
@@ -807,10 +807,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 3607fa8b-a628-4b2f-b5bd-e96bbf412796
+- id: a42b82be-141f-4878-ab9b-2c1d576200b2
   model: Review
   fields:
-    toilet_id: a3bd5c2f-70b7-493f-a307-c6362a9de420
+    toilet_id: 0f492eb1-8cca-4a67-9c32-6fce304eb7a0
     content: "Merong Bidet sa Rockwell (New Wing)\nBagong bago and super linis kase\
       \ onti lang ata may alam. Note: Sa new wing to same floor as saddle row and\
       \ certified calm. Wala pa ring bidet yung old restrooms tabi ng elevators. \n"
@@ -822,10 +822,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 46460227-5c7f-4af3-8f79-1d88cf21c8e5
+- id: 0f3e941b-6f83-4773-91ae-044b3e3a543a
   model: Review
   fields:
-    toilet_id: 1d548fd3-fc58-48a7-93c3-3da9e8092936
+    toilet_id: 2da01963-37e1-4051-b9c3-62b96a35ff9e
     content: 'Merong Bidet sa Decathlon Marcos Highway.
 
       May bidet kaso hindi malinis. Dahil siguro nasa baba siya? Walang nagbabantay?
@@ -840,10 +840,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 76ef19af-147d-436b-b72d-b7579f87711b
+- id: ed0fc992-c239-4612-8a5d-2c6e9578db2b
   model: Review
   fields:
-    toilet_id: 41cade23-d8b3-44d5-9726-90bb7238f34e
+    toilet_id: 29d0770a-200c-4420-b029-c4b71248539c
     content: 'Merong bidet sa Lugawan sa Tejeros.
 
       Syempre baka dito ka abutan tapos hindi ka maka concentrate sa inorder mong
@@ -859,10 +859,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: be7d97b3-4330-4972-9768-1471514f8b00
+- id: 026a06fb-fdd1-49d7-bc14-e66b7471a4c8
   model: Review
   fields:
-    toilet_id: 8a078a4a-0863-4e9c-b806-c5c511423b93
+    toilet_id: 88c187a7-fb05-49fa-a8f9-2c27718368bf
     content: "Walang bidet sa LTO Main Office - East Ave.\n*pasintabi sa kumakain*\n\
       Gusto ko talagang mag mura sa nakita ko. Nangigil ako p*tang*na talaga. Maling\
       \ move talaga na binuksan ko pa yung cubicle iba na kase yung amoy. Yung 1 second\
@@ -879,24 +879,24 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: fa5a99f4-3e98-4148-aad1-38872ae8307c
+- id: 816d6541-1b72-4ff5-83b0-81e16db42485
   model: Review
   fields:
-    toilet_id: 89bff203-4b63-4b95-8c7f-fd948655eefe
+    toilet_id: 68e164b1-1013-4b2e-a13b-41241e0cf035
     content: "May bidet sa Samgyupsalamat - Katipunan\nNotes: hindi misyadong malakas\
       \ pero okay na lalo kung nasobrahan ka ng kimchi. \n"
     rating_water_pressure: 3
     rating_cleanliness: 3
     rating_poopability: 4
-    has_bidet: null
+    has_bidet: false
     is_approved: true
     upvotes: 0
     downvotes: 0
     photos: []
-- id: afcddacd-763d-4ed2-ad43-22f1066103f5
+- id: 3b79dafd-4242-4b7e-b5c0-17a919b9a071
   model: Review
   fields:
-    toilet_id: 571319b3-2c5f-45b8-81bd-6c5a8871e28d
+    toilet_id: 0cc5c9eb-3859-4b13-8dd9-a9e27edf24c3
     content: 'Walang Bidet sa Starbucks - Katipunan
 
       Notes: sana hindi ka lactose intolerant. Jebs ka muna sa bahay niyo or condo
@@ -911,10 +911,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: df973d78-a21e-45d8-95eb-8ff5f067aa21
+- id: 649fe834-30c4-4f0f-b991-617e4b2343d0
   model: Review
   fields:
-    toilet_id: cdcd1e5d-9ee5-4abe-9eea-d34493145e5d
+    toilet_id: b3b6c1f8-d855-4b5b-b430-03c190bd6d3e
     content: 'Merong Bidet sa De La Salle - College of Saint Benilde School of Design
       and Arts.
 
@@ -931,10 +931,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 2976398e-c9a6-4329-b7a6-cf14579fc066
+- id: 53b551bd-5aea-4505-9509-2e554aa45528
   model: Review
   fields:
-    toilet_id: fca5ce99-e6cb-4d90-a17e-011fba70797e
+    toilet_id: a4ead7a1-fb11-4508-9623-ea341254fd1c
     content: 'Merong Bidet sa Tim Horton’s Eastwood.
 
       Sakto yung pressure. Malinis walang basa sa floor. 24 hours silang open kaya
@@ -949,10 +949,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 5a18a76d-c5cf-48dc-b55c-ef3771ca1f0e
+- id: bee99039-574f-495b-beb0-70c4e4645bc7
   model: Review
   fields:
-    toilet_id: 6a9d38ee-0337-46c2-ad32-4ea06fff9142
+    toilet_id: a8002f8a-4434-4cbb-8097-5cca7ca36577
     content: 'Walang bidet sa Quinta Market, Quiapo Manila
 
       Notes: May bayad 10 pesos. May aircon. Pero wiwi ka lanb dito walang poopie.
@@ -967,10 +967,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: a1e7cb53-e728-4708-bc4e-81f1145c3645
+- id: b5b93ce2-294d-4d5d-9c20-e35c8dd912e8
   model: Review
   fields:
-    toilet_id: 978f7373-92b3-4c8d-880a-24f43ba08ef9
+    toilet_id: 96c6133d-454f-44fd-911d-3a4b90be5c70
     content: 'May bidet sa Manila Polo Club.
 
       Notes: warm yung ilaw. relaxing. mabango. bakal yung bidet.
@@ -979,15 +979,15 @@
     rating_water_pressure: 5
     rating_cleanliness: 5
     rating_poopability: 5
-    has_bidet: null
+    has_bidet: false
     is_approved: true
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 46967eb3-05ba-4fcc-be0b-2748fab9cd65
+- id: 8661b102-b032-413f-9351-b2cc38be1cb1
   model: Review
   fields:
-    toilet_id: 348268e4-4d14-4f3c-9fa4-7763aeb351b4
+    toilet_id: f820d535-5832-45ac-a105-d62a9a84c697
     content: 'Merong bidet sa Angelfields Nature Sanctuary, Tagaytay.
 
       Malinis. Mabango. Saktong sakto yung pressure. Malamig sa tagaytay mahirap magpigil
@@ -1003,10 +1003,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 9193aabf-f4a5-49df-80a4-5597881267bd
+- id: ae70d5cd-87bd-4ef0-b63e-598e5d68991f
   model: Review
   fields:
-    toilet_id: bffeab24-8300-44e3-903b-d53a85169a96
+    toilet_id: 8024badc-a8b8-4928-88cb-aaba142bcf4c
     content: 'Walang Bidet sa Manila Hotel. - Banyo sa tabi ng Pandango Hall.
 
       Notes: Ang ganda ng CR. Classy premium ang dating. Kaso walang bidet. Hassle.
@@ -1021,10 +1021,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 24b2ee15-2ea6-42cb-91d5-636cfa06be07
+- id: 948173ee-bdad-4cb3-8833-7458adcd2461
   model: Review
   fields:
-    toilet_id: 42501d44-d18d-4002-8304-e00be30d0f80
+    toilet_id: b8a8827c-92a3-4678-b7ab-8aa020c5b930
     content: 'Merong Bidet sa Grand Palazzo Royale, Angeles Pampanga.
 
       '
@@ -1036,10 +1036,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 5e768d54-6f06-4505-b0cf-5adbcb25f6a7
+- id: ce9513db-3370-4fd5-9c49-b42c03cd873f
   model: Review
   fields:
-    toilet_id: 09935fd2-9f3c-4e9b-8f2f-dc73b8a2225e
+    toilet_id: 282a1691-6efb-4e0f-82b3-9b1c54b00752
     content: 'Merong Bidet sa Escala Tagaytay.
 
       Malinis na malinis. Mainit lang. ewan ko ba summer naman pero ayaw nila i on
@@ -1054,10 +1054,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: d8b705f2-e8eb-4772-82d2-ce8b1228a50c
+- id: 0e31ae0f-b884-4780-9a5a-3420696b1ba3
   model: Review
   fields:
-    toilet_id: 325825ce-0581-4e03-88ad-3fe938e25d8f
+    toilet_id: 71550413-7137-42f8-ac8e-dd94df00fc28
     content: 'Walang bidet sa Rockwell PowerPlant Mall. - R1 (Level ng Mango)
 
       Notes: meron naman siyang provision for bidet sana lagyan nila.
@@ -1071,10 +1071,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 1d5e69e6-ddde-4096-9330-dbd9bf27da91
+- id: e0f46e74-49f4-463b-9c1e-97ff8c8b5dd7
   model: Review
   fields:
-    toilet_id: e58345b1-2458-4771-b184-dd866683e36d
+    toilet_id: f1139a34-8054-4ef8-8556-4d1d6626d74a
     content: 'Merong bidet sa Hilton Manila.
 
       '
@@ -1086,10 +1086,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: e3c8a825-c2d9-4be1-b1a7-1ee2c3c63158
+- id: 21c6bad0-73e1-48a2-927a-25cc14b43087
   model: Review
   fields:
-    toilet_id: 565d2cc6-1b97-4d6d-b412-c675f179e2de
+    toilet_id: cdc7fe87-579d-4944-b328-4182ebd690ed
     content: "Merong Bidet sa Denny’s Uptown Parkade tapat ng The Palace.\nNotes:\
       \ Time of visit 4am. Malinis na thinking na 4am na nun and ang daming tao. Sakto\
       \ jebs mo dito kung nahihiya kang jumebs sa palace haha. \n"
@@ -1101,10 +1101,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 9a1e7bbc-4f31-4882-93f9-eb2bf9398a6c
+- id: ffb58423-c06e-4010-a7a4-dfd71ebfa449
   model: Review
   fields:
-    toilet_id: 6525a594-b0e5-4688-8562-0878ce1e994a
+    toilet_id: 559f3220-d85c-42d7-b1c4-b956864311c5
     content: 'Merong Bidet sa Mazzo. MDI Building, BGC.
 
       Super chill na lugar. 8th floor ng mdi building. Feel ko yung buong mdi building
@@ -1119,10 +1119,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 9ceb763e-63a3-473d-a6c9-a9b3bb174a65
+- id: c65d12ee-9deb-475c-9d41-d1c1b32bde5b
   model: Review
   fields:
-    toilet_id: 292f397a-6e5c-4ca6-a971-6021058ae110
+    toilet_id: 8bd7e3eb-cfaa-446e-906c-e4dc8600ee65
     content: "Walang Bidet sa Yellow Cab Santana Grove Sucat, Paranaque.\nWalang bidet.\
       \ Anak ng tipaklong baliko pa yung toilet. Mapanghi din. Uwi ka nalang walang\
       \ tae tae dito. Yellow cab baka naman. Maliit na halaga sa laki ng kita niyo.\
@@ -1135,10 +1135,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 7651d95c-6b41-4e98-ab97-dc38a23b853c
+- id: f793ba12-b642-4c8a-b7fe-7ca2221f3730
   model: Review
   fields:
-    toilet_id: c258032e-3790-495b-b5c1-9c8bc0ee8c37
+    toilet_id: c890cb64-3955-4520-87de-4a7b5382809b
     content: 'Walang Bidet sa Starbucks - Santana Grove, Sucat.
 
       Notes: Mabango meron kaseng automatic na nagsspray ng freshener. Kaso tatak
@@ -1153,10 +1153,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 1dfae88f-5148-495d-bc60-0960b39d7e11
+- id: 20f86ab3-a1fc-454d-b327-a877d84f4ec5
   model: Review
   fields:
-    toilet_id: b5504d99-d0e3-447d-be9e-c8a65738c497
+    toilet_id: b13ce471-3e3f-4575-8d33-6b7a0ccdf85c
     content: 'Merong Bidet sa TRYP by Wyndham Mall of Asia.
 
       Sakto yung pressure hindi malakas hindi mahina. Steady flow lang. malinis din
@@ -1171,10 +1171,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 2422dac7-ddaf-4033-92ee-75ef37b821d8
+- id: 6b74d54b-6bfb-4a86-81e8-f299785deab5
   model: Review
   fields:
-    toilet_id: ffe1db2a-5fb4-415e-a511-e8352b23b202
+    toilet_id: 5e8b414a-eb5c-489b-979f-4a2a75567686
     content: 'Walang bidet sa SM Marikina.
 
       Notes: hindi ka makakajebs dito. :(
@@ -1188,10 +1188,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: f50b7f8f-869c-4a63-aa57-0ae9edd274f9
+- id: c6d86fbb-00d0-4b06-b1d6-a2a50756fc7b
   model: Review
   fields:
-    toilet_id: 7e15165d-1c46-4bec-a34f-f4b21107f905
+    toilet_id: 7303067c-2cc4-4c9f-9b87-ff3562e7c9fa
     content: "Merong Bidet sa Mendokoro Ramenba Makati. (New Location)\nSayang hindi\
       \ japanese toilet :( ineexpect ko toto washlet siya. Sobrang linis pwede kang\
       \ matulog. Dahan dahan ka lang sa pag pindot sa bidet baka lumabas sa ilong\
@@ -1204,10 +1204,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: b629427a-9140-4603-b005-f7895cdc4f3e
+- id: 2c3c4b50-d895-4d28-9cfa-87cad96c91ad
   model: Review
   fields:
-    toilet_id: 1e1f9194-8b9f-44f1-b4bf-22ca77c7372c
+    toilet_id: a3fae5e7-283b-4584-b29c-7d2a929bbb36
     content: 'Merong bidet sa The Blue Leaf Filipinas.
 
       Notes: medyo maikli lang yung hose niya tapos sakto lang pressure enough para
@@ -1223,10 +1223,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: dc49eb3e-6a91-4e17-a0ce-a05e86fd334c
+- id: 4c85bac9-e53b-49ab-8838-7e9b893d9d05
   model: Review
   fields:
-    toilet_id: 5e76c79e-629b-4d2d-8a22-743b8dff2792
+    toilet_id: a3e14990-98c8-4f81-a030-2de51526b666
     content: 'Walang Bidet sa I Darts Dash.
 
       Darts lang no poop.
@@ -1240,10 +1240,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 374d9631-fa8f-4ee1-8797-b4a3520d550f
+- id: 2a948907-8b88-4180-bc84-a10f148a51f0
   model: Review
   fields:
-    toilet_id: 40003fed-fa54-4414-95ed-8201c8827082
+    toilet_id: a1dcf43e-5571-4f86-9e0e-cfc62c87bb36
     content: 'Merong Bidet sa NAIA Terminal 2.
 
       Sakto yung pressure. Regular na may naglilinis. Dito ka na magjebs utang na
@@ -1258,10 +1258,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: f1d507af-6f6e-46ca-ba34-ee7817f9ff97
+- id: c7ef3d6e-fd48-46a1-941a-bf584406cad0
   model: Review
   fields:
-    toilet_id: b45a2e61-d865-4339-9949-34d29b8b961a
+    toilet_id: 78d027a4-c832-4f54-a337-dc8549f8912c
     content: 'Merong Bidet sa Kimpura Greenhills.
 
       Isa lang yung cubicle dito sa male CR. Pero solid sa linis maski maliit. Hindi
@@ -1279,10 +1279,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 6086d04d-4a8b-4fda-9a4e-9fbda357504c
+- id: d24d8994-0e3b-4521-9181-aaca337e7509
   model: Review
   fields:
-    toilet_id: d631804b-a2c7-4561-9857-c1615e67b66d
+    toilet_id: e77e04b6-12c1-4cc2-b9cc-d4e022be41fc
     content: "Merong Bidet sa Wings on the Wheels PH\nUy ang linis ng banyo nila!\
       \ Sakto to malakas ang pressure ng bidet. Hindi ka matatakot kumain ng maraming\
       \ wings at chicken burger. Currently open sila everyday for delivery then open\
@@ -1298,10 +1298,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: e320a502-aefc-4fed-8483-de73acea3baf
+- id: acd8e40f-f993-4bda-9722-5eb17390e595
   model: Review
   fields:
-    toilet_id: 28bc57f8-379c-446e-a2fc-157800ad7354
+    toilet_id: cac925cb-beb1-4173-b3ef-312c745573e1
     content: 'Merong Bidet sa Manila Marriott Hotel *resortsworldmanila
 
       Mabango at ang daming cubicles. Malakas ang pressure sarap magjebs. White ang
@@ -1316,10 +1316,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 8c741830-28ed-4827-9b74-175a38e0aa4f
+- id: 2a62c1b9-80d6-4319-9f61-4c31f7ea4d17
   model: Review
   fields:
-    toilet_id: 3fbd0b79-d03a-4782-9ad0-8baba1a622af
+    toilet_id: 74e44c16-ece8-40dc-96f5-0261014e2a97
     content: 'Merong Bidet sa Revel at the Palace.
 
       Notes: Malinis pa siya. Ewan ko lang kapag dumami na tao. Pwede naman kung najjebs
@@ -1334,10 +1334,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 83123d22-cf61-4e7c-a709-da666b84c657
+- id: 10db7689-3627-4260-831a-5cbdfe73cc20
   model: Review
   fields:
-    toilet_id: ff76ab65-8fe6-42ee-92ca-457a3cf42f2f
+    toilet_id: e7d2c387-c91e-4481-9f06-18b26a9720ef
     content: 'Walang Bidet sa Marquis Events Place.
 
       Notes: wala eh. Ewan ko ba. Malinis siya pamaya maya may naglilis.
@@ -1351,25 +1351,25 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: bcda91b7-ebd5-4dfd-bdbf-024cd56d086e
+- id: 1b1b5761-1d83-4e13-ae5b-9333301026c0
   model: Review
   fields:
-    toilet_id: 7a7cfbe3-6649-430c-8fcc-cbd855a72718
+    toilet_id: a7032b16-b9bd-4117-be5d-2b8c8e426d7e
     content: 'May bidet sa Marriot Grand Ballroom.
 
       '
     rating_water_pressure: 5
     rating_cleanliness: 5
     rating_poopability: 5
-    has_bidet: null
+    has_bidet: false
     is_approved: true
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 15019a99-cbd5-4287-98c8-47ac08bc067c
+- id: 85bcd2f1-0c3a-4147-8aaf-3032b6394d17
   model: Review
   fields:
-    toilet_id: f9aaa860-6699-4185-85c4-ee7266a150ce
+    toilet_id: 757ce3fe-bb1c-478a-8472-c645d8b47d61
     content: 'Walang Bidet sa Coffee Bean and Tea Leaf - Petron 29km SLEX South Bound
 
       Notes: tawid ka sa mismong petron. Bili ka lang ng kape dito.
@@ -1383,10 +1383,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: e5f093c5-de2e-44b5-bea3-2bd30b35a0bf
+- id: ff3222f7-2942-44a7-91eb-43ce92b876ed
   model: Review
   fields:
-    toilet_id: 4af8b7ab-7116-46f8-ba1a-3eaf8f953083
+    toilet_id: 257b7273-8ffe-4c97-8167-5f059853cf18
     content: 'Merong bidet sa OTO Poblacion Makati City.
 
       Notes: ang sarap sa feeling na hindi mo kelangan magpigil sa inom kase walang
@@ -1402,10 +1402,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: 962a1a20-e8ec-49a5-818e-69f7137e1ffa
+- id: 822f54d1-f028-4dfc-8b4a-ccc07aafb584
   model: Review
   fields:
-    toilet_id: 275a29b9-6676-4007-b14a-2442acacf62c
+    toilet_id: 705c82e4-fdb4-4d14-a5e4-01716ebcb57f
     content: "Merong Bidet sa Grand Cobo Events Place Marikina. \nBagong bago malinis\
       \ at lamig dito. May aircon kaso hindi malakas yung exhaust amoy mo yung jebs.\n"
     rating_water_pressure: 4
@@ -1416,10 +1416,10 @@
     upvotes: 0
     downvotes: 0
     photos: []
-- id: caf91e44-2e4c-428e-9d14-1a636887108d
+- id: 63805aec-557c-4ff0-9adf-c520b49781b0
   model: Review
   fields:
-    toilet_id: 4f6a02d1-3008-433c-8569-54ff537eb572
+    toilet_id: 1a8969c9-b296-4e43-ac81-68878cbd12e5
     content: 'Merong Bidet sa Samgyupsalamat - Circulo Verde Branch
 
       Saktong sakto lang yung pressure. Hindi ka matatakot kumain ng madami kase malinis
