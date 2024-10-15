@@ -23,7 +23,13 @@
 
       <Marker
         lngLat={[marker.geometry.lng, marker.geometry.lat]}
-        on:click={async () => await goto(`/${marker.id}`)}
+        on:click={async () => {
+          if (isSelected) {
+            await goto("/");
+          } else {
+            await goto(`/${marker.id}`);
+          }
+        }}
         class={cn("flex h-8 w-8 items-center justify-center rounded-full", {
           "h-16 w-16": isSelected,
         })}

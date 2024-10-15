@@ -4,7 +4,6 @@
   import { QueryClientProvider } from "@tanstack/svelte-query";
   import "@fontsource-variable/inter";
   import "../app.css";
-  import type { LayoutData } from "./$types";
   import { SvelteQueryDevtools } from "@tanstack/svelte-query-devtools";
   import MainCard from "$lib/components/MainCard.svelte";
   import Markers from "$lib/components/Markers.svelte";
@@ -19,8 +18,7 @@
   import { writable } from "svelte/store";
   import { Protocol } from "pmtiles";
   import { page } from "$app/stores";
-
-  export let data: LayoutData;
+  import { queryClient } from "$lib/api";
 
   const protocol = new Protocol();
   maplibre.addProtocol("pmtiles", protocol.tile);
@@ -29,7 +27,7 @@
   setContext("map", map);
 </script>
 
-<QueryClientProvider client={data.queryClient}>
+<QueryClientProvider client={queryClient}>
   <MapLibre
     center={INITIAL_CENTER}
     zoom={INITIAL_ZOOM}
@@ -47,7 +45,9 @@
 
   {#if $map}
     {#key $page.params.toiletId}
-      <MainCard />
+      <MainCard>
+        <slot />
+      </MainCard>
     {/key}
   {/if}
 

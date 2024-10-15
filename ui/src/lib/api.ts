@@ -1,5 +1,7 @@
-import axios, { type AxiosResponse } from "axios";
+import { browser } from "$app/environment";
 import type { Review, Toilet } from "$lib/types";
+import { QueryClient, keepPreviousData } from "@tanstack/svelte-query";
+import axios, { type AxiosResponse } from "axios";
 
 const baseURL = "/api";
 
@@ -16,3 +18,20 @@ export const api = {
     list: (): Promise<AxiosResponse<Review[]>> => axi.get("/reviews"),
   },
 };
+
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      enabled: browser,
+      refetchOnMount: true,
+      refetchOnReconnect: true,
+      refetchOnWindowFocus: true,
+      retry: 3,
+      placeholderData: keepPreviousData,
+      staleTime: 1000 * 60 * 10, // 10 mins
+    },
+    mutations: {
+      retry: false,
+    },
+  },
+});

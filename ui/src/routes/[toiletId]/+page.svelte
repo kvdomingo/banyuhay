@@ -2,85 +2,65 @@
   import { createQuery } from "@tanstack/svelte-query";
   import { api } from "$lib/api";
   import { page } from "$app/stores";
-  import { Star } from "lucide-svelte";
-  import { Skeleton } from "$lib/components/ui/skeleton";
-  import * as Avatar from "$lib/components/ui/avatar";
+  import { MilkOff, SprayCan, Star } from "lucide-svelte";
+  import { cn } from "$lib/utils";
+  import Reviews from "$lib/components/Reviews.svelte";
 
   const { toiletId } = $page.params;
 
   const query = createQuery({
-    queryKey: ["toilets", toiletId],
-    queryFn: () => api.toilets.reviews(toiletId),
+    queryKey: ["toilets"],
+    queryFn: api.toilets.list,
   });
 </script>
 
-<h3 class="text-xl font-semibold">Reviews ({$query.data?.data.length ?? 0})</h3>
-
-{#if $query.isLoading}
-  <div class="flex items-start gap-4">
-    <Skeleton class="h-12 w-12 rounded-full" />
-    <div class="flex w-full flex-col gap-2">
-      <Skeleton class="h-12" />
-      <Skeleton class="h-2" />
-    </div>
-  </div>
-{:else if $query.data?.data}
+{#if $query.data?.data}
   {@const data = $query.data?.data}
-  {#if data.length === 0}
-    No reviews yet.
-  {:else}
-    {#each data as review}
-      <div class="flex items-start gap-4">
-        <Avatar.Root>
-          <Avatar.Fallback>AN</Avatar.Fallback>
-        </Avatar.Root>
-        <div class="flex w-full flex-col gap-2">
-          <div class="grid grid-cols-3">
-            <div class="flex flex-col items-center gap-1">
-              <small>Water Pressure:</small>
-              <div class="flex">
-                {#if review.rating_water_pressure === 0}
-                  💩
-                {:else}
-                  {#each Array(review.rating_water_pressure) as _}
-                    <Star class="fill-amber-500" size="1rem" />
-                  {/each}
-                {/if}
-              </div>
-            </div>
-            <div class="flex flex-col items-center gap-1">
-              <small>Cleanliness:</small>
-              <div class="flex">
-                {#if review.rating_water_pressure === 0}
-                  💩
-                {:else}
-                  {#each Array(review.rating_cleanliness) as _}
-                    <Star class="fill-amber-500" size="1rem" />
-                  {/each}
-                {/if}
-              </div>
-            </div>
-            <div class="flex flex-col items-center gap-1">
-              <small> Poopability: </small>
-              <div class="flex">
-                {#if review.rating_water_pressure === 0}
-                  💩
-                {:else}
-                  {#each Array(review.rating_poopability) as _}
-                    <Star class="fill-amber-500" size="1rem" />
-                  {/each}
-                {/if}
-              </div>
-            </div>
-          </div>
-          {#if review.content}
-            <p>{review.content}</p>
-          {:else}
-            <p class="text-gray-400"><i>No comment.</i></p>
-          {/if}
-          <small class="text-gray-400">Reviewed {review.created}</small>
-        </div>
+  {@const toilet = data.find(d => d.id === toiletId)}
+  {#if toilet}
+    <div class="flex flex-col gap-4">
+      <div>
+        <h2 class="text-2xl font-semibold">{toilet.establishment_name}</h2>
+        <p class="text-gray-400">{toilet.location_information}</p>
       </div>
-    {/each}
+      <div class="flex items-center gap-2">
+        {#if toilet.has_bidet}
+          <SprayCan />
+        {:else}
+          <MilkOff />
+        {/if}
+        <p
+          class={cn("font-semibold", {
+            "text-green-500": toilet.has_bidet,
+            "text-red-500": !toilet.has_bidet,
+          })}
+        >
+          {#if toilet.has_bidet}
+            May bidet!
+          {:else}
+            Walang bidet!
+          {/if}
+        </p>
+      </div>
+      <div>
+        <p class="flex items-center gap-1">
+          Water Pressure:
+          <Star size="1rem" class="fill-amber-500 text-amber-500" />
+          {toilet.avg_rating_water_pressure.toFixed(1)}
+        </p>
+        <p class="flex items-center gap-1">
+          Cleanliness:
+          <Star size="1rem" class="fill-amber-500 text-amber-500" />
+          {toilet.avg_rating_cleanliness.toFixed(1)}
+        </p>
+        <p class="flex items-center gap-1">
+          Poopability:
+          <Star size="1rem" class="fill-amber-500 text-amber-500" />
+          {toilet.avg_rating_poopability.toFixed(1)}
+        </p>
+      </div>
+
+      <Reviews />
+    </div>
   {/if}
 {/if}

@@ -7,6 +7,7 @@ ENV PATH ${PATH}:${POETRY_HOME}/bin
 
 SHELL [ "/bin/bash", "-euxo", "pipefail", "-c" ]
 
+# hadolint ignore=DL3009
 RUN apt-get update && \
     apt-get install -y --no-install-recommends curl && \
     curl -sSL https://install.python-poetry.org | python - && \
@@ -15,4 +16,4 @@ RUN apt-get update && \
 
 WORKDIR /app
 
-ENTRYPOINT [ "/app/docker-entrypoint.sh" ]
+ENTRYPOINT [ "/app/docker-entrypoint.dev.sh" ]

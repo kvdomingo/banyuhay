@@ -1,8 +1,13 @@
-import * as tailwindPlugin from "prettier-plugin-tailwindcss";
+import sortImports from "@trivago/prettier-plugin-sort-imports";
 import sveltePlugin from "prettier-plugin-svelte";
+import * as tailwindPlugin from "prettier-plugin-tailwindcss";
 
-/** @type {import("prettier").Options} */
-export default {
+/** @typedef {import("prettier").Options} PrettierOptions */
+/** @typedef {import("@trivago/prettier-plugin-sort-imports").PluginConfig} SortImportsOptions */
+/** @typedef {PrettierOptions | SortImportsOptions} Options */
+
+/** @type {Options} */
+const options = {
   useTabs: false,
   singleQuote: false,
   trailingComma: "all",
@@ -13,6 +18,18 @@ export default {
   jsxSingleQuote: false,
   semi: true,
   quoteProps: "consistent",
-  plugins: [sveltePlugin, tailwindPlugin],
+  importOrder: [
+    "^svelte$",
+    "^svelte(.*)$",
+    "^$app/(.*)$",
+    "^$lib/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^[./]",
+  ],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
+  plugins: [sortImports, sveltePlugin, tailwindPlugin],
   overrides: [{ files: "*.svelte", options: { parser: "svelte" } }],
 };
+
+export default options;
