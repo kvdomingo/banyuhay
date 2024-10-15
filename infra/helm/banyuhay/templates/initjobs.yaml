@@ -1,0 +1,90 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ include "banyuhay.fullname" . }}-init-wait-db"
+  labels:
+    {{- include "banyuhay.labels" . | nindent 4 }}
+  annotations:
+    helm.sh/hook: pre-install,pre-upgrade
+    helm.sh/hook-weight: "-4"
+    helm.sh/hook-delete-policy: before-hook-creation
+spec:
+  activeDeadlineSeconds: 600
+  backoffLimit: 3
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: "{{ include "banyuhay.fullname" . }}-init-wait-db"
+          image: "{{ .Values.postgresql.image.repository }}:{{ .Values.postgresql.image.tag }}"
+          command:
+            - /bin/sh
+            - -c
+            - >
+              until pg_isready --host {{ .Release.Name }}-postgresql-hl --username {{ .Values.postgresql.auth.username }}; do
+              echo waiting for database;
+              sleep 2;
+              done;
+          envFrom:
+            - secretRef:
+                name: '{{ .Release.Name }}-secrets'
+            - configMapRef:
+                name: '{{ .Release.Name }}-configmap'
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ include "banyuhay.fullname" . }}-init-migrate-db"
+  labels:
+      {{- include "banyuhay.labels" . | nindent 4 }}
+  annotations:
+    helm.sh/hook: pre-install,pre-upgrade
+    helm.sh/hook-weight: "-3"
+    helm.sh/hook-delete-policy: before-hook-creation
+spec:
+  activeDeadlineSeconds: 600
+  backoffLimit: 3
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: "{{ include "banyuhay.fullname" . }}-init-migrate-db"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command:
+            - /bin/sh
+            - -c
+            - /app/.venv/bin/alembic upgrade head
+          envFrom:
+            - secretRef:
+                name: '{{ .Release.Name }}-secrets'
+            - configMapRef:
+                name: '{{ .Release.Name }}-configmap'
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ include "banyuhay.fullname" . }}-init-load-db-fixtures"
+  labels:
+      {{- include "banyuhay.labels" . | nindent 4 }}
+  annotations:
+    helm.sh/hook: pre-install,pre-upgrade
+    helm.sh/hook-weight: "-2"
+    helm.sh/hook-delete-policy: before-hook-creation
+spec:
+  activeDeadlineSeconds: 300
+  backoffLimit: 1
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: "{{ include "banyuhay.fullname" . }}-init-load-db-fixtures"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command:
+            - /bin/sh
+            - -c
+            - /app/.venv/bin/python -m scripts.load_fixtures toilets reviews
+          envFrom:
+            - secretRef:
+                name: '{{ .Release.Name }}-secrets'
+            - configMapRef:
+                name: '{{ .Release.Name }}-configmap'

@@ -12,6 +12,8 @@ class Settings(BaseSettings):
     POSTGRESQL_USERNAME: str
     POSTGRESQL_PASSWORD: str
     POSTGRESQL_DATABASE: str
+    POSTGRESQL_HOST: str
+    POSTGRESQL_PORT: int = 5432
 
     @computed_field
     @property
@@ -27,8 +29,8 @@ class Settings(BaseSettings):
     @property
     def DATABASE_PARAMETERS(self) -> dict[str, str | int]:
         return {
-            "host": "db",
-            "port": 5432,
+            "host": self.POSTGRESQL_HOST,
+            "port": self.POSTGRESQL_PORT,
             "username": self.POSTGRESQL_USERNAME,
             "password": self.POSTGRESQL_PASSWORD,
             "path": self.POSTGRESQL_DATABASE,

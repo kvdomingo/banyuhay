@@ -27,6 +27,8 @@ WORKDIR /tmp
 
 COPY ./ui/ ./
 
+ARG VITE_PUBLIC_MAPTILER_API_KEY
+
 SHELL [ "/bin/sh", "-eu", "-c" ]
 
 # hadolint ignore=DL4006
