@@ -13,8 +13,5 @@ export default defineConfig({
       },
     },
   },
-  build: {
-    outDir: "dist",
-  },
   plugins: [sveltekit()],
 });
