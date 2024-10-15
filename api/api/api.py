@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from fastapi.responses import FileResponse, ORJSONResponse
+from fastapi.responses import ORJSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from api.routes import reviews, toilets
@@ -24,14 +24,9 @@ app.include_router(reviews.router)
 
 
 if settings.IN_PRODUCTION:
-
-    @app.exception_handler(404)
-    async def send_to_frontend(*_, **__):
-        return FileResponse(settings.STATICFILES_DIR / "index.html")
-
     app.mount(
-        "/{catch_all}",
-        StaticFiles(directory=settings.STATICFILES_DIR),
+        "/",
+        StaticFiles(directory=settings.STATICFILES_DIR, html=True),
         name="static",
     )
 
