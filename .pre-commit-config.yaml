@@ -53,3 +53,5 @@ repos:
           - DL3008
           - --ignore
           - DL3018
+
+exclude: ^infra/helm/banyuhay/templates/.+\.ya?ml$

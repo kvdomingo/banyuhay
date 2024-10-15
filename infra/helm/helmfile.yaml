@@ -1,0 +1,4 @@
+releases:
+  - name: banyuhay
+    namespace: banyuhay
+    chart: ./banyuhay

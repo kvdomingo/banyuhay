@@ -2,6 +2,8 @@ version: '3'
 
 env:
   NAME: banyuhay
+  COMMIT_SHA:
+    sh: git rev-parse HEAD
 
 dotenv:
   - ./api/.env
@@ -60,3 +62,24 @@ tasks:
   load-fixtures:
     desc: Load database fixtures
     cmd: task exec -- api poetry run python -m scripts.load_fixtures toilets reviews
+
+  build-cr:
+    desc: Build for production
+    cmd: >
+      docker build 
+      -t git.lab.kvd.studio/r/banyuhay:{{.COMMIT_SHA}}
+      -t git.lab.kvd.studio/r/banyuhay:latest
+      -f prod.Dockerfile .
+
+  push-cr:
+    desc: Push production image
+    cmds:
+      - docker push git.lab.kvd.studio/r/banyuhay:{{.COMMIT_SHA}}
+      - docker push git.lab.kvd.studio/r/banyuhay:latest
+
+  deploy:
+    desc: Deploy to production
+    cmds:
+      - task: build-cr
+      - task: push-cr
+      - helmfile apply -f infra/helm/helmfile.yaml
