@@ -11,9 +11,14 @@ resource "google_storage_bucket" "default" {
   enable_object_retention     = false
 
   cors {
-    origin = ["*"]
+    origin = [
+      "https://banyuhay.kvd.studio",
+      "https://banyuhay.lab.kvd.studio",
+      "http://localhost:3000",
+    ]
     method = ["GET", "HEAD"]
-    response_header = ["*"]
+    response_header = ["range", "etag", "if-match"]
+    max_age_seconds = 300
   }
 }
 
