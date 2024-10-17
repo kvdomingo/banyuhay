@@ -27,16 +27,6 @@
   setContext("map", map);
 </script>
 
-<svelte:head>
-  {#if import.meta.env.PROD}
-    <script
-      defer
-      src="https://umami.kvd.studio/script.js"
-      data-website-id="7d86dc8d-696b-41b7-8fbf-92e99c8d7e44"
-    ></script>
-  {/if}
-</svelte:head>
-
 <QueryClientProvider client={queryClient}>
   <MapLibre
     center={INITIAL_CENTER}
