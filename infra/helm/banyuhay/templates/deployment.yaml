@@ -4,6 +4,9 @@ metadata:
   name: {{ include "banyuhay.fullname" . }}
   labels:
     {{- include "banyuhay.labels" . | nindent 4 }}
+  annotations:
+    keel.sh/policy: "force"
+    keel.sh/match-tag: "true"
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
