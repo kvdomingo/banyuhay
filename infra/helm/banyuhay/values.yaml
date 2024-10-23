@@ -65,7 +65,7 @@ ingress:
     gethomepage.dev/name: "Banyuhay"
     gethomepage.dev/group: "Apps"
     gethomepage.dev/icon: "si-svelte"
-    gethomepage.dev/ping: "banyuhay.lab.kvd.studio/api/health"
+    gethomepage.dev/ping: "https://banyuhay.lab.kvd.studio/api/health"
   hosts:
     - host: banyuhay.lab.kvd.studio
       paths:
