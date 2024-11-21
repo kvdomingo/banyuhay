@@ -9,5 +9,3 @@ releases:
     set:
       - value: ref+vault://kv/lab/banyuhay#POSTGRESQL_PASSWORD
         name: env.POSTGRESQL_PASSWORD
-      - value: ref+vault://kv/lab/banyuhay#VITE_PUBLIC_MAPTILER_API_KEY
-        name: env.VITE_PUBLIC_MAPTILER_API_KEY

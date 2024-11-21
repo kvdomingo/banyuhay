@@ -7,5 +7,3 @@ export const INITIAL_CENTER = new maplibre.LngLat(121.04, 14.56);
 export const INITIAL_BEARING = 0;
 
 export const INITIAL_PITCH = 0;
-
-export const API_KEY = import.meta.env.VITE_PUBLIC_MAPTILER_API_KEY;

@@ -9,7 +9,6 @@
   import Markers from "$lib/components/Markers.svelte";
   import { setContext } from "svelte";
   import {
-    API_KEY,
     INITIAL_BEARING,
     INITIAL_CENTER,
     INITIAL_PITCH,
@@ -34,7 +33,7 @@
     bearing={INITIAL_BEARING}
     pitch={INITIAL_PITCH}
     standardControls="bottom-right"
-    style={`https://api.maptiler.com/maps/openstreetmap/style.json?key=${API_KEY}`}
+    style="https://tiles.openfreemap.org/styles/bright"
     class="h-dvh w-dvw"
     bind:map={$map}
   >

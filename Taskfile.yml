@@ -7,7 +7,7 @@ env:
 
 dotenv:
   - ./api/.env
-  - ./ui/.env
+  - ./pipelines/.env
 
 tasks:
   default:
@@ -70,7 +70,6 @@ tasks:
       docker build 
       -t git.lab.kvd.studio/r/banyuhay:{{.COMMIT_SHA}}
       -t git.lab.kvd.studio/r/banyuhay:latest
-      --build-arg VITE_PUBLIC_MAPTILER_API_KEY={{.VITE_PUBLIC_MAPTILER_API_KEY}}
       -f prod.Dockerfile .
 
   push-cr:

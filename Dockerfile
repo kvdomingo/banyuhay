@@ -16,4 +16,4 @@ RUN apt-get update && \
 
 WORKDIR /app
 
-ENTRYPOINT [ "/bin/bash", "-c" ]
+ENTRYPOINT [ "/bin/bash", "-euxo", "pipefail", "-c" ]
