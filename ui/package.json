@@ -50,6 +50,7 @@
     "clsx": "^2.1.1",
     "lucide-svelte": "^0.447.0",
     "maplibre-gl": "^4.7.1",
+    "oidc-client-ts": "^3.1.0",
     "pmtiles": "^3.2.0",
     "svelte-maplibre": "^0.9.14",
     "zod": "^3.23.8"

@@ -1,19 +1,24 @@
 from functools import lru_cache
 from pathlib import Path
 
-from pydantic import PostgresDsn, computed_field
+from pydantic import AnyHttpUrl, PostgresDsn, computed_field
 from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
     PYTHON_ENV: str = "production"
     BASE_DIR: Path = Path(__file__).resolve().parent.parent
+    APP_HOST: AnyHttpUrl
 
     POSTGRESQL_USERNAME: str
     POSTGRESQL_PASSWORD: str
     POSTGRESQL_DATABASE: str
     POSTGRESQL_HOST: str
     POSTGRESQL_PORT: int = 5432
+
+    KINDE_HOST: AnyHttpUrl
+    KINDE_CLIENT_ID: str
+    KINDE_CLIENT_SECRET: str
 
     @computed_field
     @property

@@ -8,12 +8,7 @@
   import MainCard from "$lib/components/MainCard.svelte";
   import Markers from "$lib/components/Markers.svelte";
   import { setContext } from "svelte";
-  import {
-    INITIAL_BEARING,
-    INITIAL_CENTER,
-    INITIAL_PITCH,
-    INITIAL_ZOOM,
-  } from "$lib/constants";
+  import { INITIAL_BEARING, INITIAL_CENTER, INITIAL_PITCH, INITIAL_ZOOM } from "$lib/constants";
   import { writable } from "svelte/store";
   import { Protocol } from "pmtiles";
   import { page } from "$app/stores";

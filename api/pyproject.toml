@@ -6,12 +6,12 @@ authors = ["Kenneth V. Domingo <hello@kvd.studio>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "~3.12"
 fastapi = "^0.115.0"
 uvicorn = { extras = ["standard"], version = "^0.31.0" }
 sqlalchemy = "^2.0.35"
 alembic = "^1.13.3"
-pydantic = "^2.9.2"
+pydantic = "~2.7.4"
 pydantic-settings = "^2.5.2"
 psycopg2-binary = "^2.9.9"
 asyncpg = "^0.29.0"
@@ -19,6 +19,7 @@ geoalchemy2 = "^0.15.2"
 shapely = "^2.0.6"
 loguru = "^0.7.2"
 orjson = "^3.10.7"
+kinde-python-sdk = "^1.2.6"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "0.6.4"
