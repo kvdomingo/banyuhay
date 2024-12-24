@@ -14,6 +14,30 @@ tasks:
     cmd:
       task: up
 
+  setup:
+    desc: Setup the project
+    cmds:
+      - pip install -U pre-commit
+      - pre-commit install
+      - task: setup-api
+      - task: setup-pipelines
+      - task: setup-ui
+
+  setup-api:
+    desc: Setup backend
+    dir: api
+    cmd: poetry install --no-root --with dev
+
+  setup-pipelines:
+    desc: Setup pipelines
+    dir: pipelines
+    cmd: poetry install --no-root --with dev
+
+  setup-ui:
+    desc: Setup frontend
+    dir: ui
+    cmd: bun install
+
   up:
     desc: Build and start containers
     cmd: docker compose --project-name {{.NAME}} up --detach --build --remove-orphans
@@ -84,3 +108,18 @@ tasks:
       - task: build-cr
       - task: push-cr
       - helmfile apply -f infra/helm/helmfile.yaml
+
+  tf-init:
+    desc: Initialize Terraform
+    dir: infra/terraform
+    cmd: terraform init
+
+  tf-plan:
+    desc: Generate Terraform plan
+    dir: infra/terraform
+    cmd: terraform plan -out=.tfplan
+
+  tf-apply:
+    desc: Apply Terraform plan
+    dir: infra/terraform
+    cmd: terraform apply .tfplan

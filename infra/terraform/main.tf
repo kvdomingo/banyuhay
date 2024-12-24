@@ -12,8 +12,7 @@ resource "google_storage_bucket" "default" {
 
   cors {
     origin = [
-      "https://banyuhay.kvd.studio",
-      "https://banyuhay.lab.kvd.studio",
+      "https://banyuh.ai",
       "http://localhost:3000",
     ]
     method = ["GET", "HEAD"]
