@@ -10,7 +10,7 @@ from api.schemas import (
     Toilet as ToiletSchema,
 )
 
-router = APIRouter(prefix="/api/toilets", tags=["toilets"])
+router = APIRouter(prefix="/toilets", tags=["toilets"])
 
 
 @router.get("", response_model=list[ToiletSchema])

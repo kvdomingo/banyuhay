@@ -1,24 +1,30 @@
-from authlib.common.security import generate_token
-from kinde_sdk import Configuration
-from kinde_sdk.kinde_api_client import GrantType, KindeApiClient
+import stytch
+from fastapi import HTTPException, Request, status
+from fastapi.security import APIKeyCookie
+from stytch.consumer.models.users import User
 
 from api.settings import settings
 
-config = Configuration(host=settings.KINDE_HOST)
-
-kinde_client_api_params = {
-    "configuration": config,
-    "domain": settings.KINDE_HOST,
-    "client_id": settings.KINDE_CLIENT_ID,
-    "client_secret": settings.KINDE_CLIENT_SECRET,
-}
-
-client = KindeApiClient(
-    configuration=config,
-    domain=settings.KINDE_HOST,
-    client_id=settings.KINDE_CLIENT_ID,
-    client_secret=settings.KINDE_CLIENT_SECRET,
-    grant_type=GrantType.AUTHORIZATION_CODE_WITH_PKCE,
-    callback_url=f"{settings.APP_HOST}auth/callback",
-    code_verifier=generate_token(48),
+stytch_client = stytch.Client(
+    project_id=settings.STYTCH_PROJECT_ID,
+    secret=settings.STYTCH_SECRET,
+    environment=settings.STYTCH_ENVIRONMENT,
 )
+
+
+class StytchSessionCookie(APIKeyCookie):
+    async def __call__(self, request: Request) -> User:
+        if not (stytch_session := request.session.get("stytch_session_token")):
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
+
+        res = await stytch_client.sessions.authenticate_async(
+            session_token=stytch_session
+        )
+
+        if res.status_code != status.HTTP_200_OK:
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
+
+        return res.user
+
+
+session_cookie_scheme = StytchSessionCookie(name="session")

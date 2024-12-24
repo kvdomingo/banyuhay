@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     PYTHON_ENV: str = "production"
     BASE_DIR: Path = Path(__file__).resolve().parent.parent
     APP_HOST: AnyHttpUrl
+    SECRET_KEY: str
 
     POSTGRESQL_USERNAME: str
     POSTGRESQL_PASSWORD: str
@@ -16,14 +17,19 @@ class Settings(BaseSettings):
     POSTGRESQL_HOST: str
     POSTGRESQL_PORT: int = 5432
 
-    KINDE_HOST: AnyHttpUrl
-    KINDE_CLIENT_ID: str
-    KINDE_CLIENT_SECRET: str
+    STYTCH_PROJECT_ID: str
+    STYTCH_SECRET: str
+    STYTCH_PUBLIC_TOKEN: str
 
     @computed_field
     @property
     def IN_PRODUCTION(self) -> bool:
         return self.PYTHON_ENV == "production"
+
+    @computed_field
+    @property
+    def STYTCH_ENVIRONMENT(self) -> str:
+        return "live" if self.IN_PRODUCTION else "test"
 
     @computed_field
     @property
