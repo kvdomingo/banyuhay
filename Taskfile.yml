@@ -8,6 +8,7 @@ env:
 dotenv:
   - ./api/.env
   - ./pipelines/.env
+  - ./ui/.env
 
 tasks:
   default:
@@ -91,9 +92,11 @@ tasks:
   build-cr:
     desc: Build for production
     cmd: >
-      docker build 
+      docker build
       -t git.lab.kvd.studio/r/banyuhay:{{.COMMIT_SHA}}
       -t git.lab.kvd.studio/r/banyuhay:latest
+      --build-arg VITE_PUBLIC_APP_HOST=https://banyuh.ai
+      --build-arg VITE_PUBLIC_STYTCH_PUBLIC_TOKEN={{.VITE_PUBLIC_STYTCH_PUBLIC_TOKEN}}
       -f prod.Dockerfile .
 
   push-cr:

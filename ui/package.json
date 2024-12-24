@@ -45,10 +45,11 @@
   },
   "type": "module",
   "dependencies": {
+    "@stytch/vanilla-js": "^5.10.1",
     "axios": "^1.7.7",
-    "bits-ui": "^0.21.16",
+    "bits-ui": "^0.22.0",
     "clsx": "^2.1.1",
-    "lucide-svelte": "^0.447.0",
+    "lucide-svelte": "^0.469.0",
     "maplibre-gl": "^4.7.1",
     "oidc-client-ts": "^3.1.0",
     "pmtiles": "^3.2.0",

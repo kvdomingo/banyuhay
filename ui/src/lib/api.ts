@@ -1,15 +1,17 @@
 import { browser } from "$app/environment";
-import type { Review, Toilet } from "$lib/types";
+import type { Review, Session, Toilet } from "$lib/types";
 import { QueryClient, keepPreviousData } from "@tanstack/svelte-query";
 import axios, { type AxiosResponse } from "axios";
 
 const baseURL = "/api";
 
-const axi = axios.create({ baseURL });
+const axi = axios.create({ baseURL, withCredentials: true });
 
 // prettier-ignore
 export const api = {
-  health: (): Promise<AxiosResponse<{ status: string }>> => axi.get("/health"),
+  auth: {
+    me: (): Promise<AxiosResponse<Session>> => axi.get("/auth/me"),
+  },
   toilets: {
     list: (): Promise<AxiosResponse<Toilet[]>> => axi.get("/toilets"),
     reviews: (id: string): Promise<AxiosResponse<Review[]>> => axi.get(`/toilets/${id}/reviews`),

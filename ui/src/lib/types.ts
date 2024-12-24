@@ -41,3 +41,13 @@ export const Review = z.object({
 
 // prettier-ignore
 export type Review = z.infer<typeof Review>;
+
+export const Session = z.object({
+  user_id: z.string(),
+  first_name: z.string(),
+  last_name: z.string(),
+  emails: z.array(z.string().email()),
+});
+
+// prettier-ignore
+export type Session = z.infer<typeof Session>;

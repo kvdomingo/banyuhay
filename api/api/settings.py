@@ -8,6 +8,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     PYTHON_ENV: str = "production"
     BASE_DIR: Path = Path(__file__).resolve().parent.parent
+    API_HOST: AnyHttpUrl
     APP_HOST: AnyHttpUrl
     SECRET_KEY: str
 

@@ -1,7 +1,8 @@
-from fastapi import APIRouter, HTTPException, Request, status
+from fastapi import APIRouter, HTTPException, Request, Security, status
 from fastapi.responses import RedirectResponse
 
-from api.auth import stytch_client
+from api.auth import session_cookie_scheme, stytch_client
+from api.schemas import Session
 from api.settings import settings
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -28,11 +29,28 @@ async def callback(request: Request):
     if res.status_code != status.HTTP_200_OK:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
 
-    request.session["stytch_session_token"] = res.session_token
-    return RedirectResponse("/", status_code=status.HTTP_303_SEE_OTHER)
+    request.session.update(
+        {
+            "stytch_session_token": res.session_token,
+            "user_id": res.user.user_id,
+            "first_name": res.user.name.first_name,
+            "last_name": res.user.name.last_name,
+            "emails": [e.email for e in res.user.emails],
+        }
+    )
+    return RedirectResponse(settings.APP_HOST, status_code=status.HTTP_302_FOUND)
 
 
 @router.get("/logout")
 async def logout(request: Request):
-    request.session.pop("stytch_session_token", None)
-    return RedirectResponse("/", status_code=status.HTTP_302_FOUND)
+    request.session.clear()
+    return RedirectResponse(settings.APP_HOST, status_code=status.HTTP_302_FOUND)
+
+
+@router.get(
+    "/me",
+    dependencies=[Security(session_cookie_scheme)],
+    response_model=Session,
+)
+async def me(request: Request):
+    return request.session

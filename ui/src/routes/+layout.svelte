@@ -13,6 +13,7 @@
   import { Protocol } from "pmtiles";
   import { page } from "$app/stores";
   import { queryClient } from "$lib/api";
+  import LoginUserHeader from "$lib/components/LoginUserHeader.svelte";
 
   const protocol = new Protocol();
   maplibre.addProtocol("pmtiles", protocol.tile);
@@ -36,6 +37,8 @@
       <Markers />
     {/if}
   </MapLibre>
+
+  <LoginUserHeader />
 
   {#if $map}
     {#key $page.params.toiletId}
