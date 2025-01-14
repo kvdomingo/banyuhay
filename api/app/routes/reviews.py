@@ -3,10 +3,10 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from stytch.consumer.models.users import User
 
-from api.auth import session_cookie_scheme
-from api.db import async_get_db
-from api.models import Review
-from api.schemas import Review as ReviewSchema
+from app.auth import session_cookie_scheme
+from app.db import async_get_db
+from app.models import Review
+from app.schemas import Review as ReviewSchema
 
 router = APIRouter(prefix="/reviews", tags=["reviews"])
 

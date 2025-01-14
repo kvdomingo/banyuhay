@@ -3,11 +3,11 @@ import sys
 import yaml
 from sqlalchemy.dialects.postgresql import insert
 
-from api import models
-from api.db import sync_get_db_context
-from api.settings import settings
+from app import models
+from app.db import sync_get_db_context
+from app.settings import settings
 
-FIXTURES_DIR = settings.BASE_DIR / "api/fixtures"
+FIXTURES_DIR = settings.BASE_DIR / "app/fixtures"
 
 
 def main(*args: str):

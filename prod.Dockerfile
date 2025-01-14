@@ -1,4 +1,4 @@
-FROM python:3.12-slim AS base
+FROM python:3.12-bookworm AS base
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV POETRY_VERSION=1.8.3
@@ -45,4 +45,4 @@ COPY ./api ./
 COPY --from=build /app/.venv ./.venv/
 COPY --from=web-build /tmp/build ./static/
 
-CMD [ "/app/.venv/bin/uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000" ]
+CMD [ "/app/.venv/bin/fastapi", "run", "--host", "0.0.0.0", "--port", "8000" ]

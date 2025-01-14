@@ -2,7 +2,7 @@ from starlette.responses import FileResponse, Response
 from starlette.staticfiles import StaticFiles
 from starlette.types import Scope
 
-from api.settings import settings
+from app.settings import settings
 
 
 class StaticFilesMiddleware(StaticFiles):

@@ -3,7 +3,7 @@ from fastapi import HTTPException, Request, status
 from fastapi.security import APIKeyCookie
 from stytch.consumer.models.users import User
 
-from api.settings import settings
+from app.settings import settings
 
 stytch_client = stytch.Client(
     project_id=settings.STYTCH_PROJECT_ID,

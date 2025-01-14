@@ -3,9 +3,9 @@ from pydantic import UUID4
 from sqlalchemy import bindparam, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from api.db import async_get_db
-from api.models import Review, Toilet
-from api.schemas import (
+from app.db import async_get_db
+from app.models import Review, Toilet
+from app.schemas import (
     Review as ReviewSchema,
     Toilet as ToiletSchema,
 )

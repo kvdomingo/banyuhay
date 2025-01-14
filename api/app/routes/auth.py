@@ -1,9 +1,9 @@
 from fastapi import APIRouter, HTTPException, Request, Security, status
 from fastapi.responses import RedirectResponse
 
-from api.auth import session_cookie_scheme, stytch_client
-from api.schemas import Session
-from api.settings import settings
+from app.auth import session_cookie_scheme, stytch_client
+from app.schemas import Session
+from app.settings import settings
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 

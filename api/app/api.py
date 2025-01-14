@@ -5,8 +5,8 @@ from fastapi.responses import ORJSONResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.sessions import SessionMiddleware
 
-from api.routes import auth, reviews, toilets
-from api.settings import settings
+from app.routes import auth, reviews, toilets
+from app.settings import settings
 
 app = FastAPI(
     title="Banyuhay",

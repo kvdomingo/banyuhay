@@ -11,7 +11,7 @@ from sqlalchemy.exc import DatabaseError
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import Session, sessionmaker
 
-from api.settings import settings
+from app.settings import settings
 
 sync_engine = create_engine(
     settings.SYNC_DATABASE_URL,
