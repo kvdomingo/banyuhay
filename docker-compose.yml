@@ -9,9 +9,9 @@ services:
     env_file: ./api/.env
     command:
       - |
-        poetry install --no-root
+        poetry install --with dev
         poetry run alembic upgrade head
-        exec poetry run fastapi dev --host 0.0.0.0 --port 8000 --reload api/api.py
+        exec poetry run fastapi dev --host 0.0.0.0 --port 8000 --reload
     volumes:
       - ./api:/app
       - venv-data:/app/.venv

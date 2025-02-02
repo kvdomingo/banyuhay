@@ -1,5 +1,5 @@
 [tools]
 bun = "latest"
-poetry = "latest"
+poetry = "1"
 python = "3.12"
 task = "latest"

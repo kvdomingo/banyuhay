@@ -22,6 +22,9 @@ orjson = "^3.10.7"
 itsdangerous = "^2.2.0"
 stytch = "^11.10.0"
 
+[tool.poetry.group.dev]
+optional = true
+
 [tool.poetry.group.dev.dependencies]
 ruff = "0.6.4"
 
