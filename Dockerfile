@@ -11,8 +11,11 @@ SHELL [ "/bin/bash", "-euxo", "pipefail", "-c" ]
 
 # hadolint ignore=DL3009
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends curl && \
-    curl -sSL https://install.python-poetry.org | python -
+    apt-get install -y --no-install-recommends curl
+    
+ADD https://install.python-poetry.org install-poetry.py
+
+RUN python install-poetry.py
 
 WORKDIR /app
 

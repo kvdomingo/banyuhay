@@ -1,3 +1,5 @@
+name: banyuhay
+
 services:
   api:
     build:
@@ -9,7 +11,7 @@ services:
     env_file: ./api/.env
     command:
       - |
-        poetry install --with dev
+        poetry install --sync --with dev
         poetry run alembic upgrade head
         exec poetry run fastapi dev --host 0.0.0.0 --port 8000 --reload
     volumes:

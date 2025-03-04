@@ -13,12 +13,15 @@ FROM base AS build
 
 COPY ./api/pyproject.toml ./api/poetry.lock ./
 
-SHELL [ "/bin/sh", "-eu", "-c" ]
+SHELL [ "/bin/bash", "-euxo", "pipefail", "-c" ]
 
 # hadolint ignore=DL4006
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends curl && \
-    curl -sSL https://install.python-poetry.org | python - && \
+    apt-get install -y --no-install-recommends curl
+
+ADD https://install.python-poetry.org install-poetry.py
+
+RUN python install-poetry.py && \
     poetry export --format requirements.txt --output requirements.txt && \
     python -m venv .venv && \
     ./.venv/bin/pip install -r requirements.txt
