@@ -1,8 +1,10 @@
-from fastapi import APIRouter, HTTPException, Request, Security, status
+from fastapi import APIRouter, Depends, HTTPException, Request, Security, status
 from fastapi.responses import RedirectResponse
 
-from app.auth import session_cookie_scheme, stytch_client
-from app.schemas import Session
+from app.auth import get_current_user, session_cookie_scheme, stytch_client
+from app.db.generated.models import User
+from app.db.generated.users import AsyncQuerier
+from app.db.queriers import get_user_async_querier
 from app.settings import settings
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -16,7 +18,9 @@ async def login():
 
 
 @router.get("/callback")
-async def callback(request: Request):
+async def callback(
+    request: Request, querier: AsyncQuerier = Depends(get_user_async_querier)
+):
     token = request.query_params.get("token")
 
     if not token:
@@ -26,16 +30,24 @@ async def callback(request: Request):
         token, session_duration_minutes=60
     )
 
-    if res.status_code != status.HTTP_200_OK:
+    if not res.is_success:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
+
+    if (existing_user := await querier.get_user(id=res.user.user_id)) is None:
+        existing_user = await querier.create_user(
+            id=res.user.user_id,
+            first_name=res.user.name.first_name,
+            last_name=res.user.name.last_name,
+            avatar=None,
+        )
 
     request.session.update(
         {
-            "stytch_session_token": res.session_token,
-            "user_id": res.user.user_id,
-            "first_name": res.user.name.first_name,
-            "last_name": res.user.name.last_name,
-            "emails": [e.email for e in res.user.emails],
+            "stytch": {
+                "session_token": res.session_token,
+                "session_jwt": res.session_jwt,
+            },
+            "user": existing_user.model_dump(mode="json"),
         }
     )
     return RedirectResponse(settings.APP_HOST, status_code=status.HTTP_302_FOUND)
@@ -43,6 +55,8 @@ async def callback(request: Request):
 
 @router.get("/logout")
 async def logout(request: Request):
+    jwt = request.session.get("stytch", {}).get("session_jwt")
+    await stytch_client.sessions.revoke_async(session_jwt=jwt)
     request.session.clear()
     return RedirectResponse(settings.APP_HOST, status_code=status.HTTP_302_FOUND)
 
@@ -50,7 +64,7 @@ async def logout(request: Request):
 @router.get(
     "/me",
     dependencies=[Security(session_cookie_scheme)],
-    response_model=Session,
+    response_model=User,
 )
-async def me(request: Request):
-    return request.session
+async def me(user: User = Depends(get_current_user)):
+    return user

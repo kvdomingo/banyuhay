@@ -38,3 +38,13 @@ class Toilet(pydantic.BaseModel):
     upvotes: int
     downvotes: int
     photos: list[str] | None
+
+
+class User(pydantic.BaseModel):
+    id: str
+    created: datetime.datetime
+    modified: datetime.datetime
+    first_name: str | None
+    last_name: str | None
+    full_name: str | None
+    avatar: str | None

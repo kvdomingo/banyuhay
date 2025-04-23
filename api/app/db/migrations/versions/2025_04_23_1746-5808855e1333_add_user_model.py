@@ -1,24 +1,22 @@
-"""${message}
+"""add user model
 
-Revision ID: ${up_revision}
-Revises: ${down_revision | comma,n}
-Create Date: ${create_date}
+Revision ID: 5808855e1333
+Revises: 52fdea2767d8
+Create Date: 2025-04-23 17:46:43.817420
 
 """
-from typing import Sequence, Union
+
+from collections.abc import Sequence
 from pathlib import Path
 
-from alembic import op
 import sqlalchemy as sa
-
-from app.settings import settings
-${imports if imports else ""}
+from alembic import op
 
 # revision identifiers, used by Alembic.
-revision: str = ${repr(up_revision)}
-down_revision: Union[str, None] = ${repr(down_revision)}
-branch_labels: Union[str, Sequence[str], None] = ${repr(branch_labels)}
-depends_on: Union[str, Sequence[str], None] = ${repr(depends_on)}
+revision: str = "5808855e1333"
+down_revision: str | None = "52fdea2767d8"
+branch_labels: str | Sequence[str] | None = None
+depends_on: str | Sequence[str] | None = None
 
 MIGRATIONS_DIR = Path(__file__).resolve().parent
 MIGRATION_NAME = Path(__file__).stem

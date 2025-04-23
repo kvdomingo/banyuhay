@@ -12,15 +12,13 @@ from pathlib import Path
 import sqlalchemy as sa
 from alembic import op
 
-from app.settings import settings
-
 # revision identifiers, used by Alembic.
 revision: str = "52fdea2767d8"
 down_revision: str | None = None
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None
 
-MIGRATIONS_DIR = settings.BASE_DIR / "migrations/versions"
+MIGRATIONS_DIR = Path(__file__).resolve().parent
 MIGRATION_NAME = Path(__file__).stem
 
 

@@ -2,7 +2,7 @@ from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import Session
 
-from app.db.generated import reviews, toilets
+from app.db.generated import reviews, toilets, users
 from app.db.utils import async_get_db, sync_get_db
 
 
@@ -20,3 +20,11 @@ def get_review_querier(conn: Session = Depends(sync_get_db)):
 
 async def get_review_async_querier(conn: AsyncSession = Depends(async_get_db)):
     return reviews.AsyncQuerier(conn)
+
+
+def get_user_querier(conn: Session = Depends(sync_get_db)):
+    return users.Querier(conn)
+
+
+async def get_user_async_querier(conn: AsyncSession = Depends(async_get_db)):
+    return users.AsyncQuerier(conn)

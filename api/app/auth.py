@@ -14,17 +14,21 @@ stytch_client = stytch.Client(
 
 class StytchSessionCookie(APIKeyCookie):
     async def __call__(self, request: Request) -> User:
-        if not (stytch_session := request.session.get("stytch_session_token")):
+        if not (stytch_jwt := request.session.get("stytch", {}).get("session_jwt")):
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
 
-        res = await stytch_client.sessions.authenticate_async(
-            session_token=stytch_session
+        res = await stytch_client.sessions.authenticate_jwt_async(
+            session_jwt=stytch_jwt
         )
 
-        if res.status_code != status.HTTP_200_OK:
+        if not res.is_success:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
 
         return res.user
 
 
 session_cookie_scheme = StytchSessionCookie(name="session")
+
+
+async def get_current_user(request: Request):
+    return request.session.get("stytch", {}).get("user", {})
