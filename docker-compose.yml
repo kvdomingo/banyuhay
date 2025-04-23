@@ -1,5 +1,12 @@
 name: banyuhay
 
+volumes:
+  venv-data:
+  dagster-venv-data:
+  db-data:
+  dagster-db-data:
+  pgadmin-data:
+
 services:
   api:
     build:
@@ -8,12 +15,23 @@ services:
     image: kvdomingo/banyuhay-api
     restart: unless-stopped
     init: true
-    env_file: ./api/.env
+    environment:
+      PYTHON_ENV: development
+      POSTGRESQL_USERNAME: postgres
+      POSTGRESQL_PASSWORD: postgres
+      POSTGRESQL_DATABASE: postgres
+      POSTGRESQL_HOST: db
+      API_HOST: http://localhost:8000
+      APP_HOST: http://localhost:3000
+      SECRET_KEY: ${SECRET_KEY}
+      STYTCH_PROJECT_ID: ${STYTCH_PROJECT_ID}
+      STYTCH_SECRET: ${STYTCH_SECRET}
+      STYTCH_PUBLIC_TOKEN: ${STYTCH_PUBLIC_TOKEN}
     command:
-      - |
-        poetry install --sync --with dev
-        poetry run alembic upgrade head
-        exec poetry run fastapi dev --host 0.0.0.0 --port 8000 --reload
+      - >
+        uv sync --frozen;
+        uv run alembic upgrade head;
+        exec uv run fastapi dev --host 0.0.0.0 --port 8000 --reload --app app app/app.py;
     volumes:
       - ./api:/app
       - venv-data:/app/.venv
@@ -26,12 +44,14 @@ services:
         condition: service_healthy
 
   ui:
-    image: oven/bun:1.1-alpine
+    image: oven/bun:1.2-alpine
     restart: unless-stopped
     init: true
     working_dir: /app
     environment:
       NODE_ENV: development
+      VITE_PUBLIC_APP_HOST: http://localhost:3000
+      VITE_PUBLIC_STYTCH_PUBLIC_TOKEN: ${STYTCH_PUBLIC_TOKEN}
     entrypoint:
       - /bin/sh
       - -c
@@ -44,7 +64,8 @@ services:
   db:
     image: bitnami/postgresql:16.4.0-debian-12-r8
     restart: unless-stopped
-    env_file: ./api/.env
+    environment:
+      POSTGRESQL_PASSWORD: postgres
     volumes:
       - db-data:/bitnami/postgresql
     ports:
@@ -63,15 +84,19 @@ services:
     image: kvdomingo/banyuhay-pipelines
     restart: unless-stopped
     init: true
-    env_file: ./pipelines/.env
     environment:
+      PYTHON_ENV: development
       DAGSTER_HOME: /opt/dagster
+      POSTGRESQL_USERNAME: postgres
+      POSTGRESQL_PASSWORD: postgres
+      POSTGRESQL_DATABASE: postgres
+      GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
     command:
       - |
-        poetry install --no-root
+        uv sync --frozen
         mkdir -p $${DAGSTER_HOME}
         cp /app/dagster.yaml $${DAGSTER_HOME}/dagster.yaml
-        exec poetry run dagster dev -h 0.0.0.0 -p 3030
+        exec uv run dagster dev -h 0.0.0.0 -p 3030
     volumes:
       - ./pipelines:/app
       - dagster-venv-data:/app/.venv
@@ -84,7 +109,8 @@ services:
   dagster-db:
     image: bitnami/postgresql:16.4.0-debian-12-r8
     restart: unless-stopped
-    env_file: ./pipelines/.env
+    environment:
+      POSTGRESQL_PASSWORD: postgres
     volumes:
       - dagster-db-data:/bitnami/postgresql
     healthcheck:
@@ -95,19 +121,13 @@ services:
       timeout: 2s
 
   pgadmin:
-    image: dpage/pgadmin4:8.12
+    image: dpage/pgadmin4:9
     environment:
       PGADMIN_LISTEN_ADDRESS: 0.0.0.0
       PGADMIN_LISTEN_PORT: 5000
-    env_file: ./api/.env
+      PGADMIN_DEFAULT_EMAIL: hello@kvd.studio
+      PGADMIN_DEFAULT_PASSWORD: admin
     volumes:
-      - pgadmin-data:/var/lib/pgadmin
+      - pgadmin-data:/pgadmin
     ports:
       - "5000:5000"
-
-volumes:
-  venv-data:
-  dagster-venv-data:
-  db-data:
-  dagster-db-data:
-  pgadmin-data:

@@ -5,11 +5,6 @@ env:
     sh: git rev-parse HEAD
   IMAGE_NAME: ghcr.io/kvdomingo/banyuhay
 
-dotenv:
-  - ./api/.env
-  - ./pipelines/.env
-  - ./ui/.env
-
 tasks:
   default:
     cmd:
@@ -27,12 +22,12 @@ tasks:
   setup-api:
     desc: Setup backend
     dir: api
-    cmd: poetry install --no-root --with dev
+    cmd: uv sync
 
   setup-pipelines:
     desc: Setup pipelines
     dir: pipelines
-    cmd: poetry install --no-root --with dev
+    cmd: uv sync
 
   setup-ui:
     desc: Setup frontend
@@ -41,7 +36,7 @@ tasks:
 
   up:
     desc: Build and start containers
-    cmd: docker compose up --detach --build --remove-orphans
+    cmd: infisical run -- docker compose up --detach --build --remove-orphans
 
   stop:
     desc: Stop containers
@@ -58,11 +53,11 @@ tasks:
 
   down:
     desc: Stop and remove containers
-    cmd: docker compose down
+    cmd: docker compose down {{ .CLI_ARGS }}
 
   clean:
     desc: Nuke everything
-    cmd: docker compose down --volumes --remove-orphans
+    cmd: docker compose down --volumes --remove-orphans {{ .CLI_ARGS }}
 
   exec:
     desc: Execute a command in a running container
@@ -70,15 +65,15 @@ tasks:
 
   generate-migration:
     desc: Generate a new migration revision file
-    cmd: task exec -- api poetry run alembic revision -m '{{ .CLI_ARGS }}'
+    cmd: task exec -- api uv run alembic revision -m '{{ .CLI_ARGS }}'
 
   migrate:
     desc: Apply all migrations
-    cmd: task exec -- api poetry run alembic upgrade head
+    cmd: task exec -- api uv run alembic upgrade head
 
   unmigrate:
     desc: Undo 1 migration
-    cmd: task exec -- api poetry run alembic downgrade -1
+    cmd: task exec -- api uv run alembic downgrade -1
 
   psql:
     desc: Attach to the db container and run psql
@@ -87,7 +82,7 @@ tasks:
 
   load-fixtures:
     desc: Load database fixtures
-    cmd: task exec -- api poetry run python -m scripts.load_fixtures toilets reviews
+    cmd: task exec -- api uv run python -m scripts.load_fixtures toilets reviews
 
   push-cr:
     desc: Push production image
