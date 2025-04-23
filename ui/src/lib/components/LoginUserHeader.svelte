@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { createQuery } from "@tanstack/svelte-query";
   import { api } from "$lib/api";
-  import { Button } from "$lib/components/ui/button";
   import { Avatar, AvatarFallback } from "$lib/components/ui/avatar";
+  import { Button } from "$lib/components/ui/button";
   import {
     DropdownMenu,
     DropdownMenuContent,
-    DropdownMenuLabel,
-    DropdownMenuTrigger,
     DropdownMenuGroup,
-    DropdownMenuSeparator,
     DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuSeparator,
+    DropdownMenuTrigger,
   } from "$lib/components/ui/dropdown-menu/index.js";
+  import { createQuery } from "@tanstack/svelte-query";
 
   const meQuery = createQuery({
     queryKey: ["me"],

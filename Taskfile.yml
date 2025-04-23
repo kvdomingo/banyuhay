@@ -63,7 +63,7 @@ tasks:
     desc: Execute a command in a running container
     cmd: docker compose exec {{ .CLI_ARGS }}
 
-  generate-migration:
+  makemigrations:
     desc: Generate a new migration revision file
     cmd: task exec -- api uv run alembic revision -m '{{ .CLI_ARGS }}'
 

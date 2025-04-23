@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { createQuery } from "@tanstack/svelte-query";
-  import { api } from "$lib/api";
   import { Marker } from "svelte-maplibre";
-  import { cn } from "$lib/utils";
-  import { MapPin, MapPinX } from "lucide-svelte";
+
   import { goto } from "$app/navigation";
   import { page } from "$app/stores";
+  import { api } from "$lib/api";
+  import { cn } from "$lib/utils";
+  import { createQuery } from "@tanstack/svelte-query";
+  import { MapPin, MapPinX } from "lucide-svelte";
 
   const query = createQuery({
     queryKey: ["toilets"],

@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { createQuery } from "@tanstack/svelte-query";
-  import { api } from "$lib/api";
   import { page } from "$app/stores";
-  import { MilkOff, SprayCan, Star } from "lucide-svelte";
-  import { cn } from "$lib/utils";
+  import { api } from "$lib/api";
   import Reviews from "$lib/components/Reviews.svelte";
+  import { cn } from "$lib/utils";
+  import { createQuery } from "@tanstack/svelte-query";
+  import { MilkOff, SprayCan, Star } from "lucide-svelte";
 
   const { toiletId } = $page.params;
 

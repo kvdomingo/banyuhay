@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { createQuery } from "@tanstack/svelte-query";
+  import { page } from "$app/stores";
   import { api } from "$lib/api";
   import * as Avatar from "$lib/components/ui/avatar";
   import { Skeleton } from "$lib/components/ui/skeleton/index.js";
+  import { createQuery } from "@tanstack/svelte-query";
   import { Star } from "lucide-svelte";
-  import { page } from "$app/stores";
 
   const {
     params: { toiletId },

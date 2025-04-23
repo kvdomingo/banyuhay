@@ -26,6 +26,7 @@ const options = {
     "<THIRD_PARTY_MODULES>",
     "^[./]",
   ],
+  bracketSpacing: true,
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
   plugins: [sortImports, sveltePlugin, tailwindPlugin],

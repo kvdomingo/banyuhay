@@ -1,6 +1,4 @@
 from contextlib import (
-    AbstractAsyncContextManager,
-    AbstractContextManager,
     asynccontextmanager,
     contextmanager,
 )
@@ -8,8 +6,8 @@ from contextlib import (
 from loguru import logger
 from sqlalchemy import create_engine
 from sqlalchemy.exc import DatabaseError
-from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
-from sqlalchemy.orm import Session, sessionmaker
+from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
+from sqlalchemy.orm import sessionmaker
 
 from app.settings import settings
 
@@ -62,25 +60,5 @@ async def async_get_db():
         await session.close()
 
 
-@contextmanager
-def sync_get_db_context() -> AbstractContextManager[Session]:
-    session = sync_session_maker()
-    try:
-        yield session
-    except DatabaseError as err:
-        logger.error(str(err))
-        raise err
-    finally:
-        session.close()
-
-
-@asynccontextmanager
-async def async_get_db_context() -> AbstractAsyncContextManager[AsyncSession]:
-    session = async_session_maker()
-    try:
-        yield session
-    except DatabaseError as err:
-        logger.error(str(err))
-        raise err
-    finally:
-        await session.close()
+sync_get_db_context = contextmanager(sync_get_db)
+async_get_db_context = asynccontextmanager(async_get_db)

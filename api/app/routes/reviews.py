@@ -1,21 +1,26 @@
-from fastapi import APIRouter, Depends
-from sqlalchemy import select
-from sqlalchemy.ext.asyncio import AsyncSession
-from stytch.consumer.models.users import User
+from fastapi import APIRouter, Depends, HTTPException
+from pydantic import UUID4
+from starlette import status
 
-from app.auth import session_cookie_scheme
-from app.db import async_get_db
-from app.models import Review
-from app.schemas import Review as ReviewSchema
+from app.db.generated.models import Review
+from app.db.generated.reviews import AsyncQuerier
+from app.db.queriers import get_review_async_querier
 
 router = APIRouter(prefix="/reviews", tags=["reviews"])
 
 
-@router.get("", response_model=list[ReviewSchema])
-async def list_reviews(db: AsyncSession = Depends(async_get_db)):
-    return await db.scalars(select(Review))
+@router.get("", response_model=list[Review])
+async def list_reviews(
+    toilet_id: UUID4, querier: AsyncQuerier = Depends(get_review_async_querier)
+):
+    return [r async for r in querier.list_toilet_reviews(toilet_id=str(toilet_id))]
 
 
-@router.post("")
-async def create_review(user: User = Depends(session_cookie_scheme)):
-    pass
+@router.get("/{id}", response_model=Review)
+async def get_review(
+    id: UUID4, querier: AsyncQuerier = Depends(get_review_async_querier)
+):
+    review = await querier.get_review(id=str(id))
+    if review is None:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+    return review
