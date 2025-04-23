@@ -78,7 +78,7 @@ tasks:
   psql:
     desc: Attach to the db container and run psql
     interactive: true
-    cmd: task exec -- db psql -U {{ .POSTGRESQL_USERNAME }} -d {{ .POSTGRESQL_DATABASE }}
+    cmd: task exec -- db psql postgres://postgres:postgres@db:5432/postgres
 
   load-fixtures:
     desc: Load database fixtures

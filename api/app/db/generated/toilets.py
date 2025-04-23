@@ -2,6 +2,7 @@
 # versions:
 #   sqlc v1.29.0
 # source: toilets.sql
+import datetime
 from collections.abc import AsyncIterator, Iterator
 from typing import Any
 
@@ -46,16 +47,84 @@ RETURNING id
 
 
 GET_TOILET = """-- name: get_toilet \\:one
-SELECT id, created, modified, establishment_name, geometry, location_information, avg_rating_water_pressure, avg_rating_cleanliness, avg_rating_poopability, total_reviews, has_bidet, upvotes, downvotes, photos
+SELECT
+    id,
+    created,
+    modified,
+    establishment_name,
+    location_information,
+    JSONB_BUILD_OBJECT(
+            'lat', ST_X(geometry),
+            'lng', ST_Y(geometry)
+    ) AS geometry,
+    avg_rating_cleanliness,
+    avg_rating_poopability,
+    avg_rating_water_pressure,
+    total_reviews,
+    has_bidet,
+    upvotes,
+    downvotes,
+    photos
 FROM toilets
 WHERE id = :p1
 """
 
 
+class GetToiletRow(pydantic.BaseModel):
+    id: str
+    created: datetime.datetime
+    modified: datetime.datetime
+    establishment_name: str
+    location_information: str
+    geometry: Any
+    avg_rating_cleanliness: float
+    avg_rating_poopability: float
+    avg_rating_water_pressure: float
+    total_reviews: int
+    has_bidet: bool
+    upvotes: int
+    downvotes: int
+    photos: list[str] | None
+
+
 LIST_TOILETS = """-- name: list_toilets \\:many
-SELECT id, created, modified, establishment_name, geometry, location_information, avg_rating_water_pressure, avg_rating_cleanliness, avg_rating_poopability, total_reviews, has_bidet, upvotes, downvotes, photos
+SELECT
+    id,
+    created,
+    modified,
+    establishment_name,
+    location_information,
+    JSONB_BUILD_OBJECT(
+            'lat', ST_X(geometry),
+            'lng', ST_Y(geometry)
+    ) AS geometry,
+    avg_rating_cleanliness,
+    avg_rating_poopability,
+    avg_rating_water_pressure,
+    total_reviews,
+    has_bidet,
+    upvotes,
+    downvotes,
+    photos
 FROM toilets
 """
+
+
+class ListToiletsRow(pydantic.BaseModel):
+    id: str
+    created: datetime.datetime
+    modified: datetime.datetime
+    establishment_name: str
+    location_information: str
+    geometry: Any
+    avg_rating_cleanliness: float
+    avg_rating_poopability: float
+    avg_rating_water_pressure: float
+    total_reviews: int
+    has_bidet: bool
+    upvotes: int
+    downvotes: int
+    photos: list[str] | None
 
 
 UPDATE_TOILET = """-- name: update_toilet \\:one
@@ -137,20 +206,20 @@ class Querier:
             return None
         return row[0]
 
-    def get_toilet(self, *, id: str) -> models.Toilet | None:
+    def get_toilet(self, *, id: str) -> GetToiletRow | None:
         row = self._conn.execute(sqlalchemy.text(GET_TOILET), {"p1": id}).first()
         if row is None:
             return None
-        return models.Toilet(
+        return GetToiletRow(
             id=row[0],
             created=row[1],
             modified=row[2],
             establishment_name=row[3],
-            geometry=row[4],
-            location_information=row[5],
-            avg_rating_water_pressure=row[6],
-            avg_rating_cleanliness=row[7],
-            avg_rating_poopability=row[8],
+            location_information=row[4],
+            geometry=row[5],
+            avg_rating_cleanliness=row[6],
+            avg_rating_poopability=row[7],
+            avg_rating_water_pressure=row[8],
             total_reviews=row[9],
             has_bidet=row[10],
             upvotes=row[11],
@@ -158,19 +227,19 @@ class Querier:
             photos=row[13],
         )
 
-    def list_toilets(self) -> Iterator[models.Toilet]:
+    def list_toilets(self) -> Iterator[ListToiletsRow]:
         result = self._conn.execute(sqlalchemy.text(LIST_TOILETS))
         for row in result:
-            yield models.Toilet(
+            yield ListToiletsRow(
                 id=row[0],
                 created=row[1],
                 modified=row[2],
                 establishment_name=row[3],
-                geometry=row[4],
-                location_information=row[5],
-                avg_rating_water_pressure=row[6],
-                avg_rating_cleanliness=row[7],
-                avg_rating_poopability=row[8],
+                location_information=row[4],
+                geometry=row[5],
+                avg_rating_cleanliness=row[6],
+                avg_rating_poopability=row[7],
+                avg_rating_water_pressure=row[8],
                 total_reviews=row[9],
                 has_bidet=row[10],
                 upvotes=row[11],
@@ -266,22 +335,22 @@ class AsyncQuerier:
             return None
         return row[0]
 
-    async def get_toilet(self, *, id: str) -> models.Toilet | None:
+    async def get_toilet(self, *, id: str) -> GetToiletRow | None:
         row = (
             await self._conn.execute(sqlalchemy.text(GET_TOILET), {"p1": id})
         ).first()
         if row is None:
             return None
-        return models.Toilet(
+        return GetToiletRow(
             id=row[0],
             created=row[1],
             modified=row[2],
             establishment_name=row[3],
-            geometry=row[4],
-            location_information=row[5],
-            avg_rating_water_pressure=row[6],
-            avg_rating_cleanliness=row[7],
-            avg_rating_poopability=row[8],
+            location_information=row[4],
+            geometry=row[5],
+            avg_rating_cleanliness=row[6],
+            avg_rating_poopability=row[7],
+            avg_rating_water_pressure=row[8],
             total_reviews=row[9],
             has_bidet=row[10],
             upvotes=row[11],
@@ -289,19 +358,19 @@ class AsyncQuerier:
             photos=row[13],
         )
 
-    async def list_toilets(self) -> AsyncIterator[models.Toilet]:
+    async def list_toilets(self) -> AsyncIterator[ListToiletsRow]:
         result = await self._conn.stream(sqlalchemy.text(LIST_TOILETS))
         async for row in result:
-            yield models.Toilet(
+            yield ListToiletsRow(
                 id=row[0],
                 created=row[1],
                 modified=row[2],
                 establishment_name=row[3],
-                geometry=row[4],
-                location_information=row[5],
-                avg_rating_water_pressure=row[6],
-                avg_rating_cleanliness=row[7],
-                avg_rating_poopability=row[8],
+                location_information=row[4],
+                geometry=row[5],
+                avg_rating_cleanliness=row[6],
+                avg_rating_poopability=row[7],
+                avg_rating_water_pressure=row[8],
                 total_reviews=row[9],
                 has_bidet=row[10],
                 upvotes=row[11],

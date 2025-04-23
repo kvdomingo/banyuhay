@@ -45,7 +45,9 @@
           <DropdownMenuGroup>
             <DropdownMenuLabel>Hello, {$meQuery.data?.data.first_name}</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem href="/api/auth/logout">Logout</DropdownMenuItem>
+            <DropdownMenuItem href="/api/auth/logout" class="cursor-pointer">
+              Logout
+            </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>

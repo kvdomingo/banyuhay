@@ -9,11 +9,45 @@ VALUES (
 RETURNING *;
 
 -- name: ListToilets :many
-SELECT *
+SELECT
+    id,
+    created,
+    modified,
+    establishment_name,
+    location_information,
+    JSONB_BUILD_OBJECT(
+            'lat', ST_X(geometry),
+            'lng', ST_Y(geometry)
+    ) AS geometry,
+    avg_rating_cleanliness,
+    avg_rating_poopability,
+    avg_rating_water_pressure,
+    total_reviews,
+    has_bidet,
+    upvotes,
+    downvotes,
+    photos
 FROM toilets;
 
 -- name: GetToilet :one
-SELECT *
+SELECT
+    id,
+    created,
+    modified,
+    establishment_name,
+    location_information,
+    JSONB_BUILD_OBJECT(
+            'lat', ST_X(geometry),
+            'lng', ST_Y(geometry)
+    ) AS geometry,
+    avg_rating_cleanliness,
+    avg_rating_poopability,
+    avg_rating_water_pressure,
+    total_reviews,
+    has_bidet,
+    upvotes,
+    downvotes,
+    photos
 FROM toilets
 WHERE id = $1;
 
