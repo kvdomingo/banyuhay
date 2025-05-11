@@ -51,3 +51,21 @@ export const Session = z.object({
 
 // prettier-ignore
 export type Session = z.infer<typeof Session>;
+
+export const LatLng = z.object({
+  lat: z.number().gte(-90).lte(90),
+  lng: z.number().gte(-180).lte(180),
+});
+
+// prettier-ignore
+export type LatLng = z.infer<typeof LatLng>;
+
+export const BboxRequestParam = z.object({
+  nw: LatLng,
+  ne: LatLng,
+  sw: LatLng,
+  se: LatLng,
+});
+
+// prettier-ignore
+export type BboxRequestParam = z.infer<typeof BboxRequestParam>;

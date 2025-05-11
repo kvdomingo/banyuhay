@@ -1,5 +1,6 @@
 import { browser } from "$app/environment";
-import type { Review, Session, Toilet } from "$lib/types";
+import type { BboxRequestParam, Review, Session, Toilet } from "$lib/types";
+import { stringifyBbox } from "$lib/utils";
 import { QueryClient, keepPreviousData } from "@tanstack/svelte-query";
 import axios, { type AxiosResponse } from "axios";
 
@@ -13,10 +14,10 @@ export const api = {
     me: (): Promise<AxiosResponse<Session>> => axi.get("/auth/me"),
   },
   toilets: {
-    list: (): Promise<AxiosResponse<Toilet[]>> => axi.get("/toilets"),
-  },
-  reviews: {
-    list: (toilet_id: string): Promise<AxiosResponse<Review[]>> => axi.get("/reviews", {
+    list: (bbox?: BboxRequestParam): Promise<AxiosResponse<Toilet[]>> => axi.get("/toilets", {
+      params: !!bbox ? { bbox: stringifyBbox(bbox) } : undefined
+    }),
+    reviews: (toilet_id: string): Promise<AxiosResponse<Review[]>> => axi.get("/reviews", {
       params: { toilet_id }
     }),
   },

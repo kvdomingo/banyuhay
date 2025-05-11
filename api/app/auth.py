@@ -1,6 +1,7 @@
 import stytch
 from fastapi import Depends, HTTPException, Request, status
 from fastapi.security import APIKeyCookie
+from stytch.core.response_base import StytchError
 
 from app.db.generated.models import User
 from app.db.generated.users import AsyncQuerier
@@ -23,12 +24,12 @@ class StytchSessionCookie(APIKeyCookie):
         if not (stytch_jwt := request.session.get("stytch", {}).get("session_jwt")):
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
 
-        res = await stytch_client.sessions.authenticate_jwt_async(
-            session_jwt=stytch_jwt
-        )
-
-        if not res.is_success:
-            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED)
+        try:
+            res = await stytch_client.sessions.authenticate_jwt_async(
+                session_jwt=stytch_jwt
+            )
+        except StytchError as e:
+            raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED) from e
 
         user = await querier.get_user(id=res.session.user_id)
         if user is None:

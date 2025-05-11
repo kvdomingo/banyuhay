@@ -1,7 +1,9 @@
 import { cubicOut } from "svelte/easing";
 import type { TransitionConfig } from "svelte/transition";
 
+import type { BboxRequestParam } from "$lib/types";
 import { type ClassValue, clsx } from "clsx";
+import qs from "qs";
 import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
@@ -55,3 +57,12 @@ export const flyAndScale = (
     easing: cubicOut,
   };
 };
+
+export function stringifyBbox(bbox: BboxRequestParam) {
+  return qs.stringify({
+    nw: [bbox.nw.lat, bbox.nw.lng],
+    ne: [bbox.ne.lat, bbox.ne.lng],
+    sw: [bbox.sw.lat, bbox.sw.lng],
+    se: [bbox.se.lat, bbox.se.lng],
+  });
+}

@@ -1,5 +1,9 @@
 <script lang="ts">
-  import { type Map } from "maplibre-gl";
+  import { getContext, onMount } from "svelte";
+
+  import type { Writable } from "svelte/store";
+
+  import { goto } from "$app/navigation";
   import { Button } from "$lib/components/ui/button";
   import {
     Card,
@@ -8,34 +12,37 @@
     CardHeader,
     CardTitle,
   } from "$lib/components/ui/card";
-  import { Home } from "lucide-svelte";
-  import { getContext, onMount } from "svelte";
-  import type { Writable } from "svelte/store";
-  import { goto } from "$app/navigation";
   import { INITIAL_BEARING, INITIAL_CENTER, INITIAL_PITCH, INITIAL_ZOOM } from "$lib/constants";
+  import { Home } from "lucide-svelte";
+  import { type Map } from "maplibre-gl";
 
   const map = getContext<Writable<Map>>("map");
   let { lat, lng } = $map.getCenter();
+  let bbox = $map.getBounds();
   let zoom = $map.getZoom();
   let bearing = $map.getBearing();
   let pitch = $map.getPitch();
 
   function onMove() {
     const center = $map.getCenter();
+    bbox = $map.getBounds();
     lat = center.lat;
     lng = center.lng;
   }
 
   function onZoom() {
     zoom = $map.getZoom();
+    bbox = $map.getBounds();
   }
 
   function onRotate() {
     bearing = $map.getBearing();
+    bbox = $map.getBounds();
   }
 
   function onPitch() {
     pitch = $map.getPitch();
+    bbox = $map.getBounds();
   }
 
   async function onClick() {
@@ -67,7 +74,7 @@
   });
 </script>
 
-<div class="fixed left-0 top-0 z-[400] h-dvh w-1/3 p-4">
+<div class="fixed top-0 left-0 z-[400] h-dvh w-1/3 p-4">
   <Card class="h-full w-full">
     <CardHeader>
       <CardTitle class="text-4xl">Banyuhay</CardTitle>
@@ -81,7 +88,7 @@
       </CardDescription>
     </CardHeader>
     <CardContent class="flex flex-col gap-4">
-      <Button variant="outline" size="icon" on:click={resetMap}>
+      <Button variant="outline" size="icon" onclick={resetMap}>
         <Home />
       </Button>
 
@@ -94,6 +101,7 @@
           <p>zoom: {zoom.toFixed(5)}</p>
           <p>bearing: {bearing.toFixed(5)}</p>
           <p>pitch: {pitch.toFixed(5)}</p>
+          <p>bbox: {bbox}</p>
         </div>
       {/if}
     </CardContent>

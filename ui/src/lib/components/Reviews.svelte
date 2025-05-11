@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import { api } from "$lib/api";
-  import * as Avatar from "$lib/components/ui/avatar";
+  import { Avatar, AvatarFallback } from "$lib/components/ui/avatar";
   import { Skeleton } from "$lib/components/ui/skeleton/index.js";
   import { createQuery } from "@tanstack/svelte-query";
   import { Star } from "lucide-svelte";
 
   const {
     params: { toiletId },
-  } = $page;
+  } = page;
 
   const query = createQuery({
-    queryKey: ["toilets", toiletId],
+    queryKey: ["toilets", toiletId, "reviews"],
     queryFn: () => api.toilets.reviews(toiletId),
   });
 </script>
@@ -33,9 +33,9 @@
   {:else}
     {#each data as review}
       <div class="flex items-start gap-4">
-        <Avatar.Root>
-          <Avatar.Fallback>AN</Avatar.Fallback>
-        </Avatar.Root>
+        <Avatar>
+          <AvatarFallback>AN</AvatarFallback>
+        </Avatar>
         <div class="flex w-full flex-col gap-2">
           <div class="grid grid-cols-3">
             <div class="flex flex-col items-center gap-1">
