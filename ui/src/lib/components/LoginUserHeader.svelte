@@ -21,10 +21,9 @@
   });
 </script>
 
-<div class="absolute right-0 top-0 z-[400] m-4">
+<div class="absolute top-0 right-0 z-[400] m-4">
   {#if $meQuery.isError || $meQuery.isPending}
     <Button
-      variant="secondary"
       href={`https://test.stytch.com/v1/public/oauth/google/start?public_token=${
         import.meta.env.VITE_PUBLIC_STYTCH_PUBLIC_TOKEN
       }`}

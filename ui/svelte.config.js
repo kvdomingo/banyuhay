@@ -15,6 +15,9 @@ const config = {
       precompress: true,
       fallback: "index.html",
     }),
+    alias: {
+      "@/*": "./src/*",
+    },
   },
 };
 

@@ -35,6 +35,7 @@ async def create_toilet(
 ):
     if (toilet := await querier.create_toilet(body)) is None:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    await querier._conn.commit()
     return toilet
 
 
@@ -47,8 +48,13 @@ async def update_toilet(
     body: UpdateToiletParams,
     querier: AsyncQuerier = Depends(get_toilet_async_querier),
 ):
+    if id != body.id:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST)
+
     if (toilet := await querier.update_toilet(body)) is None:
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    await querier._conn.commit()
     response.status_code = status.HTTP_202_ACCEPTED
     return toilet
 
@@ -61,4 +67,5 @@ async def delete_toilet(
 ):
     if await querier.delete_toilet(id=id) is None:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+    await querier._conn.commit()
     response.status_code = status.HTTP_204_NO_CONTENT

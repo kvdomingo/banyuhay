@@ -26,15 +26,13 @@ async_engine = create_async_engine(
 sync_session_maker = sessionmaker(
     bind=sync_engine,
     autoflush=True,
-    autocommit=False,
-    expire_on_commit=False,
+    expire_on_commit=True,
 )
 
 async_session_maker = async_sessionmaker(
     bind=async_engine,
     autoflush=True,
-    autocommit=False,
-    expire_on_commit=False,
+    expire_on_commit=True,
 )
 
 

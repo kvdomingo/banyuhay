@@ -40,6 +40,7 @@ async def callback(
             last_name=res.user.name.last_name,
             avatar=None,
         )
+        await querier._conn.commit()
 
     request.session.update(
         {
