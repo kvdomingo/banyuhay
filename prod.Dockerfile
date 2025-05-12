@@ -57,4 +57,4 @@ COPY ./api ./
 COPY --from=build /app/.venv ./.venv/
 COPY --from=web-build /tmp/build ./static/
 
-ENTRYPOINT [ "/app/.venv/bin/fastapi", "run", "--host", "0.0.0.0", "--port", "8000" ]
+ENTRYPOINT [ "/app/.venv/bin/fastapi", "run", "--host", "0.0.0.0", "--port", "8000", "--app", "app", "app/app.py" ]

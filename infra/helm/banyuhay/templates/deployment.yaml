@@ -45,10 +45,22 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          startupProbe:
+            httpGet:
+              {{- toYaml .Values.startupProbe.httpGet | nindent 14 }}
+            periodSeconds: 10
+            timeoutSeconds: 3
+            successThreshold: 1
+            failureThreshold: 60
+            initialDelaySeconds: 30
           livenessProbe:
-            {{- toYaml .Values.livenessProbe | nindent 12 }}
-          readinessProbe:
-            {{- toYaml .Values.readinessProbe | nindent 12 }}
+            httpGet:
+              {{- toYaml .Values.livenessProbe.httpGet | nindent 14 }}
+            periodSeconds: 20
+            timeoutSeconds: 3
+            successThreshold: 1
+            failureThreshold: 3
+            initialDelaySeconds: 30
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}

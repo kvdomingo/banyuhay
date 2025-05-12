@@ -93,7 +93,7 @@ livenessProbe:
   httpGet:
     path: /api/health
     port: http
-readinessProbe:
+startupProbe:
   httpGet:
     path: /api/health
     port: http
