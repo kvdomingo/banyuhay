@@ -1,16 +1,16 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import { api } from "$lib/api";
   import Reviews from "$lib/components/Reviews.svelte";
   import { cn } from "$lib/utils";
   import { createQuery } from "@tanstack/svelte-query";
   import { MilkOff, SprayCan, Star } from "lucide-svelte";
 
-  const { toiletId } = $page.params;
+  const { toiletId } = page.params;
 
   const query = createQuery({
     queryKey: ["toilets"],
-    queryFn: api.toilets.list,
+    queryFn: () => api.toilets.list(),
   });
 </script>
 

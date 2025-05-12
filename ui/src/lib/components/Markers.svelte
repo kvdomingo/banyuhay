@@ -22,7 +22,7 @@
     se: bounds.getSouthEast(),
   });
   let queryOpts = $derived({
-    queryKey: ["toilets", bbox.nw, bbox.ne, bbox.sw, bbox.se],
+    queryKey: ["toilets"],
     queryFn: () => api.toilets.list(bbox),
   });
 
