@@ -57,7 +57,7 @@ services:
       - -c
       - bun install && exec bun run dev
     volumes:
-      - ./ui:/app
+      - ./ui-next:/app
     ports:
       - '3000:3000'
 
