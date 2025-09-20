@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import logo from "../logo.svg";
+import { Map as MapLibre } from "@vis.gl/react-maplibre";
+import { InfoPanel } from "@/components/info-panel";
 
 export const Route = createFileRoute("/")({
   component: Page,
@@ -7,33 +8,22 @@ export const Route = createFileRoute("/")({
 
 function Page() {
   return (
-    <div className="text-center">
-      <header className="min-h-screen flex flex-col items-center justify-center bg-[#282c34] text-white text-[calc(10px+2vmin)]">
-        <img
-          src={logo}
-          className="h-[40vmin] pointer-events-none animate-[spin_20s_linear_infinite]"
-          alt="logo"
-        />
-        <p>
-          Edit <code>src/routes/index.tsx</code> and save to reload.
-        </p>
-        <a
-          className="text-[#61dafb] hover:underline"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <a
-          className="text-[#61dafb] hover:underline"
-          href="https://tanstack.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn TanStack
-        </a>
-      </header>
-    </div>
+    <MapLibre
+      initialViewState={{
+        zoom: 10.5,
+        latitude: 14.56,
+        longitude: 121.04,
+      }}
+      mapStyle="https://tiles.openfreemap.org/styles/bright"
+      style={{ height: "100vh", position: "fixed" }}
+      maxPitch={0}
+      minPitch={0}
+      pitch={0}
+      bearing={0}
+      attributionControl={false}
+      cancelPendingTileRequestsWhileZooming
+    >
+      <InfoPanel />
+    </MapLibre>
   );
 }

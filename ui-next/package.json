@@ -11,7 +11,8 @@
     "test": "vitest run",
     "format": "biome format",
     "lint": "biome lint",
-    "check": "biome check"
+    "check": "biome check",
+    "generate-api-types": "openapi-typescript http://localhost:8000/api/openapi.json -o ./src/lib/types/generated.ts"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",
@@ -25,6 +26,7 @@
     "@radix-ui/react-switch": "^1.2.6",
     "@stytch/vanilla-js": "^5.35.1",
     "@t3-oss/env-core": "^0.12.0",
+    "@tailwindcss/typography": "^0.5.18",
     "@tailwindcss/vite": "^4.0.6",
     "@tanstack/react-devtools": "^0.2.2",
     "@tanstack/react-form": "^1.0.0",
@@ -39,6 +41,8 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.544.0",
     "maplibre-gl": "^5.7.3",
+    "openapi-fetch": "^0.14.0",
+    "openapi-typescript": "^7.9.1",
     "pmtiles": "^4.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

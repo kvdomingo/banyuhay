@@ -1,26 +1,45 @@
-import { Outlet, createRootRouteWithContext } from "@tanstack/react-router";
-import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanstackDevtools } from "@tanstack/react-devtools";
-
-import { Header } from "../components/header";
-
-import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
-
 import type { QueryClient } from "@tanstack/react-query";
+import {
+  createRootRouteWithContext,
+  HeadContent,
+  Outlet,
+} from "@tanstack/react-router";
+import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import { MapProvider } from "@vis.gl/react-maplibre";
+import maplibregl from "maplibre-gl";
+import { Protocol } from "pmtiles";
+import { useEffect } from "react";
+import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 
 interface MyRouterContext {
   queryClient: QueryClient;
 }
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
-  component: Page,
+  component: Layout,
 });
 
-function Page() {
+function Layout() {
+  useEffect(() => {
+    const protocol = new Protocol();
+    maplibregl.addProtocol("pmtiles", protocol.tile);
+
+    return () => {
+      maplibregl.removeProtocol("pmtiles");
+    };
+  }, []);
+
   return (
     <>
-      <Header />
-      <Outlet />
+      <HeadContent />
+
+      <main>
+        <MapProvider>
+          <Outlet />
+        </MapProvider>
+      </main>
+
       <TanstackDevtools
         config={{
           position: "bottom-left",
