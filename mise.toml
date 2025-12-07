@@ -1,5 +1,5 @@
 [tools]
 bun = "latest"
-python = "3.12"
+python = "3.13"
 task = "latest"
 uv = "latest"

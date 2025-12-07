@@ -15,6 +15,9 @@ app = FastAPI(
     docs_url="/docs",
     redoc_url="/redoc",
     default_response_class=ORJSONResponse,
+    swagger_ui_parameters={
+        "persistAuthorization": True,
+    },
 )
 
 

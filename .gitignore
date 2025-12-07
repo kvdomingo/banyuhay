@@ -338,3 +338,4 @@ terraform.rc
 .tfplan
 
 data/
+!data/**/*.dvc
