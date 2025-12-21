@@ -39,10 +39,10 @@ class Settings(BaseSettings):
 
     @computed_field
     @property
-    def DATABASE_PARAMETERS(self) -> dict[str, str | int]:
+    def DATABASE_PARAMETERS(self) -> dict[str, str]:
         return {
             "host": self.POSTGRESQL_HOST,
-            "port": self.POSTGRESQL_PORT,
+            "port": str(self.POSTGRESQL_PORT),
             "username": self.POSTGRESQL_USERNAME,
             "password": self.POSTGRESQL_PASSWORD,
             "path": self.POSTGRESQL_DATABASE,
@@ -71,7 +71,7 @@ class Settings(BaseSettings):
 
 @lru_cache
 def get_settings():
-    return Settings()
+    return Settings()  # ty:ignore[missing-argument]
 
 
 settings = get_settings()
