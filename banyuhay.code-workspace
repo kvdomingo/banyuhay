@@ -1,50 +1,52 @@
 {
-    "folders": [
-        {
-            "path": ".",
-            "name": "root"
-        },
-        {
-            "path": "api",
-            "name": "api"
-        },
-        {
-            "path": "pipelines",
-            "name": "pipelines"
-        },
-        {
-            "path": "ui",
-            "name": "ui"
-        },
-        {
-            "path": "ui-next",
-            "name": "ui-next"
-        }
-    ],
-    "settings": {
-        "files.watcherExclude": {
-            "**/routeTree.gen.ts": true
-        },
-        "search.exclude": {
-            "**/routeTree.gen.ts": true
-        },
-        "files.readonlyInclude": {
-            "**/routeTree.gen.ts": true
-        },
-        "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc][css]": {
-            "editor.defaultFormatter": "biomejs.biome",
-            "editor.formatOnSave": true,
-            "editor.codeActionsOnSave": {
-                "source.organizeImports.biome": "explicit",
-                "source.removeUnusedImports": "explicit",
-                "source.fixAll.biome": "explicit"
-            },
-            "editor.indentSize": 2
-        },
-        "editor.codeActionsOnSave": {
-            "source.organizeImports.biome": "explicit"
-        },
-        "biome.configurationPath": "./ui-next/biome.json",
-        "biome.lsp.bin": "./ui-next/node_modules/.bin/biome"
+  "folders": [
+    {
+      "path": ".",
+      "name": "root"
+    },
+    {
+      "path": "api",
+      "name": "api"
+    },
+    {
+      "path": "pipelines",
+      "name": "pipelines"
+    },
+    {
+      "path": "ui",
+      "name": "ui"
+    },
+    {
+      "path": "ui-start",
+      "name": "ui-start"
     }
+  ],
+  "settings": {
+    "files.watcherExclude": {
+      "**/routeTree.gen.ts": true
+    },
+    "search.exclude": {
+      "**/routeTree.gen.ts": true
+    },
+    "files.readonlyInclude": {
+      "**/routeTree.gen.ts": true
+    },
+    "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc][css]": {
+      "editor.defaultFormatter": "biomejs.biome",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports.biome": "explicit",
+        "source.removeUnusedImports": "explicit",
+        "source.fixAll.biome": "explicit"
+      },
+      "editor.indentSize": 2
+    },
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.biome": "explicit"
+    },
+    "vscord.app.privacyMode.enable": false,
+    "prettier.enable": false,
+    "biome.configurationPath": "./ui-start/biome.json",
+    "biome.lsp.bin": "./ui-start/node_modules/.bin/biome"
+  }
 }

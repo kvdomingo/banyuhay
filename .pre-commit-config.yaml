@@ -5,15 +5,15 @@ repos:
       - id: ruff
         args: [--fix]
       - id: ruff-format
-  # - repo: https://github.com/biomejs/pre-commit
-  #   rev: v2.2.4
-  #   hooks:
-  #     - id: biome-check
-  #       additional_dependencies:
-  #         - "@biomejs/biome@2.2.4"
-  #       args: [--config-path, ./ui-next/biome.json, --unsafe, "./ui-next"]
+  - repo: https://github.com/biomejs/pre-commit
+    rev: v2.2.4
+    hooks:
+      - id: biome-check
+        additional_dependencies:
+          - "@biomejs/biome@2.2.4"
+        args: [--config-path, ./ui-start/biome.json, --unsafe, "./ui-start"]
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v6.0.0
     hooks:
       - id: check-added-large-files
         args: ["--maxkb=500"]
@@ -24,7 +24,7 @@ repos:
       - id: check-yaml
         args: ["--allow-multiple-documents"]
   - repo: https://github.com/zricethezav/gitleaks
-    rev: v8.18.4
+    rev: v8.30.0
     hooks:
       - id: gitleaks
         args: ["--verbose"]

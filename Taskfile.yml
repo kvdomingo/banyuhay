@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 env:
   COMMIT_SHA:
@@ -13,8 +13,8 @@ tasks:
   setup:
     desc: Setup the project
     cmds:
-      - pip install -U pre-commit
-      - pre-commit install
+      - pip install -U prek
+      - prek install
       - task: setup-api
       - task: setup-pipelines
       - task: setup-ui
@@ -22,12 +22,12 @@ tasks:
   setup-api:
     desc: Setup backend
     dir: api
-    cmd: uv sync
+    cmd: uv sync --dev --all-extras
 
   setup-pipelines:
     desc: Setup pipelines
     dir: pipelines
-    cmd: uv sync
+    cmd: uv sync --dev --all-extras
 
   setup-ui:
     desc: Setup frontend
