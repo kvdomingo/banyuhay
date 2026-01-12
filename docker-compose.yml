@@ -14,7 +14,6 @@ services:
       dockerfile: ../Dockerfile
     image: kvdomingo/banyuhay-api
     restart: unless-stopped
-    init: true
     environment:
       PYTHON_ENV: development
       POSTGRESQL_USERNAME: postgres
@@ -44,34 +43,35 @@ services:
         condition: service_healthy
 
   ui:
-    image: oven/bun:1.2-alpine
+    image: oven/bun:1-alpine
     restart: unless-stopped
     init: true
     working_dir: /app
     environment:
       NODE_ENV: development
-      VITE_PUBLIC_APP_HOST: http://localhost:3000
-      VITE_PUBLIC_STYTCH_PUBLIC_TOKEN: ${STYTCH_PUBLIC_TOKEN}
+      VITE_APP_HOST: http://localhost:3000
+      VITE_STYTCH_PUBLIC_TOKEN: ${STYTCH_PUBLIC_TOKEN}
     entrypoint:
       - /bin/sh
       - -c
       - bun install && exec bun run dev
     volumes:
-      - ./ui-next:/app
+      - ./ui-start:/app
     ports:
       - '3000:3000'
 
   db:
-    image: bitnami/postgresql:16.4.0-debian-12-r8
+    image: ghcr.io/kvdomingo/postgresql-pig:18
     restart: unless-stopped
     environment:
-      POSTGRESQL_PASSWORD: postgres
+      POSTGRES_PASSWORD: postgres
     volumes:
-      - db-data:/bitnami/postgresql
+      - db-data:/var/lib/postgresql
+      - ./initdb:/docker-entrypoint-initdb.d
     ports:
       - '5432:5432'
     healthcheck:
-      test: [ 'CMD', 'pg_isready', '-U', '$${POSTGRESQL_USERNAME}', '-d', '$${POSTGRESQL_DATABASE}' ]
+      test: [ 'CMD', 'pg_isready', '-U', 'postgres', '-d', 'postgres' ]
       start_period: 10s
       retries: 3
       interval: 20s
@@ -83,13 +83,12 @@ services:
       dockerfile: ../Dockerfile
     image: kvdomingo/banyuhay-pipelines
     restart: unless-stopped
-    init: true
     environment:
       PYTHON_ENV: development
       DAGSTER_HOME: /opt/dagster
-      POSTGRESQL_USERNAME: postgres
-      POSTGRESQL_PASSWORD: postgres
-      POSTGRESQL_DATABASE: postgres
+      POSTGRESQL_USERNAME: dagster
+      POSTGRESQL_PASSWORD: dagster
+      POSTGRESQL_DATABASE: dagster
       GOOGLE_MAPS_API_KEY: ${GOOGLE_MAPS_API_KEY}
     command:
       - |
@@ -103,22 +102,8 @@ services:
     ports:
       - '3030:3030'
     depends_on:
-      dagster-db:
+      db:
         condition: service_healthy
-
-  dagster-db:
-    image: bitnami/postgresql:16.4.0-debian-12-r8
-    restart: unless-stopped
-    environment:
-      POSTGRESQL_PASSWORD: postgres
-    volumes:
-      - dagster-db-data:/bitnami/postgresql
-    healthcheck:
-      test: [ 'CMD', 'pg_isready', '-U', '$${POSTGRESQL_USERNAME}', '-d', '$${POSTGRESQL_DATABASE}' ]
-      start_period: 10s
-      retries: 3
-      interval: 20s
-      timeout: 2s
 
   pgadmin:
     image: dpage/pgadmin4:9

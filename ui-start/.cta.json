@@ -10,13 +10,11 @@
   "framework": "react-cra",
   "chosenAddOns": [
     "biome",
-    "nitro",
-    "start",
     "compiler",
     "db",
     "shadcn",
     "t3env",
     "tanstack-query",
-    "oRPC"
+    "start"
   ]
 }

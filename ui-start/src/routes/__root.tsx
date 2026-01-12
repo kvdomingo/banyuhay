@@ -1,64 +1,139 @@
+import inter from "@fontsource-variable/inter/wght?url";
+import interItalic from "@fontsource-variable/inter/wght-italic?url";
+import { TanStackDevtools } from "@tanstack/react-devtools";
+import type { QueryClient } from "@tanstack/react-query";
 import {
+  createRootRouteWithContext,
   HeadContent,
   Scripts,
-  createRootRouteWithContext,
-} from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
+} from "@tanstack/react-router";
+import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import maplibre from "maplibre-gl";
+import { Protocol } from "pmtiles";
+import { LoginUserHeader } from "@/components/login-user-header";
+import { Map as MapLibre } from "@/components/ui/map";
+import {
+  INITIAL_BEARING,
+  INITIAL_CENTER,
+  INITIAL_PITCH,
+  INITIAL_ZOOM,
+} from "@/lib/constants";
+import appCss from "@/styles.css?url";
+import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 
-import Header from '../components/Header'
-
-import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
-
-import appCss from '../styles.css?url'
-
-import type { QueryClient } from '@tanstack/react-query'
-
-interface MyRouterContext {
-  queryClient: QueryClient
+interface RouterContext {
+  queryClient: QueryClient;
 }
 
-export const Route = createRootRouteWithContext<MyRouterContext>()({
+export const Route = createRootRouteWithContext<RouterContext>()({
   head: () => ({
     meta: [
       {
-        charSet: 'utf-8',
+        charSet: "utf-8",
       },
       {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
+        name: "viewport",
+        content: "width=device-width, initial-scale=1",
       },
       {
-        title: 'TanStack Start Starter',
+        title: "Banyuhay",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:title",
+        content: "Banyuhay",
+      },
+      {
+        property: "og:description",
+        content: "Banyo ng buhay",
+      },
+      {
+        property: "og:url",
+        content: "https://banyuh.ai",
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image",
+      },
+      {
+        name: "twitter:creator",
+        content: "@rockentothemoon",
+      },
+      {
+        name: "twitter:title",
+        content: "Banyuhay",
+      },
+      {
+        name: "twitter:description",
+        content: "Banyo ng buhay",
+      },
+      {
+        name: "twitter:url",
+        content: "https://banyuh.ai",
       },
     ],
     links: [
       {
-        rel: 'stylesheet',
+        rel: "icon",
+        href: "/favicon.png",
+      },
+      {
+        rel: "stylesheet",
+        href: inter,
+      },
+      {
+        rel: "stylesheet",
+        href: interItalic,
+      },
+      {
+        rel: "stylesheet",
         href: appCss,
       },
     ],
   }),
 
-  shellComponent: RootDocument,
-})
+  shellComponent: Layout,
+  beforeLoad: () => {
+    const protocol = new Protocol();
+    maplibre.addProtocol("pmtiles", protocol.tile);
+  },
+});
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         <HeadContent />
       </head>
-      <body>
-        <Header />
-        {children}
+      <body className="dark">
+        <main className="h-dvh w-dvw">
+          <LoginUserHeader />
+
+          <MapLibre
+            center={INITIAL_CENTER}
+            zoom={INITIAL_ZOOM}
+            pitch={INITIAL_PITCH}
+            bearing={INITIAL_BEARING}
+            styles={{
+              light: "https://tiles.openfreemap.org/styles/bright",
+              dark: "https://tiles.openfreemap.org/styles/dark",
+            }}
+            scrollZoom
+          >
+            {children}
+          </MapLibre>
+        </main>
+
         <TanStackDevtools
           config={{
-            position: 'bottom-right',
+            position: "bottom-right",
           }}
           plugins={[
             {
-              name: 'Tanstack Router',
+              name: "Tanstack Router",
               render: <TanStackRouterDevtoolsPanel />,
             },
             TanStackQueryDevtools,
@@ -67,5 +142,5 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }

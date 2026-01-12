@@ -39,10 +39,10 @@ class Settings(BaseSettings):
 
     @computed_field
     @property
-    def DATABASE_PARAMETERS(self) -> dict[str, str]:
+    def DATABASE_PARAMETERS(self) -> dict[str, str | int]:
         return {
             "host": self.POSTGRESQL_HOST,
-            "port": str(self.POSTGRESQL_PORT),
+            "port": self.POSTGRESQL_PORT,
             "username": self.POSTGRESQL_USERNAME,
             "password": self.POSTGRESQL_PASSWORD,
             "path": self.POSTGRESQL_DATABASE,
@@ -53,7 +53,7 @@ class Settings(BaseSettings):
     def ASYNC_DATABASE_URL(self) -> str:
         return str(
             PostgresDsn.build(
-                **self.DATABASE_PARAMETERS,
+                **self.DATABASE_PARAMETERS,  # pyright: ignore[reportArgumentType]
                 scheme="postgresql+asyncpg",
             )
         )
@@ -63,7 +63,7 @@ class Settings(BaseSettings):
     def SYNC_DATABASE_URL(self) -> str:
         return str(
             PostgresDsn.build(
-                **self.DATABASE_PARAMETERS,
+                **self.DATABASE_PARAMETERS,  # pyright: ignore[reportArgumentType]
                 scheme="postgresql+psycopg2",
             )
         )
@@ -71,7 +71,7 @@ class Settings(BaseSettings):
 
 @lru_cache
 def get_settings():
-    return Settings()  # ty:ignore[missing-argument]
+    return Settings()  # ty:ignore[missing-argument]  # pyright: ignore[reportCallIssue]
 
 
 settings = get_settings()

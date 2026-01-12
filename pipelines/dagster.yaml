@@ -4,10 +4,10 @@ telemetry:
 storage:
   postgres:
     postgres_db:
-      username: postgres
-      password: postgres
-      db_name: postgres
-      hostname: dagster-db
+      username: dagster
+      password: dagster
+      db_name: dagster
+      hostname: db
       port: 5432
 
 run_launcher:
