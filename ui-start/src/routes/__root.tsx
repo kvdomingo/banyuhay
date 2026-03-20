@@ -11,6 +11,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import maplibre from "maplibre-gl";
 import { Protocol } from "pmtiles";
 import { LoginUserHeader } from "@/components/login-user-header";
+import { Markers } from "@/components/markers";
 import { Map as MapLibre } from "@/components/ui/map";
 import {
   INITIAL_BEARING,
@@ -123,6 +124,7 @@ function Layout({ children }: { children: React.ReactNode }) {
             }}
             scrollZoom
           >
+            <Markers />
             {children}
           </MapLibre>
         </main>

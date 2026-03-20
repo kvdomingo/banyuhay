@@ -1,3 +1,4 @@
+import { env } from "@/env";
 import { api } from "@/lib/api";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Button } from "./ui/button";
@@ -17,7 +18,13 @@ export function LoginUserHeader() {
   return (
     <div className="absolute top-0 right-0 z-50 m-4">
       {isError || isPending ? (
-        <Button>Login</Button>
+        <Button asChild>
+          <a
+            href={`https://test.stytch.com/v1/public/oauth/google/start?public_token=${env.VITE_STYTCH_PUBLIC_TOKEN}`}
+          >
+            Login
+          </a>
+        </Button>
       ) : (
         <DropdownMenu>
           <DropdownMenuTrigger>
