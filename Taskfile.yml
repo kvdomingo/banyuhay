@@ -82,7 +82,8 @@ tasks:
 
   load-fixtures:
     desc: Load database fixtures
-    cmd: task exec -- api uv run python -m scripts.load_fixtures toilets reviews
+    dir: ./api/app/fixtures
+    cmd: psql -f seed-data.sql postgres://postgres:postgres@localhost:5432/postgres
 
   push-cr:
     desc: Push production image
