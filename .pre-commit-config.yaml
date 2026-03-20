@@ -5,13 +5,12 @@ repos:
       - id: ruff
         args: [--fix]
       - id: ruff-format
-  - repo: local
+  - repo: https://github.com/biomejs/pre-commit
+    rev: v2.4.8
     hooks:
       - id: biome-check
-        name: biome check
-        entry: /bin/bash -euxo pipefail -c "cd ui-start && bun run check"
-        language: system
-        types: [text]
+        additional_dependencies:
+          - "@biomejs/biome@2.4.8"
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:

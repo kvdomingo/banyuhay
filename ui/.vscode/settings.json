@@ -1,11 +1,25 @@
 {
   "files.watcherExclude": {
-    "**/routeTree.gen.ts": true
+    "**/routeTree.gen.ts": true,
+    "**/src/lib/api/generated.d.ts": true
   },
   "search.exclude": {
-    "**/routeTree.gen.ts": true
+    "**/routeTree.gen.ts": true,
+    "**/src/lib/api/generated.d.ts": true
   },
   "files.readonlyInclude": {
-    "**/routeTree.gen.ts": true
+    "**/routeTree.gen.ts": true,
+    "**/src/lib/api/generated.d.ts": true
+  },
+  "prettier.enable": false,
+  "biome.enabled": true,
+  "[javascript][typescript][javascriptreact][typescriptreact][html][css][json][jsonc][vue][astro]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.biome": "explicit",
+      "source.fixAll.biome": "explicit"
+    },
+    "editor.indentSize": 2
   }
 }

@@ -1,9 +1,9 @@
-FROM python:3.12-slim AS base
+FROM python:3.13-slim AS base
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV UV_VERSION=0.6.13
+ENV UV_VERSION=0.10.11
 ENV PATH="/root/.local/bin:/root/.cargo/bin:${PATH}"
 
 WORKDIR /app

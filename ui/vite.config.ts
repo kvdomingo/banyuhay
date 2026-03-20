@@ -1,8 +1,25 @@
-import { sveltekit } from "@sveltejs/kit/vite";
 import tailwindcss from "@tailwindcss/vite";
+import { devtools } from "@tanstack/devtools-vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import viteReact from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+import viteTsConfigPaths from "vite-tsconfig-paths";
 
-export default defineConfig({
+const config = defineConfig({
+  plugins: [
+    devtools(),
+    // this is the plugin that enables path aliases
+    viteTsConfigPaths({
+      projects: ["./tsconfig.json"],
+    }),
+    tailwindcss(),
+    tanstackStart(),
+    viteReact({
+      babel: {
+        plugins: ["babel-plugin-react-compiler"],
+      },
+    }),
+  ],
   server: {
     host: "0.0.0.0",
     port: 3000,
@@ -14,5 +31,6 @@ export default defineConfig({
       },
     },
   },
-  plugins: [tailwindcss(), sveltekit()],
 });
+
+export default config;

@@ -4,8 +4,6 @@ volumes:
   venv-data:
   dagster-venv-data:
   db-data:
-  dagster-db-data:
-  pgadmin-data:
 
 services:
   api:
@@ -56,7 +54,7 @@ services:
       - -c
       - bun install && exec bun run dev
     volumes:
-      - ./ui-start:/app
+      - ./ui:/app
     ports:
       - '3000:3000'
 
