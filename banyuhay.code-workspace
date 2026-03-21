@@ -15,10 +15,6 @@
     {
       "path": "ui",
       "name": "ui"
-    },
-    {
-      "path": "ui-start",
-      "name": "ui-start"
     }
   ],
   "settings": {
@@ -46,7 +42,7 @@
     },
     "vscord.app.privacyMode.enable": false,
     "prettier.enable": false,
-    "biome.configurationPath": "./ui-start/biome.json",
-    "biome.lsp.bin": "./ui-start/node_modules/.bin/biome"
+    "biome.configurationPath": "./ui/biome.json",
+    "biome.lsp.bin": "./ui/node_modules/.bin/biome"
   }
 }
