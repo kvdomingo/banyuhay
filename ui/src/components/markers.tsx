@@ -1,7 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { useNavigate, useParams } from "@tanstack/react-router";
 import { MapPin, MapPinX } from "lucide-react";
 import type { LngLatBounds } from "maplibre-gl";
+import qs from "qs";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import { MapMarker, MarkerContent, useMap } from "./ui/map";
@@ -19,20 +20,19 @@ function stringifyBbox(bounds: LngLatBounds): string {
   const ne = bounds.getNorthEast();
   const sw = bounds.getSouthWest();
   const se = bounds.getSouthEast();
-  // Replicates qs.stringify({ nw: [lat, lng], ne: [...], sw: [...], se: [...] })
-  return [
-    `nw[0]=${nw.lat}&nw[1]=${nw.lng}`,
-    `ne[0]=${ne.lat}&ne[1]=${ne.lng}`,
-    `sw[0]=${sw.lat}&sw[1]=${sw.lng}`,
-    `se[0]=${se.lat}&se[1]=${se.lng}`,
-  ].join("&");
+
+  return qs.stringify({
+    nw: [nw.lat, nw.lng],
+    ne: [ne.lat, ne.lng],
+    sw: [sw.lat, sw.lng],
+    se: [se.lat, se.lng],
+  });
 }
 
 export function Markers() {
   const { map, isLoaded } = useMap();
   const navigate = useNavigate();
-  const params = useParams({ strict: false }) as { toiletId?: string };
-  const currentToiletId = params.toiletId;
+  const { toiletId: currentToiletId } = useParams({ strict: false });
 
   const [bounds, setBounds] = useState<LngLatBounds | null>(
     () => map?.getBounds() ?? null,
@@ -72,7 +72,7 @@ export function Markers() {
       return res.json();
     },
     enabled: isLoaded,
-    placeholderData: (prev) => prev,
+    placeholderData: keepPreviousData,
   });
 
   return (

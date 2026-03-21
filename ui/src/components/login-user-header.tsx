@@ -1,5 +1,5 @@
 import { env } from "@/env";
-import { api } from "@/lib/api";
+import { queryApi } from "@/lib/api";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Button } from "./ui/button";
 import {
@@ -13,7 +13,7 @@ import {
 } from "./ui/dropdown-menu";
 
 export function LoginUserHeader() {
-  const { data: me, isPending, isError } = api.useQuery("get", "/auth/me");
+  const { data: me, isPending, isError } = queryApi.useQuery("get", "/auth/me");
 
   return (
     <div className="absolute top-0 right-0 z-50 m-4">

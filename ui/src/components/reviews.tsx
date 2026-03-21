@@ -1,5 +1,5 @@
 import { Star } from "lucide-react";
-import { api } from "@/lib/api";
+import { queryApi } from "@/lib/api";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Skeleton } from "./ui/skeleton";
 
@@ -12,7 +12,7 @@ export function Reviews({ toiletId }: ReviewsProps) {
     data: reviews,
     isPending,
     isError,
-  } = api.useQuery("get", "/reviews", {
+  } = queryApi.useQuery("get", "/reviews", {
     params: { query: { toilet_id: toiletId } },
   });
 

@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as AppRouteImport } from './routes/_app'
 import { Route as AppIndexRouteImport } from './routes/_app/index'
 import { Route as AppToiletIdRouteImport } from './routes/_app/$toiletId'
+import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc.$'
 
 const AppRoute = AppRouteImport.update({
   id: '/_app',
@@ -27,31 +28,40 @@ const AppToiletIdRoute = AppToiletIdRouteImport.update({
   path: '/$toiletId',
   getParentRoute: () => AppRoute,
 } as any)
+const ApiRpcSplatRoute = ApiRpcSplatRouteImport.update({
+  id: '/api/rpc/$',
+  path: '/api/rpc/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/$toiletId': typeof AppToiletIdRoute
   '/': typeof AppIndexRoute
+  '/api/rpc/$': typeof ApiRpcSplatRoute
 }
 export interface FileRoutesByTo {
   '/$toiletId': typeof AppToiletIdRoute
   '/': typeof AppIndexRoute
+  '/api/rpc/$': typeof ApiRpcSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_app': typeof AppRouteWithChildren
   '/_app/$toiletId': typeof AppToiletIdRoute
   '/_app/': typeof AppIndexRoute
+  '/api/rpc/$': typeof ApiRpcSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/$toiletId' | '/'
+  fullPaths: '/$toiletId' | '/' | '/api/rpc/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/$toiletId' | '/'
-  id: '__root__' | '/_app' | '/_app/$toiletId' | '/_app/'
+  to: '/$toiletId' | '/' | '/api/rpc/$'
+  id: '__root__' | '/_app' | '/_app/$toiletId' | '/_app/' | '/api/rpc/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   AppRoute: typeof AppRouteWithChildren
+  ApiRpcSplatRoute: typeof ApiRpcSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -77,6 +87,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppToiletIdRouteImport
       parentRoute: typeof AppRoute
     }
+    '/api/rpc/$': {
+      id: '/api/rpc/$'
+      path: '/api/rpc/$'
+      fullPath: '/api/rpc/$'
+      preLoaderRoute: typeof ApiRpcSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -94,6 +111,7 @@ const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   AppRoute: AppRouteWithChildren,
+  ApiRpcSplatRoute: ApiRpcSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

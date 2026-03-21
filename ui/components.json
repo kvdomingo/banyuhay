@@ -19,6 +19,6 @@
   },
   "iconLibrary": "lucide",
   "registries": {
-    "@mapcn": "https://mapcn.dev/maps/{name}.json"
+    "@mapcn": "https://mapcn.dev/r/{name}.json"
   }
 }
