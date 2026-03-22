@@ -49,10 +49,13 @@ services:
       NODE_ENV: development
       VITE_APP_HOST: http://localhost:3000
       VITE_STYTCH_PUBLIC_TOKEN: ${STYTCH_PUBLIC_TOKEN}
-    entrypoint:
-      - /bin/sh
+    entrypoint: [/bin/sh]
+    command:
+      - -eu
       - -c
-      - bun install && exec bun run dev
+      - |
+        bun install
+        exec bun run dev
     volumes:
       - ./ui:/app
     ports:
@@ -102,3 +105,14 @@ services:
     depends_on:
       db:
         condition: service_healthy
+
+  db-mcp:
+    image: crystaldba/postgres-mcp
+    restart: unless-stopped
+    environment:
+      DATABASE_URI: postgres://postgres:postgres@db:5432/postgres
+    command:
+      - --access-mode=unrestricted
+      - --transport=sse
+    ports:
+      - 8080:8000

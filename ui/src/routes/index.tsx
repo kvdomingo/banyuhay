@@ -1,17 +1,28 @@
-import { Outlet } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { HomeIcon } from "lucide-react";
 import { useCallback } from "react";
+import { ReviewsContainer } from "@/components/reviews-container";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { useMap } from "@/components/ui/map";
 import {
   INITIAL_BEARING,
   INITIAL_CENTER,
   INITIAL_PITCH,
   INITIAL_ZOOM,
 } from "@/lib/constants";
-import { Button } from "./ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
-import { useMap } from "./ui/map";
 
-export function MainCard() {
+export const Route = createFileRoute("/")({
+  component: Page,
+});
+
+function Page() {
   const { map, isLoaded } = useMap();
 
   const resetMap = useCallback(() => {
@@ -42,7 +53,7 @@ export function MainCard() {
             <HomeIcon />
           </Button>
 
-          <Outlet />
+          <ReviewsContainer />
         </CardContent>
       </Card>
     </div>

@@ -1,0 +1,7 @@
+{
+    "mcpServers": {
+        "postgres-mcp": {
+            "url": "http://localhost:8080/sse"
+        }
+    }
+}

@@ -1,5 +1,6 @@
+import { useQuery } from "@tanstack/react-query";
 import { Star } from "lucide-react";
-import { queryApi } from "@/lib/api";
+import { orpc } from "@/api";
 import { Avatar, AvatarFallback } from "./ui/avatar";
 import { Skeleton } from "./ui/skeleton";
 
@@ -12,9 +13,13 @@ export function Reviews({ toiletId }: ReviewsProps) {
     data: reviews,
     isPending,
     isError,
-  } = queryApi.useQuery("get", "/reviews", {
-    params: { query: { toilet_id: toiletId } },
-  });
+  } = useQuery(
+    orpc.review.list.queryOptions({
+      input: {
+        toilet_id: toiletId,
+      },
+    }),
+  );
 
   if (isPending) {
     return (
@@ -53,8 +58,8 @@ export function Reviews({ toiletId }: ReviewsProps) {
                     ) : (
                       Array.from({ length: review.rating_water_pressure }).map(
                         (_, i) => (
-                          // biome-ignore lint/suspicious/noArrayIndexKey: index is fine for static star arrays
                           <Star
+                            // biome-ignore lint/suspicious/noArrayIndexKey: index is fine for static star arrays
                             key={i}
                             className="fill-amber-500 text-amber-500"
                             size="1rem"
@@ -71,8 +76,8 @@ export function Reviews({ toiletId }: ReviewsProps) {
                       <span>💩</span>
                     ) : (
                       Array.from({ length: review.rating_cleanliness }).map((_, i) => (
-                        // biome-ignore lint/suspicious/noArrayIndexKey: index is fine for static star arrays
                         <Star
+                          // biome-ignore lint/suspicious/noArrayIndexKey: index is fine for static star arrays
                           key={i}
                           className="fill-amber-500 text-amber-500"
                           size="1rem"
@@ -88,8 +93,8 @@ export function Reviews({ toiletId }: ReviewsProps) {
                       <span>💩</span>
                     ) : (
                       Array.from({ length: review.rating_poopability }).map((_, i) => (
-                        // biome-ignore lint/suspicious/noArrayIndexKey: index is fine for static star arrays
                         <Star
+                          // biome-ignore lint/suspicious/noArrayIndexKey: index is fine for static star arrays
                           key={i}
                           className="fill-amber-500 text-amber-500"
                           size="1rem"

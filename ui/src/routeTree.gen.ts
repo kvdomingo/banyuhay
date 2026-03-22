@@ -8,120 +8,79 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { Route as rootRouteImport } from './routes/__root'
-import { Route as AppRouteImport } from './routes/_app'
-import { Route as AppIndexRouteImport } from './routes/_app/index'
-import { Route as AppToiletIdRouteImport } from './routes/_app/$toiletId'
-import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc.$'
+import { Route as rootRouteImport } from "./routes/__root";
+import { Route as IndexRouteImport } from "./routes/index";
+import { Route as RpcSplatRouteImport } from "./routes/rpc.$";
 
-const AppRoute = AppRouteImport.update({
-  id: '/_app',
+const IndexRoute = IndexRouteImport.update({
+  id: "/",
+  path: "/",
   getParentRoute: () => rootRouteImport,
-} as any)
-const AppIndexRoute = AppIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => AppRoute,
-} as any)
-const AppToiletIdRoute = AppToiletIdRouteImport.update({
-  id: '/$toiletId',
-  path: '/$toiletId',
-  getParentRoute: () => AppRoute,
-} as any)
-const ApiRpcSplatRoute = ApiRpcSplatRouteImport.update({
-  id: '/api/rpc/$',
-  path: '/api/rpc/$',
+} as any);
+const RpcSplatRoute = RpcSplatRouteImport.update({
+  id: "/rpc/$",
+  path: "/rpc/$",
   getParentRoute: () => rootRouteImport,
-} as any)
+} as any);
 
 export interface FileRoutesByFullPath {
-  '/$toiletId': typeof AppToiletIdRoute
-  '/': typeof AppIndexRoute
-  '/api/rpc/$': typeof ApiRpcSplatRoute
+  "/": typeof IndexRoute;
+  "/rpc/$": typeof RpcSplatRoute;
 }
 export interface FileRoutesByTo {
-  '/$toiletId': typeof AppToiletIdRoute
-  '/': typeof AppIndexRoute
-  '/api/rpc/$': typeof ApiRpcSplatRoute
+  "/": typeof IndexRoute;
+  "/rpc/$": typeof RpcSplatRoute;
 }
 export interface FileRoutesById {
-  __root__: typeof rootRouteImport
-  '/_app': typeof AppRouteWithChildren
-  '/_app/$toiletId': typeof AppToiletIdRoute
-  '/_app/': typeof AppIndexRoute
-  '/api/rpc/$': typeof ApiRpcSplatRoute
+  __root__: typeof rootRouteImport;
+  "/": typeof IndexRoute;
+  "/rpc/$": typeof RpcSplatRoute;
 }
 export interface FileRouteTypes {
-  fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/$toiletId' | '/' | '/api/rpc/$'
-  fileRoutesByTo: FileRoutesByTo
-  to: '/$toiletId' | '/' | '/api/rpc/$'
-  id: '__root__' | '/_app' | '/_app/$toiletId' | '/_app/' | '/api/rpc/$'
-  fileRoutesById: FileRoutesById
+  fileRoutesByFullPath: FileRoutesByFullPath;
+  fullPaths: "/" | "/rpc/$";
+  fileRoutesByTo: FileRoutesByTo;
+  to: "/" | "/rpc/$";
+  id: "__root__" | "/" | "/rpc/$";
+  fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
-  AppRoute: typeof AppRouteWithChildren
-  ApiRpcSplatRoute: typeof ApiRpcSplatRoute
+  IndexRoute: typeof IndexRoute;
+  RpcSplatRoute: typeof RpcSplatRoute;
 }
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/_app': {
-      id: '/_app'
-      path: ''
-      fullPath: ''
-      preLoaderRoute: typeof AppRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/_app/': {
-      id: '/_app/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof AppIndexRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/_app/$toiletId': {
-      id: '/_app/$toiletId'
-      path: '/$toiletId'
-      fullPath: '/$toiletId'
-      preLoaderRoute: typeof AppToiletIdRouteImport
-      parentRoute: typeof AppRoute
-    }
-    '/api/rpc/$': {
-      id: '/api/rpc/$'
-      path: '/api/rpc/$'
-      fullPath: '/api/rpc/$'
-      preLoaderRoute: typeof ApiRpcSplatRouteImport
-      parentRoute: typeof rootRouteImport
-    }
+    "/": {
+      id: "/";
+      path: "/";
+      fullPath: "/";
+      preLoaderRoute: typeof IndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/rpc/$": {
+      id: "/rpc/$";
+      path: "/rpc/$";
+      fullPath: "/rpc/$";
+      preLoaderRoute: typeof RpcSplatRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
   }
 }
 
-interface AppRouteChildren {
-  AppToiletIdRoute: typeof AppToiletIdRoute
-  AppIndexRoute: typeof AppIndexRoute
-}
-
-const AppRouteChildren: AppRouteChildren = {
-  AppToiletIdRoute: AppToiletIdRoute,
-  AppIndexRoute: AppIndexRoute,
-}
-
-const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
-
 const rootRouteChildren: RootRouteChildren = {
-  AppRoute: AppRouteWithChildren,
-  ApiRpcSplatRoute: ApiRpcSplatRoute,
-}
+  IndexRoute: IndexRoute,
+  RpcSplatRoute: RpcSplatRoute,
+};
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>()
+  ._addFileTypes<FileRouteTypes>();
 
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
+import type { getRouter } from "./router.tsx";
+
+declare module "@tanstack/react-start" {
   interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
+    ssr: true;
+    router: Awaited<ReturnType<typeof getRouter>>;
   }
 }

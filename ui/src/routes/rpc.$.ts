@@ -3,12 +3,12 @@ import { RPCHandler } from "@orpc/server/fetch";
 import { createFileRoute } from "@tanstack/react-router";
 import { router } from "@/api";
 
-export const Route = createFileRoute("/api/rpc/$")({
+export const Route = createFileRoute("/rpc/$")({
   server: {
     handlers: {
       ANY: async ({ request }) => {
         const { response } = await handler.handle(request, {
-          prefix: "/api/rpc",
+          prefix: "/rpc",
           context: {},
         });
 

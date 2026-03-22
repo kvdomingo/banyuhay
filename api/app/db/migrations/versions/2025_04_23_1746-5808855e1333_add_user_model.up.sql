@@ -1,6 +1,6 @@
 CREATE INDEX toilets_id_ix ON toilets (id);
 CREATE INDEX toilets_establishment_name_ix ON toilets (establishment_name);
-CREATE INDEX toilets_geometry_ix ON toilets USING gist (geometry);
+CREATE INDEX toilets_geometry_ix ON toilets USING GIST (geometry);
 CREATE INDEX toilets_has_bidet_ix ON toilets (has_bidet);
 
 CREATE INDEX reviews_id_ix ON reviews (id);

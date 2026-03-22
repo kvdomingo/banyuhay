@@ -1,83 +1,34 @@
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { useNavigate, useParams } from "@tanstack/react-router";
+import { getRouteApi } from "@tanstack/react-router";
 import { MapPin, MapPinX } from "lucide-react";
-import type { LngLatBounds } from "maplibre-gl";
-import qs from "qs";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { orpc } from "@/api";
 import { cn } from "@/lib/utils";
-import { MapMarker, MarkerContent, useMap } from "./ui/map";
+import { MapMarker, MarkerContent } from "./ui/map";
 
-type ToiletGeometry = { lat: number; lng: number };
-
-interface Toilet {
-  id: string;
-  geometry: ToiletGeometry;
-  has_bidet: boolean;
-}
-
-function stringifyBbox(bounds: LngLatBounds): string {
-  const nw = bounds.getNorthWest();
-  const ne = bounds.getNorthEast();
-  const sw = bounds.getSouthWest();
-  const se = bounds.getSouthEast();
-
-  return qs.stringify({
-    nw: [nw.lat, nw.lng],
-    ne: [ne.lat, ne.lng],
-    sw: [sw.lat, sw.lng],
-    se: [se.lat, se.lng],
-  });
-}
+const Route = getRouteApi("/");
 
 export function Markers() {
-  const { map, isLoaded } = useMap();
-  const navigate = useNavigate();
-  const { toiletId: currentToiletId } = useParams({ strict: false });
+  const search = Route.useSearch();
+  const navigate = Route.useNavigate();
 
-  const [bounds, setBounds] = useState<LngLatBounds | null>(
-    () => map?.getBounds() ?? null,
+  const currentToiletId = search?.toilet_id;
+
+  const { data: toilets = [] } = useQuery(
+    orpc.toilet.list.queryOptions({
+      input: {
+        min_lng: search?.min_lng ?? 0,
+        max_lng: search?.max_lng ?? 0,
+        min_lat: search?.min_lat ?? 0,
+        max_lat: search?.max_lat ?? 0,
+      },
+      placeholderData: keepPreviousData,
+      enabled: search && [Object.values(search)].every(Boolean),
+    }),
   );
-
-  const handleMapChange = useCallback(() => {
-    setBounds(map?.getBounds() ?? null);
-  }, [map]);
-
-  useEffect(() => {
-    if (!map || !isLoaded) return;
-    map.on("moveend", handleMapChange);
-    map.on("zoomend", handleMapChange);
-    map.on("pitchend", handleMapChange);
-    map.on("rotateend", handleMapChange);
-    return () => {
-      map.off("moveend", handleMapChange);
-      map.off("zoomend", handleMapChange);
-      map.off("pitchend", handleMapChange);
-      map.off("rotateend", handleMapChange);
-    };
-  }, [map, isLoaded, handleMapChange]);
-
-  const bboxString = useMemo(
-    () => (bounds ? stringifyBbox(bounds) : undefined),
-    [bounds],
-  );
-
-  const { data: toilets } = useQuery<Toilet[]>({
-    queryKey: ["toilets", bboxString],
-    queryFn: async () => {
-      const url = bboxString
-        ? `/api/toilets?bbox=${encodeURIComponent(bboxString)}`
-        : "/api/toilets";
-      const res = await fetch(url, { credentials: "include" });
-      if (!res.ok) throw new Error("Failed to fetch toilets");
-      return res.json();
-    },
-    enabled: isLoaded,
-    placeholderData: keepPreviousData,
-  });
 
   return (
     <>
-      {toilets?.map((toilet) => {
+      {toilets.map((toilet) => {
         const isSelected = toilet.id === currentToiletId;
         return (
           <MapMarker
@@ -86,18 +37,13 @@ export function Markers() {
             latitude={toilet.geometry.lat}
             onClick={() => {
               if (isSelected) {
-                navigate({ to: "/" });
+                navigate({ search: { toilet_id: undefined }, replace: true });
               } else {
-                navigate({ to: "/$toiletId", params: { toiletId: toilet.id } });
+                navigate({ search: { toilet_id: toilet.id }, replace: true });
               }
             }}
           >
-            <MarkerContent
-              className={cn("flex items-center justify-center rounded-full", {
-                "h-16 w-16": isSelected,
-                "h-8 w-8": !isSelected,
-              })}
-            >
+            <MarkerContent className="flex items-center justify-center rounded-full">
               {toilet.has_bidet ? (
                 <MapPin
                   className={cn("fill-sky-500 transition-all duration-100", {

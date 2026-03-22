@@ -4,20 +4,34 @@ from starlette import status
 from starlette.responses import Response
 
 from app.auth import session_cookie_scheme
-from app.db.generated.models import Toilet
 from app.db.generated.toilets import (
     AsyncQuerier,
     CreateToiletParams,
     UpdateToiletParams,
 )
 from app.db.queriers import get_toilet_async_querier
+from app.schemas.toilet import Toilet
 
 router = APIRouter(prefix="/toilets", tags=["toilets"])
 
 
 @router.get("", response_model=list[Toilet])
-async def list_toilets(querier: AsyncQuerier = Depends(get_toilet_async_querier)):
-    return [t async for t in querier.list_toilets()]
+async def list_toilets(
+    min_lng: float,
+    max_lng: float,
+    min_lat: float,
+    max_lat: float,
+    querier: AsyncQuerier = Depends(get_toilet_async_querier),
+):
+    return [
+        t
+        async for t in querier.list_toilets(
+            min_lng=min_lng,
+            max_lng=max_lng,
+            min_lat=min_lat,
+            max_lat=max_lat,
+        )
+    ]
 
 
 @router.get("/{id}", response_model=Toilet)

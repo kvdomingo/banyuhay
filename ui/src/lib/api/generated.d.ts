@@ -4,646 +4,666 @@
  */
 
 export interface paths {
-    "/health": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Health */
-        get: operations["health_health_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+  "/health": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/login": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Login */
-        get: operations["login_auth_login_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Health */
+    get: operations["health_health_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/login": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/callback": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Callback */
-        get: operations["callback_auth_callback_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Login */
+    get: operations["login_auth_login_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/callback": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/logout": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Logout */
-        get: operations["logout_auth_logout_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Callback */
+    get: operations["callback_auth_callback_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/logout": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/auth/me": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Me */
-        get: operations["me_auth_me_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Logout */
+    get: operations["logout_auth_logout_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/auth/me": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/toilets": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** List Toilets */
-        get: operations["list_toilets_toilets_get"];
-        put?: never;
-        /** Create Toilet */
-        post: operations["create_toilet_toilets_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Me */
+    get: operations["me_auth_me_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/toilets": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/toilets/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Get Toilet */
-        get: operations["get_toilet_toilets__id__get"];
-        put?: never;
-        post?: never;
-        /** Delete Toilet */
-        delete: operations["delete_toilet_toilets__id__delete"];
-        options?: never;
-        head?: never;
-        /** Update Toilet */
-        patch: operations["update_toilet_toilets__id__patch"];
-        trace?: never;
+    /** List Toilets */
+    get: operations["list_toilets_toilets_get"];
+    put?: never;
+    /** Create Toilet */
+    post: operations["create_toilet_toilets_post"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/toilets/{id}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/reviews": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** List Reviews */
-        get: operations["list_reviews_reviews_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Get Toilet */
+    get: operations["get_toilet_toilets__id__get"];
+    put?: never;
+    post?: never;
+    /** Delete Toilet */
+    delete: operations["delete_toilet_toilets__id__delete"];
+    options?: never;
+    head?: never;
+    /** Update Toilet */
+    patch: operations["update_toilet_toilets__id__patch"];
+    trace?: never;
+  };
+  "/reviews": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/reviews/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Get Review */
-        get: operations["get_review_reviews__id__get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** List Reviews */
+    get: operations["list_reviews_reviews_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/reviews/{id}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
+    /** Get Review */
+    get: operations["get_review_reviews__id__get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
 }
 export type webhooks = Record<string, never>;
 export interface components {
-    schemas: {
-        /** CreateToiletParams */
-        CreateToiletParams: {
-            /** Establishment Name */
-            establishment_name: string;
-            /** Geometry */
-            geometry: unknown;
-            /** Location Information */
-            location_information: string;
-            /** Avg Rating Water Pressure */
-            avg_rating_water_pressure: number;
-            /** Avg Rating Cleanliness */
-            avg_rating_cleanliness: number;
-            /** Avg Rating Poopability */
-            avg_rating_poopability: number;
-            /** Total Reviews */
-            total_reviews: number;
-            /** Has Bidet */
-            has_bidet: boolean;
-            /** Upvotes */
-            upvotes: number;
-            /** Downvotes */
-            downvotes: number;
-            /** Photos */
-            photos: string[] | null;
-        };
-        /** HTTPValidationError */
-        HTTPValidationError: {
-            /** Detail */
-            detail?: components["schemas"]["ValidationError"][];
-        };
-        /** Review */
-        Review: {
-            /** Id */
-            id: string;
-            /**
-             * Created
-             * Format: date-time
-             */
-            created: string;
-            /**
-             * Modified
-             * Format: date-time
-             */
-            modified: string;
-            /** Toilet Id */
-            toilet_id: string;
-            /** Content */
-            content: string | null;
-            /** Rating Water Pressure */
-            rating_water_pressure: number;
-            /** Rating Cleanliness */
-            rating_cleanliness: number;
-            /** Rating Poopability */
-            rating_poopability: number;
-            /** Has Bidet */
-            has_bidet: boolean;
-            /** Is Approved */
-            is_approved: boolean;
-            /** Upvotes */
-            upvotes: number;
-            /** Downvotes */
-            downvotes: number;
-            /** Photos */
-            photos: string[] | null;
-        };
-        /** Toilet */
-        Toilet: {
-            /** Id */
-            id: string;
-            /**
-             * Created
-             * Format: date-time
-             */
-            created: string;
-            /**
-             * Modified
-             * Format: date-time
-             */
-            modified: string;
-            /** Establishment Name */
-            establishment_name: string;
-            /** Geometry */
-            geometry: unknown;
-            /** Location Information */
-            location_information: string;
-            /** Avg Rating Water Pressure */
-            avg_rating_water_pressure: number;
-            /** Avg Rating Cleanliness */
-            avg_rating_cleanliness: number;
-            /** Avg Rating Poopability */
-            avg_rating_poopability: number;
-            /** Total Reviews */
-            total_reviews: number;
-            /** Has Bidet */
-            has_bidet: boolean;
-            /** Upvotes */
-            upvotes: number;
-            /** Downvotes */
-            downvotes: number;
-            /** Photos */
-            photos: string[] | null;
-        };
-        /** UpdateToiletParams */
-        UpdateToiletParams: {
-            /** Establishment Name */
-            establishment_name: string | null;
-            /** Geometry */
-            geometry: unknown | null;
-            /** Location Information */
-            location_information: string | null;
-            /** Avg Rating Water Pressure */
-            avg_rating_water_pressure: number | null;
-            /** Avg Rating Cleanliness */
-            avg_rating_cleanliness: number | null;
-            /** Avg Rating Poopability */
-            avg_rating_poopability: number | null;
-            /** Total Reviews */
-            total_reviews: number | null;
-            /** Has Bidet */
-            has_bidet: boolean | null;
-            /** Upvotes */
-            upvotes: number | null;
-            /** Downvotes */
-            downvotes: number | null;
-            /** Photos */
-            photos: string[] | null;
-            /** Id */
-            id: string;
-        };
-        /** User */
-        User: {
-            /** Id */
-            id: string;
-            /**
-             * Created
-             * Format: date-time
-             */
-            created: string;
-            /**
-             * Modified
-             * Format: date-time
-             */
-            modified: string;
-            /** First Name */
-            first_name: string | null;
-            /** Last Name */
-            last_name: string | null;
-            /** Full Name */
-            full_name: string | null;
-            /** Avatar */
-            avatar: string | null;
-        };
-        /** ValidationError */
-        ValidationError: {
-            /** Location */
-            loc: (string | number)[];
-            /** Message */
-            msg: string;
-            /** Error Type */
-            type: string;
-        };
+  schemas: {
+    /** Coordinates */
+    Coordinates: {
+      /** Lat */
+      lat: number;
+      /** Lng */
+      lng: number;
     };
-    responses: never;
-    parameters: never;
-    requestBodies: never;
-    headers: never;
-    pathItems: never;
+    /** CreateToiletParams */
+    CreateToiletParams: {
+      /** Establishment Name */
+      establishment_name: string;
+      /** Geometry */
+      geometry: unknown;
+      /** Location Information */
+      location_information: string;
+      /** Avg Rating Water Pressure */
+      avg_rating_water_pressure: number;
+      /** Avg Rating Cleanliness */
+      avg_rating_cleanliness: number;
+      /** Avg Rating Poopability */
+      avg_rating_poopability: number;
+      /** Total Reviews */
+      total_reviews: number;
+      /** Has Bidet */
+      has_bidet: boolean;
+      /** Upvotes */
+      upvotes: number;
+      /** Downvotes */
+      downvotes: number;
+      /** Photos */
+      photos: string[] | null;
+    };
+    /** HTTPValidationError */
+    HTTPValidationError: {
+      /** Detail */
+      detail?: components["schemas"]["ValidationError"][];
+    };
+    /** Review */
+    Review: {
+      /** Id */
+      id: string;
+      /**
+       * Created
+       * Format: date-time
+       */
+      created: string;
+      /**
+       * Modified
+       * Format: date-time
+       */
+      modified: string;
+      /** Toilet Id */
+      toilet_id: string;
+      /** Content */
+      content: string | null;
+      /** Rating Water Pressure */
+      rating_water_pressure: number;
+      /** Rating Cleanliness */
+      rating_cleanliness: number;
+      /** Rating Poopability */
+      rating_poopability: number;
+      /** Has Bidet */
+      has_bidet: boolean;
+      /** Is Approved */
+      is_approved: boolean;
+      /** Upvotes */
+      upvotes: number;
+      /** Downvotes */
+      downvotes: number;
+      /** Photos */
+      photos: string[] | null;
+    };
+    /** Toilet */
+    Toilet: {
+      /** Id */
+      id: string;
+      /**
+       * Created
+       * Format: date-time
+       */
+      created: string;
+      /**
+       * Modified
+       * Format: date-time
+       */
+      modified: string;
+      /** Establishment Name */
+      establishment_name: string;
+      geometry: components["schemas"]["Coordinates"];
+      /** Location Information */
+      location_information: string;
+      /** Avg Rating Water Pressure */
+      avg_rating_water_pressure: number;
+      /** Avg Rating Cleanliness */
+      avg_rating_cleanliness: number;
+      /** Avg Rating Poopability */
+      avg_rating_poopability: number;
+      /** Total Reviews */
+      total_reviews: number;
+      /** Has Bidet */
+      has_bidet: boolean;
+      /** Upvotes */
+      upvotes: number;
+      /** Downvotes */
+      downvotes: number;
+      /** Photos */
+      photos: string[] | null;
+    };
+    /** UpdateToiletParams */
+    UpdateToiletParams: {
+      /** Establishment Name */
+      establishment_name: string | null;
+      /** Geometry */
+      geometry: unknown | null;
+      /** Location Information */
+      location_information: string | null;
+      /** Avg Rating Water Pressure */
+      avg_rating_water_pressure: number | null;
+      /** Avg Rating Cleanliness */
+      avg_rating_cleanliness: number | null;
+      /** Avg Rating Poopability */
+      avg_rating_poopability: number | null;
+      /** Total Reviews */
+      total_reviews: number | null;
+      /** Has Bidet */
+      has_bidet: boolean | null;
+      /** Upvotes */
+      upvotes: number | null;
+      /** Downvotes */
+      downvotes: number | null;
+      /** Photos */
+      photos: string[] | null;
+      /** Id */
+      id: string;
+    };
+    /** User */
+    User: {
+      /** Id */
+      id: string;
+      /**
+       * Created
+       * Format: date-time
+       */
+      created: string;
+      /**
+       * Modified
+       * Format: date-time
+       */
+      modified: string;
+      /** First Name */
+      first_name: string | null;
+      /** Last Name */
+      last_name: string | null;
+      /** Full Name */
+      full_name: string | null;
+      /** Avatar */
+      avatar: string | null;
+    };
+    /** ValidationError */
+    ValidationError: {
+      /** Location */
+      loc: (string | number)[];
+      /** Message */
+      msg: string;
+      /** Error Type */
+      type: string;
+    };
+  };
+  responses: never;
+  parameters: never;
+  requestBodies: never;
+  headers: never;
+  pathItems: never;
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    health_health_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
-        };
+  health_health_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    login_auth_login_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
+        content: {
+          "application/json": unknown;
         };
+      };
     };
-    callback_auth_callback_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
-        };
+  };
+  login_auth_login_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    logout_auth_logout_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
+        content: {
+          "application/json": unknown;
         };
+      };
     };
-    me_auth_me_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["User"];
-                };
-            };
-        };
+  };
+  callback_auth_callback_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    list_toilets_toilets_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Toilet"][];
-                };
-            };
+        content: {
+          "application/json": unknown;
         };
+      };
     };
-    create_toilet_toilets_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["CreateToiletParams"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Toilet"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
+  };
+  logout_auth_logout_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    get_toilet_toilets__id__get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Toilet"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
+        content: {
+          "application/json": unknown;
         };
+      };
     };
-    delete_toilet_toilets__id__delete: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": unknown;
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
+  };
+  me_auth_me_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    update_toilet_toilets__id__patch: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["UpdateToiletParams"];
-            };
+        content: {
+          "application/json": components["schemas"]["User"];
         };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Toilet"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
+      };
     };
-    list_reviews_reviews_get: {
-        parameters: {
-            query: {
-                toilet_id: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Review"][];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
+  };
+  list_toilets_toilets_get: {
+    parameters: {
+      query: {
+        min_lng: number;
+        max_lng: number;
+        min_lat: number;
+        max_lat: number;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    get_review_reviews__id__get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Review"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["Toilet"][];
         };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
     };
+  };
+  create_toilet_toilets_post: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["CreateToiletParams"];
+      };
+    };
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["Toilet"];
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  get_toilet_toilets__id__get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["Toilet"];
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  delete_toilet_toilets__id__delete: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": unknown;
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  update_toilet_toilets__id__patch: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["UpdateToiletParams"];
+      };
+    };
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["Toilet"];
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  list_reviews_reviews_get: {
+    parameters: {
+      query: {
+        toilet_id: string;
+      };
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["Review"][];
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  get_review_reviews__id__get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        id: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["Review"];
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
 }

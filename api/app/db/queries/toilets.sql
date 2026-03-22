@@ -1,11 +1,20 @@
 -- name: CreateToilet :one
 INSERT INTO toilets (
-    establishment_name, geometry, location_information, avg_rating_water_pressure, avg_rating_cleanliness,
-    avg_rating_poopability, total_reviews, has_bidet, upvotes, downvotes, photos
+    establishment_name, 
+    geometry, 
+    location_information, 
+    avg_rating_water_pressure, 
+    avg_rating_cleanliness,
+    avg_rating_poopability, 
+    total_reviews, 
+    has_bidet, 
+    upvotes, 
+    downvotes, 
+    photos
 )
 VALUES (
-           $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11
-       )
+    $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11
+)
 RETURNING *;
 
 -- name: ListToilets :many
@@ -16,8 +25,8 @@ SELECT
     establishment_name,
     location_information,
     JSONB_BUILD_OBJECT(
-            'lat', ST_X(geometry),
-            'lng', ST_Y(geometry)
+        'lat', ST_Y(geometry),
+        'lng', ST_X(geometry)
     ) AS geometry,
     avg_rating_cleanliness,
     avg_rating_poopability,
@@ -27,7 +36,14 @@ SELECT
     upvotes,
     downvotes,
     photos
-FROM toilets;
+FROM toilets
+WHERE geometry && ST_MakeEnvelope(
+    sqlc.arg('min_lng'),
+    sqlc.arg('min_lat'),
+    sqlc.arg('max_lng'),
+    sqlc.arg('max_lat'),
+    4326
+);
 
 -- name: GetToilet :one
 SELECT
@@ -37,8 +53,8 @@ SELECT
     establishment_name,
     location_information,
     JSONB_BUILD_OBJECT(
-            'lat', ST_X(geometry),
-            'lng', ST_Y(geometry)
+        'lat', ST_Y(geometry),
+        'lng', ST_X(geometry)
     ) AS geometry,
     avg_rating_cleanliness,
     avg_rating_poopability,

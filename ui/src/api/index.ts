@@ -1,6 +1,6 @@
 import { createORPCClient } from "@orpc/client";
 import { RPCLink } from "@orpc/client/fetch";
-import { lazy, type RouterClient } from "@orpc/server";
+import { createRouterClient, lazy, type RouterClient } from "@orpc/server";
 import { createTanstackQueryUtils } from "@orpc/tanstack-query";
 import { createIsomorphicFn } from "@tanstack/react-start";
 import { getRequestHeaders } from "@tanstack/react-start/server";
@@ -10,21 +10,23 @@ export const router = {
   review: lazy(() => import("./reviews")),
 };
 
-const getRpcClientLink = createIsomorphicFn()
+const getORPCClient = createIsomorphicFn()
   .client(
-    () =>
-      new RPCLink({
-        url: `${window.location.origin}/api/rpc`,
-      }),
+    (): RouterClient<typeof router> =>
+      createORPCClient(
+        new RPCLink({
+          url: `${window.location.origin}/rpc`,
+        }),
+      ),
   )
-  .server(
-    () =>
-      new RPCLink({
-        url: "http://localhost:3000/api/rpc",
-        headers: () => getRequestHeaders(),
+  .server(() =>
+    createRouterClient(router, {
+      context: async () => ({
+        headers: getRequestHeaders(),
       }),
+    }),
   );
 
-const client: RouterClient<typeof router> = createORPCClient(getRpcClientLink());
+const client = getORPCClient();
 
 export const orpc = createTanstackQueryUtils(client);

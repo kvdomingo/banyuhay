@@ -1,38 +1,32 @@
-import { useQuery } from "@tanstack/react-query";
-import { useParams } from "@tanstack/react-router";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { getRouteApi } from "@tanstack/react-router";
 import { MilkOff, SprayCan, Star } from "lucide-react";
+import { orpc } from "@/api";
+import { Reviews } from "@/components/reviews";
 import { cn } from "@/lib/utils";
-import { Reviews } from "./reviews";
 
-type ToiletGeometry = { lat: number; lng: number };
+const Route = getRouteApi("/");
 
-interface Toilet {
-  id: string;
-  establishment_name: string;
-  location_information: string;
-  geometry: ToiletGeometry;
-  has_bidet: boolean;
-  avg_rating_water_pressure: number;
-  avg_rating_cleanliness: number;
-  avg_rating_poopability: number;
-  total_reviews: number;
-}
+export function ReviewsContainer() {
+  const search = Route.useSearch();
+  const toiletId = search?.toilet_id;
 
-export function ToiletDetail() {
-  const { toiletId } = useParams({ from: "/_app/$toiletId" });
-
-  const { data: toilets } = useQuery<Toilet[]>({
-    queryKey: ["toilets"],
-    queryFn: async () => {
-      const res = await fetch("/api/toilets", { credentials: "include" });
-      if (!res.ok) throw new Error("Failed to fetch toilets");
-      return res.json();
-    },
-  });
+  const { data: toilets = [] } = useQuery(
+    orpc.toilet.list.queryOptions({
+      input: {
+        min_lng: search?.min_lng ?? 0,
+        max_lng: search?.max_lng ?? 0,
+        min_lat: search?.min_lat ?? 0,
+        max_lat: search?.max_lat ?? 0,
+      },
+      placeholderData: keepPreviousData,
+      enabled: search && [Object.values(search)].every(Boolean),
+    }),
+  );
 
   const toilet = toilets?.find((t) => t.id === toiletId);
 
-  if (!toilet) return null;
+  if (!toilet || !toiletId) return null;
 
   return (
     <div className="flex flex-col gap-4">

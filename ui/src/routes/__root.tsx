@@ -5,12 +5,15 @@ import type { QueryClient } from "@tanstack/react-query";
 import {
   createRootRouteWithContext,
   HeadContent,
+  retainSearchParams,
   Scripts,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import maplibre from "maplibre-gl";
 import { Protocol } from "pmtiles";
+import z from "zod";
 import { LoginUserHeader } from "@/components/login-user-header";
+import { MapStateUpdater } from "@/components/map-state-updater";
 import { Markers } from "@/components/markers";
 import { Map as MapLibre } from "@/components/ui/map";
 import {
@@ -25,6 +28,16 @@ import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
 interface RouterContext {
   queryClient: QueryClient;
 }
+
+const mapQueryStateSchema = z
+  .object({
+    toilet_id: z.uuid().optional(),
+    min_lng: z.number().optional(),
+    max_lng: z.number().optional(),
+    min_lat: z.number().optional(),
+    max_lat: z.number().optional(),
+  })
+  .catch({});
 
 export const Route = createRootRouteWithContext<RouterContext>()({
   head: () => ({
@@ -101,6 +114,10 @@ export const Route = createRootRouteWithContext<RouterContext>()({
     const protocol = new Protocol();
     maplibre.addProtocol("pmtiles", protocol.tile);
   },
+  validateSearch: mapQueryStateSchema,
+  search: {
+    middlewares: [retainSearchParams(true)],
+  },
 });
 
 function Layout({ children }: { children: React.ReactNode }) {
@@ -124,6 +141,7 @@ function Layout({ children }: { children: React.ReactNode }) {
             }}
             scrollZoom
           >
+            <MapStateUpdater />
             <Markers />
             {children}
           </MapLibre>

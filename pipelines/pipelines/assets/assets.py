@@ -158,7 +158,7 @@ def meta_fixtures(
                 "fields": {
                     "establishment_name": meta["establishment_name"].title(),
                     "location_information": meta["establishment_name"].title(),
-                    "geometry": f"POINT({meta['lat']:.6f} {meta['lng']:.6f})",
+                    "geometry": f"POINT({meta['lng']:.6f} {meta['lat']:.6f})",
                     "avg_rating_water_pressure": meta["rating_water_pressure"],
                     "avg_rating_cleanliness": meta["rating_cleanliness"],
                     "avg_rating_poopability": meta["rating_poopability"],

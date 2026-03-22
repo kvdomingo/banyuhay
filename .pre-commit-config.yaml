@@ -1,16 +1,22 @@
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.6.4
+    rev: v0.11.6
     hooks:
       - id: ruff
-        args: [--fix]
+        args: [--fix, --unsafe-fixes]
       - id: ruff-format
-  - repo: https://github.com/biomejs/pre-commit
-    rev: v2.4.8
+  - repo: local
     hooks:
-      - id: biome-check
-        additional_dependencies:
-          - "@biomejs/biome@2.4.8"
+      - id: local-biome-check
+        name: biome check
+        entry: >
+          /bin/bash -euxo pipefail -c "
+          cd ui &&
+          bun run check &&
+          cd ..
+          "
+        language: system
+        types: [text]
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:

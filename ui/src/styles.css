@@ -37,18 +37,12 @@
   --sidebar-accent-foreground: oklch(0.33 0 0);
   --sidebar-border: oklch(0.94 0 0);
   --sidebar-ring: oklch(0.77 0 0);
-  --font-sans: 
-      "Inter Variable",
-      "Inter",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Helvetica Neue",
-      Helvetica,
-      "Segoe UI Variable",
-      "Segoe UI",
-      sans-serif;
+  --font-sans:
+    "Inter Variable", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Helvetica, "Segoe UI Variable", "Segoe UI", sans-serif;
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
   --radius: 0.5rem;
   --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
@@ -94,18 +88,12 @@
   --sidebar-accent-foreground: oklch(0.97 0 286.38);
   --sidebar-border: oklch(0.27 0.01 286.03);
   --sidebar-ring: oklch(0.87 0.01 286.29);
-  --font-sans: 
-      "Inter Variable",
-      "Inter",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Helvetica Neue",
-      Helvetica,
-      "Segoe UI Variable",
-      "Segoe UI",
-      sans-serif;
+  --font-sans:
+    "Inter Variable", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    Helvetica, "Segoe UI Variable", "Segoe UI", sans-serif;
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
   --radius: 0.5rem;
   --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
@@ -205,15 +193,8 @@
     --radius: 0.5rem;
 
     font-family:
-      "Inter Variable",
-      "Inter",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Helvetica Neue",
-      Helvetica,
-      "Segoe UI Variable",
-      "Segoe UI",
-      sans-serif;
+      "Inter Variable", "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+      Helvetica, "Segoe UI Variable", "Segoe UI", sans-serif;
   }
 
   .dark {
