@@ -49,6 +49,7 @@ services:
       NODE_ENV: development
       VITE_APP_HOST: http://localhost:3000
       VITE_STYTCH_PUBLIC_TOKEN: ${STYTCH_PUBLIC_TOKEN}
+      API_HOST: http://api:8000
     entrypoint: [/bin/sh]
     command:
       - -eu

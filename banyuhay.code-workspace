@@ -27,22 +27,7 @@
     "files.readonlyInclude": {
       "**/routeTree.gen.ts": true
     },
-    "[javascript][javascriptreact][typescript][typescriptreact][json][jsonc][css]": {
-      "editor.defaultFormatter": "biomejs.biome",
-      "editor.formatOnSave": true,
-      "editor.codeActionsOnSave": {
-        "source.organizeImports.biome": "explicit",
-        "source.removeUnusedImports": "explicit",
-        "source.fixAll.biome": "explicit"
-      },
-      "editor.indentSize": 2
-    },
-    "editor.codeActionsOnSave": {
-      "source.organizeImports.biome": "explicit"
-    },
     "vscord.app.privacyMode.enable": false,
-    "prettier.enable": false,
-    "biome.configurationPath": "./ui/biome.json",
-    "biome.lsp.bin": "./ui/node_modules/.bin/biome"
+    "prettier.enable": false
   }
 }
