@@ -33,9 +33,17 @@ Create chart name and version as used by the chart label.
 {{/*
 Common labels
 */}}
-{{- define "banyuhay.labels" -}}
+{{- define "banyuhay.apiLabels" -}}
 helm.sh/chart: {{ include "banyuhay.chart" . }}
 {{ include "banyuhay.selectorLabels" . }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+{{- define "banyuhay.appLabels" -}}
+helm.sh/chart: {{ include "banyuhay.chart" . }}
+{{ include "banyuhay.appSelectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,8 +53,12 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "banyuhay.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "banyuhay.name" . }}
+{{- define "banyuhay.apiSelectorLabels" -}}
+app.kubernetes.io/name: '{{ include "banyuhay.name" . }}-api'
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+{{- define "banyuhay.appSelectorLabels" -}}
+app.kubernetes.io/name: '{{ include "banyuhay.name" . }}-app'
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 

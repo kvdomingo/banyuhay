@@ -8,16 +8,22 @@ releases:
     chart: ./banyuhay
     set:
       - value: ref+vault://kv/lab/banyuhay#POSTGRESQL_PASSWORD
-        name: env.POSTGRESQL_PASSWORD
+        name: apiEnv.POSTGRESQL_PASSWORD
       - value: ref+vault://kv/lab/banyuhay#SECRET_KEY
-        name: env.SECRET_KEY
+        name: apiEnv.SECRET_KEY
       - value: ref+vault://kv/lab/banyuhay#API_HOST
-        name: env.API_HOST
+        name: apiEnv.API_HOST
       - value: ref+vault://kv/lab/banyuhay#APP_HOST
-        name: env.APP_HOST
+        name: apiEnv.APP_HOST
       - value: ref+vault://kv/lab/banyuhay#STYTCH_PROJECT_ID
-        name: env.STYTCH_PROJECT_ID
+        name: apiEnv.STYTCH_PROJECT_ID
       - value: ref+vault://kv/lab/banyuhay#STYTCH_SECRET
-        name: env.STYTCH_SECRET
+        name: apiEnv.STYTCH_SECRET
       - value: ref+vault://kv/lab/banyuhay#STYTCH_PUBLIC_TOKEN
-        name: env.STYTCH_PUBLIC_TOKEN
+        name: apiEnv.STYTCH_PUBLIC_TOKEN
+      - value: ref+vault://kv/lab/banyuhay#STYTCH_PROJECT_ID
+        name: appEnv.STYTCH_PROJECT_ID
+      - value: ref+vault://kv/lab/banyuhay#STYTCH_SECRET
+        name: appEnv.STYTCH_SECRET
+      - value: ref+vault://kv/lab/banyuhay#STYTCH_PUBLIC_TOKEN
+        name: appEnv.STYTCH_PUBLIC_TOKEN
