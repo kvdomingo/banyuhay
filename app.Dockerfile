@@ -19,4 +19,4 @@ COPY --from=build /tmp/.output /app
 WORKDIR /app
 
 ENTRYPOINT [ "/bin/sh", "-eu" ]
-CMD [ "-c", "exec bun server.mjs" ]
+CMD [ "-c", "exec bun server/index.mjs" ]
