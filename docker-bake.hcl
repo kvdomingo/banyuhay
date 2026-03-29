@@ -1,13 +1,23 @@
 variable "COMMIT_SHA" {}
-variable "IMAGE_NAME" {}
+variable "BASE_IMAGE_NAME" {}
 variable "VITE_PUBLIC_STYTCH_PUBLIC_TOKEN" {}
 
-target "default" {
+target "api" {
     context = "."
-    dockerfile = "prod.Dockerfile"
+    dockerfile = "api.Dockerfile"
     tags = [
-        "${IMAGE_NAME}:${COMMIT_SHA}",
-        "${IMAGE_NAME}:latest",
+        "${BASE_IMAGE_NAME}-api:${COMMIT_SHA}",
+        "${BASE_IMAGE_NAME}-api:latest",
+    ]
+    platforms = ["linux/amd64"]
+}
+
+target "app" {
+    context = "."
+    dockerfile = "app.Dockerfile"
+    tags = [
+        "${BASE_IMAGE_NAME}-app:${COMMIT_SHA}",
+        "${BASE_IMAGE_NAME}-app:latest",
     ]
     platforms = ["linux/amd64"]
     args = {

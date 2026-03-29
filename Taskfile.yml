@@ -3,7 +3,7 @@ version: "3"
 env:
   COMMIT_SHA:
     sh: git rev-parse HEAD
-  IMAGE_NAME: ghcr.io/kvdomingo/banyuhay
+  BASE_IMAGE_NAME: ghcr.io/kvdomingo/banyuhay
 
 tasks:
   default:
@@ -88,12 +88,14 @@ tasks:
   push-cr:
     desc: Push production image
     cmds:
-      - docker push {{ .IMAGE_NAME }}:{{ .COMMIT_SHA }}
-      - docker push {{ .IMAGE_NAME }}:latest
+      - docker push {{ .BASE_IMAGE_NAME }}-api:{{ .COMMIT_SHA }}
+      - docker push {{ .BASE_IMAGE_NAME }}-api:latest
+      - docker push {{ .BASE_IMAGE_NAME }}-app:{{ .COMMIT_SHA }}
+      - docker push {{ .BASE_IMAGE_NAME }}-app:latest
 
   bake:
     desc: Bake Docker image
-    cmd: docker buildx bake --file docker-bake.hcl {{ .CLI_ARGS }}
+    cmd: docker buildx bake --file docker-bake.hcl {{ .CLI_ARGS }} api app
 
   deploy:
     desc: Deploy to production

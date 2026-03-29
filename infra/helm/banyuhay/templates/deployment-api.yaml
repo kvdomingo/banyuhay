@@ -39,8 +39,8 @@ spec:
         - name: '{{ .Chart.Name }}-api'
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          image: "{{ .Values.apiImage.repository }}:{{ .Values.apiImage.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.apiImage.pullPolicy }}
           ports:
             - name: http
               containerPort: {{ .Values.apiService.port }}
@@ -68,7 +68,7 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           envFrom:
-            - configMapRef:
+            - secretRef:
                 name: '{{ .Release.Name }}-secrets'
             - configMapRef:
                 name: '{{ .Release.Name }}-configmap-api'

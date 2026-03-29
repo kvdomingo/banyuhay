@@ -38,6 +38,8 @@ FROM base AS prod
 WORKDIR /app
 
 SHELL [ "/bin/bash", "-euxo", "pipefail", "-c" ]
+RUN apt-get update && \
+    apt-get install -y postgresql-client-common postgresql-client
 
 COPY ./api ./
 COPY --from=build /app/.venv ./.venv/
