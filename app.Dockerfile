@@ -2,15 +2,20 @@ FROM oven/bun:1-alpine AS build
 
 WORKDIR /tmp
 
+COPY ./ui/package.json ./ui/bun.lock ./
+
+SHELL [ "/bin/sh", "-eu", "-c" ]
+
+RUN --mount=type=cache,target=/root/.bun/install/cache \
+    bun install --frozen-lockfile
+
 COPY ./ui/ ./
 
 ARG VITE_PUBLIC_APP_HOST
 ARG VITE_PUBLIC_STYTCH_PUBLIC_TOKEN
 
-SHELL [ "/bin/sh", "-eu", "-c" ]
-
 # hadolint ignore=DL4006
-RUN bun install && bun run build
+RUN bun run build
 
 FROM oven/bun:1-alpine AS prod
 

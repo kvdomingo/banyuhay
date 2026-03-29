@@ -23,14 +23,16 @@ RUN apt-get update && \
 ADD https://astral.sh/uv/${UV_VERSION}/install.sh install-uv.sh
 
 SHELL [ "/bin/sh", "-eu", "-c" ]
-RUN chmod +x /tmp/install-uv.sh && \
+RUN --mount=type=cache,target=/root/.cache/uv \
+    chmod +x /tmp/install-uv.sh && \
     /tmp/install-uv.sh && \
     uv export --format requirements-txt --no-dev --output-file requirements.txt
 
 WORKDIR /app
 
 ENTRYPOINT [ "/bin/bash", "-euxo", "pipefail", "-c" ]
-RUN python -m venv .venv && \
+RUN --mount=type=cache,target=/root/.cache/pip \
+    python -m venv .venv && \
     ./.venv/bin/pip install -r /tmp/requirements.txt
 
 FROM base AS prod
