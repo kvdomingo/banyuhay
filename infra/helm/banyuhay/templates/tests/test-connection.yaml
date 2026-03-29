@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: "{{ include "banyuhay.fullname" . }}-test-connection"
   labels:
-    {{- include "banyuhay.labels" . | nindent 4 }}
+    {{- include "banyuhay.apiLabels" . | nindent 4 }}
   annotations:
     "helm.sh/hook": test
 spec:
@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "banyuhay.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ include "banyuhay.fullname" . }}:{{ .Values.apiService.port }}']
   restartPolicy: Never

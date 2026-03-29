@@ -4,7 +4,7 @@ kind: Ingress
 metadata:
   name: {{ include "banyuhay.fullname" . }}
   labels:
-    {{- include "banyuhay.labels" . | nindent 4 }}
+    {{- include "banyuhay.apiLabels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -37,7 +37,7 @@ spec:
               service:
                 name: {{ include "banyuhay.fullname" $ }}
                 port:
-                  number: {{ $.Values.service.port }}
+                  number: {{ $.Values.appService.port }}
           {{- end }}
     {{- end }}
 {{- end }}

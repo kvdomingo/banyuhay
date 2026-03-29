@@ -143,28 +143,3 @@ affinity:
             - key: kubernetes.io/arch
               operator: NotIn
               values: [arm64, arm]
-
-apiEnv: {}
-appEnv: {}
-
-postgresql:
-  image:
-    repository: bitnamilegacy/postgresql
-    tag: 16.4.0-debian-12-r8
-  auth:
-    username: postgres
-    database: banyuhay
-    existingSecret: "{{ .Release.Name }}-secrets"
-    secretKeys:
-      adminPasswordKey: POSTGRESQL_PASSWORD
-      userPasswordKey: POSTGRESQL_PASSWORD
-      replicationPasswordKey: POSTGRESQL_PASSWORD
-  primary:
-    persistence:
-      enabled: true
-    readinessProbe:
-      enabled: false
-    livenessProbe:
-      enabled: false
-  volumePermissions:
-    enabled: true

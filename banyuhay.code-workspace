@@ -1,8 +1,8 @@
 {
   "folders": [
     {
-      "path": ".",
-      "name": "root"
+      "path": "ui",
+      "name": "ui"
     },
     {
       "path": "api",
@@ -13,9 +13,9 @@
       "name": "pipelines"
     },
     {
-      "path": "ui",
-      "name": "ui"
-    }
+      "path": ".",
+      "name": "root"
+    },
   ],
   "settings": {
     "files.watcherExclude": {

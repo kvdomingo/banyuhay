@@ -35,7 +35,7 @@ Common labels
 */}}
 {{- define "banyuhay.apiLabels" -}}
 helm.sh/chart: {{ include "banyuhay.chart" . }}
-{{ include "banyuhay.selectorLabels" . }}
+{{ include "banyuhay.apiSelectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}

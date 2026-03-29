@@ -263,8 +263,16 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
       setIsStyleLoaded(false);
       setMapInstance(null);
     };
-  }, []);
- 
+  }, [
+    clearStyleTimeout,
+    mapStyles.dark,
+    mapStyles.light,
+    projection,
+    props,
+    resolvedTheme,
+    viewport,
+  ]);
+
   // Sync controlled viewport to map
   useEffect(() => {
     if (!mapInstance || !isControlled || !viewport) return;
@@ -429,9 +437,8 @@ function MapMarker({
     markerInstance.on("dragend", handleDragEnd);
 
     return markerInstance;
+  }, [draggable, latitude, longitude, markerOptions]);
 
-  }, []);
-  
   // biome-ignore lint/correctness/useExhaustiveDependencies
   useEffect(() => {
     if (!map) return;
@@ -441,8 +448,7 @@ function MapMarker({
     return () => {
       marker.remove();
     };
-
-  }, [map]);
+  }, [map, marker.addTo, marker.remove]);
 
   if (marker.getLngLat().lng !== longitude || marker.getLngLat().lat !== latitude) {
     marker.setLngLat([longitude, latitude]);
@@ -529,7 +535,7 @@ function MarkerPopup({
       .setDOMContent(container);
 
     return popupInstance;
-  }, []);
+  }, [container, popupOptions]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies
   useEffect(() => {
@@ -541,7 +547,7 @@ function MarkerPopup({
     return () => {
       marker.setPopup(null);
     };
-  }, [map]);
+  }, [map, container, marker.setPopup, popup]);
 
   if (popup.isOpen()) {
     const prev = prevPopupOptions.current;
@@ -604,7 +610,7 @@ function MarkerTooltip({ children, className, ...popupOptions }: MarkerTooltipPr
     }).setMaxWidth("none");
 
     return tooltipInstance;
-  }, []);
+  }, [popupOptions]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies
   useEffect(() => {
@@ -625,7 +631,15 @@ function MarkerTooltip({ children, className, ...popupOptions }: MarkerTooltipPr
       marker.getElement()?.removeEventListener("mouseleave", handleMouseLeave);
       tooltip.remove();
     };
-  }, [map]);
+  }, [
+    map,
+    container,
+    marker.getElement,
+    marker.getLngLat,
+    tooltip.remove,
+    tooltip.setDOMContent,
+    tooltip.setLngLat,
+  ]);
 
   if (tooltip.isOpen()) {
     const prev = prevTooltipOptions.current;
@@ -932,7 +946,7 @@ function MapPopup({
       .setLngLat([longitude, latitude]);
 
     return popupInstance;
-  }, []);
+  }, [latitude, longitude, popupOptions]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies
   useEffect(() => {
@@ -951,7 +965,16 @@ function MapPopup({
         popup.remove();
       }
     };
-  }, [map]);
+  }, [
+    map,
+    container,
+    popup.addTo,
+    popup.isOpen,
+    popup.off,
+    popup.on,
+    popup.remove,
+    popup.setDOMContent,
+  ]);
 
   if (popup.isOpen()) {
     const prev = popupOptionsRef.current;
@@ -1037,7 +1060,7 @@ function MapRoute({
   const id = propId ?? autoId;
   const sourceId = `route-source-${id}`;
   const layerId = `route-layer-${id}`;
-  
+
   // Add source and layer on mount
   // biome-ignore lint/correctness/useExhaustiveDependencies
   useEffect(() => {
@@ -1073,7 +1096,7 @@ function MapRoute({
         // ignore
       }
     };
-  }, [isLoaded, map]);
+  }, [isLoaded, map, color, dashArray, layerId, opacity, sourceId, width]);
 
   // When coordinates change, update the source data
   useEffect(() => {
@@ -1176,13 +1199,13 @@ function MapClusterLayer<
   const clusterLayerId = `clusters-${id}`;
   const clusterCountLayerId = `cluster-count-${id}`;
   const unclusteredLayerId = `unclustered-point-${id}`;
-  
+
   const stylePropsRef = useRef({
     clusterColors,
     clusterThresholds,
     pointColor,
   });
-  
+
   // Add source and layers on mount
   // biome-ignore lint/correctness/useExhaustiveDependencies
   useEffect(() => {
@@ -1268,7 +1291,20 @@ function MapClusterLayer<
         // ignore
       }
     };
-  }, [isLoaded, map, sourceId]);
+  }, [
+    isLoaded,
+    map,
+    sourceId,
+    clusterColors[0],
+    clusterCountLayerId,
+    clusterLayerId,
+    clusterMaxZoom,
+    clusterRadius,
+    clusterThresholds[0],
+    data,
+    pointColor,
+    unclusteredLayerId,
+  ]);
 
   // Update source data when data prop changes (only for non-URL data)
   useEffect(() => {

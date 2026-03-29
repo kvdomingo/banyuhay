@@ -1,9 +1,2 @@
-CREATE EXTENSION pg_idkit;
-CREATE EXTENSION postgis;
-
-CREATE USER dagster WITH PASSWORD 'dagster';
-CREATE DATABASE dagster OWNER dagster;
-
-\connect dagster;
-CREATE EXTENSION pg_idkit;
-CREATE EXTENSION postgis;
+CREATE EXTENSION IF NOT EXISTS pg_idkit;
+CREATE EXTENSION IF NOT EXISTS postgis;
