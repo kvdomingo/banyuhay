@@ -89,7 +89,7 @@ spec:
             - -c
             - >
               psql
-              'postgres://${POSTGRESQL_USERNAME}:${POSTGRESQL_PASSWORD}@${POSTGRESQL_HOST}:5432/${POSTGRESQL_DATABASE}'
+              "postgres://${POSTGRESQL_USERNAME}:${POSTGRESQL_PASSWORD}@${POSTGRESQL_HOST}:5432/${POSTGRESQL_DATABASE}"
               -f
               /app/app/fixtures/seed-data.sql
           envFrom:
