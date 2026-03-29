@@ -34,11 +34,6 @@ class Settings(BaseSettings):
 
     @computed_field
     @property
-    def STATICFILES_DIR(self) -> Path:
-        return self.BASE_DIR / "static"
-
-    @computed_field
-    @property
     def DATABASE_PARAMETERS(self) -> dict[str, str | int]:
         return {
             "host": self.POSTGRESQL_HOST,

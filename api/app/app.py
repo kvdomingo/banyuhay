@@ -2,7 +2,6 @@ from datetime import timedelta
 
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
-from fastapi.staticfiles import StaticFiles
 from scalar_fastapi import get_scalar_api_reference
 from starlette.middleware.sessions import SessionMiddleware
 
@@ -46,11 +45,3 @@ async def docs():
 app.include_router(auth.router)
 app.include_router(toilets.router)
 app.include_router(reviews.router)
-
-
-if settings.IN_PRODUCTION:
-    app.mount(
-        "/",
-        StaticFiles(directory=settings.STATICFILES_DIR, html=True),
-        name="static",
-    )
