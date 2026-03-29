@@ -83,7 +83,11 @@ tasks:
   load-fixtures:
     desc: Load database fixtures
     dir: ./api/app/fixtures
-    cmd: psql -f seed-data.sql postgres://postgres:postgres@localhost:5432/postgres
+    cmd: >
+      psql
+      postgres://postgres:postgres@db:5432/postgres
+      -f
+      ./app/fixtures/seed-data.sql
 
   push-cr:
     desc: Push production image
@@ -96,13 +100,6 @@ tasks:
   bake:
     desc: Bake Docker image
     cmd: docker buildx bake --file docker-bake.hcl {{ .CLI_ARGS }} api app
-
-  deploy:
-    desc: Deploy to production
-    cmds:
-      - task: bake
-      - task: push-cr
-      - helmfile apply -f infra/helm/helmfile.yaml
 
   tf-init:
     desc: Initialize Terraform
