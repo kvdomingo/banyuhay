@@ -1,21 +1,21 @@
-{{- if .Values.ingress.enabled -}}
+{{- if .Values.apiIngress.enabled -}}
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "banyuhay.fullname" . }}
+  name: '{{ include "banyuhay.fullname" . }}-api'
   labels:
     {{- include "banyuhay.apiLabels" . | nindent 4 }}
-  {{- with .Values.ingress.annotations }}
+  {{- with .Values.apiIngress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
-  {{- with .Values.ingress.className }}
+  {{- with .Values.apiIngress.className }}
   ingressClassName: {{ . }}
   {{- end }}
-  {{- if .Values.ingress.tls }}
+  {{- if .Values.apiIngress.tls }}
   tls:
-    {{- range .Values.ingress.tls }}
+    {{- range .Values.apiIngress.tls }}
     - hosts:
         {{- range .hosts }}
         - {{ . | quote }}
@@ -24,7 +24,7 @@ spec:
     {{- end }}
   {{- end }}
   rules:
-    {{- range .Values.ingress.hosts }}
+    {{- range .Values.apiIngress.hosts }}
     - host: {{ .host | quote }}
       http:
         paths:
@@ -35,7 +35,51 @@ spec:
             {{- end }}
             backend:
               service:
-                name: {{ include "banyuhay.fullname" $ }}
+                name: '{{ include "banyuhay.fullname" $ }}-api'
+                port:
+                  number: {{ $.Values.apiService.port }}
+          {{- end }}
+    {{- end }}
+{{- end }}
+---
+{{- if .Values.appIngress.enabled -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: '{{ include "banyuhay.fullname" . }}-app'
+  labels:
+    {{- include "banyuhay.apiLabels" . | nindent 4 }}
+  {{- with .Values.appIngress.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  {{- with .Values.appIngress.className }}
+  ingressClassName: {{ . }}
+  {{- end }}
+  {{- if .Values.appIngress.tls }}
+  tls:
+    {{- range .Values.appIngress.tls }}
+    - hosts:
+        {{- range .hosts }}
+        - {{ . | quote }}
+        {{- end }}
+      secretName: {{ .secretName }}
+    {{- end }}
+  {{- end }}
+  rules:
+    {{- range .Values.appIngress.hosts }}
+    - host: {{ .host | quote }}
+      http:
+        paths:
+          {{- range .paths }}
+          - path: {{ .path }}
+            {{- with .pathType }}
+            pathType: {{ . }}
+            {{- end }}
+            backend:
+              service:
+                name: '{{ include "banyuhay.fullname" $ }}-app'
                 port:
                   number: {{ $.Values.appService.port }}
           {{- end }}

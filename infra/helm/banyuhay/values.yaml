@@ -65,7 +65,7 @@ appService:
   port: 3000
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
-ingress:
+apiIngress:
   enabled: true
   className: ""
   annotations:
@@ -73,13 +73,30 @@ ingress:
     gethomepage.dev/name: "Banyuhay"
     gethomepage.dev/group: "Apps"
     gethomepage.dev/icon: "si-svelte"
-    gethomepage.dev/ping: "https://banyuhay.lab.kvd.studio/api/health"
   hosts:
     - host: banyuhay.lab.kvd.studio
       paths:
         - path: /
           pathType: Prefix
     - host: banyuh.ai
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
+appIngress:
+  enabled: true
+  className: ""
+  annotations:
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/name: "Banyuhay API"
+    gethomepage.dev/group: "Apps"
+    gethomepage.dev/icon: "si-fastapi"
+  hosts:
+    - host: banyuhay-api.lab.kvd.studio
+      paths:
+        - path: /
+          pathType: Prefix
+    - host: api.banyuh.ai
       paths:
         - path: /
           pathType: Prefix
@@ -148,4 +165,4 @@ affinity:
               operator: NotIn
               values: [arm64, arm]
 
-disableFixtureLoading: false
+disableFixtureLoading: true
