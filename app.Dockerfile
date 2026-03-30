@@ -19,9 +19,9 @@ RUN bun run build
 
 FROM oven/bun:1-alpine AS prod
 
-COPY --from=build /tmp/.output /app
+COPY --from=build /tmp/.output /app/.output
 
 WORKDIR /app
 
 ENTRYPOINT [ "/bin/sh", "-eu" ]
-CMD [ "-c", "exec bun server/index.mjs" ]
+CMD [ "-c", "exec bun run start" ]

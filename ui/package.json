@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
+    "start": "bun .output/server/index.mjs",
     "format": "biome format",
     "lint": "biome lint",
     "check": "biome check --unsafe --write",

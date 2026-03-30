@@ -10,7 +10,7 @@
     "includes": [
       "**/*.(js|ts|tsx|jsx|html|css|json|svg)",
       "!**/routeTree.gen.ts",
-      "src/components/ui/map.tsx"
+      "!src/components/ui/map.tsx"
     ]
   },
   "formatter": {
