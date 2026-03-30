@@ -1,3 +1,6 @@
+// biome-ignore-all format: stop messing with the hooks
+// biome-ignore-all lint: stop messing with the hooks
+
 "use client";
 
 import MapLibreGL, { type MarkerOptions, type PopupOptions } from "maplibre-gl";
@@ -38,7 +41,9 @@ function getDocumentTheme(): Theme | null {
 // Get system preference
 function getSystemTheme(): Theme {
   if (typeof window === "undefined") return "light";
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 }
 
 function useResolvedTheme(themeProp?: "light" | "dark"): Theme {
@@ -214,7 +219,8 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
   useEffect(() => {
     if (!containerRef.current) return;
 
-    const initialStyle = resolvedTheme === "dark" ? mapStyles.dark : mapStyles.light;
+    const initialStyle =
+      resolvedTheme === "dark" ? mapStyles.dark : mapStyles.light;
     currentStyleRef.current = initialStyle;
 
     const map = new MapLibreGL.Map({
@@ -305,7 +311,8 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
   useEffect(() => {
     if (!mapInstance || !resolvedTheme) return;
 
-    const newStyle = resolvedTheme === "dark" ? mapStyles.dark : mapStyles.light;
+    const newStyle =
+      resolvedTheme === "dark" ? mapStyles.dark : mapStyles.light;
 
     if (currentStyleRef.current === newStyle) return;
 
@@ -326,7 +333,10 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
 
   return (
     <MapContext.Provider value={contextValue}>
-      <div ref={containerRef} className={cn("relative h-full w-full", className)}>
+      <div
+        ref={containerRef}
+        className={cn("relative h-full w-full", className)}
+      >
         {(!isLoaded || loading) && <DefaultLoader />}
         {/* SSR-safe: children render only when map is loaded on client */}
         {mapInstance && children}
@@ -403,7 +413,7 @@ function MapMarker({
     onDragEnd,
   };
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies
+  // biome-ignore: lint/correctness/useExhaustiveDependencies
   const marker = useMemo(() => {
     const markerInstance = new MapLibreGL.Marker({
       ...markerOptions,
@@ -412,12 +422,18 @@ function MapMarker({
     }).setLngLat([longitude, latitude]);
 
     const handleClick = (e: MouseEvent) => callbacksRef.current.onClick?.(e);
-    const handleMouseEnter = (e: MouseEvent) => callbacksRef.current.onMouseEnter?.(e);
-    const handleMouseLeave = (e: MouseEvent) => callbacksRef.current.onMouseLeave?.(e);
+    const handleMouseEnter = (e: MouseEvent) =>
+      callbacksRef.current.onMouseEnter?.(e);
+    const handleMouseLeave = (e: MouseEvent) =>
+      callbacksRef.current.onMouseLeave?.(e);
 
     markerInstance.getElement()?.addEventListener("click", handleClick);
-    markerInstance.getElement()?.addEventListener("mouseenter", handleMouseEnter);
-    markerInstance.getElement()?.addEventListener("mouseleave", handleMouseLeave);
+    markerInstance
+      .getElement()
+      ?.addEventListener("mouseenter", handleMouseEnter);
+    markerInstance
+      .getElement()
+      ?.addEventListener("mouseleave", handleMouseLeave);
 
     const handleDragStart = () => {
       const lngLat = markerInstance.getLngLat();
@@ -439,7 +455,7 @@ function MapMarker({
     return markerInstance;
   }, [draggable, latitude, longitude, markerOptions]);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies
+  // biome-ignore: lint/correctness/useExhaustiveDependencies
   useEffect(() => {
     if (!map) return;
 
@@ -450,7 +466,10 @@ function MapMarker({
     };
   }, [map, marker.addTo, marker.remove]);
 
-  if (marker.getLngLat().lng !== longitude || marker.getLngLat().lat !== latitude) {
+  if (
+    marker.getLngLat().lng !== longitude ||
+    marker.getLngLat().lat !== latitude
+  ) {
     marker.setLngLat([longitude, latitude]);
   }
   if (marker.isDraggable() !== draggable) {
@@ -477,7 +496,9 @@ function MapMarker({
   }
 
   return (
-    <MarkerContext.Provider value={{ marker, map }}>{children}</MarkerContext.Provider>
+    <MarkerContext.Provider value={{ marker, map }}>
+      {children}
+    </MarkerContext.Provider>
   );
 }
 
@@ -524,7 +545,7 @@ function MarkerPopup({
   const container = useMemo(() => document.createElement("div"), []);
   const prevPopupOptions = useRef(popupOptions);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies
+  // biome-ignore: lint/correctness/useExhaustiveDependencies
   const popup = useMemo(() => {
     const popupInstance = new MapLibreGL.Popup({
       offset: 16,
@@ -537,7 +558,7 @@ function MarkerPopup({
     return popupInstance;
   }, [container, popupOptions]);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies
+  // biome-ignore: lint/correctness/useExhaustiveDependencies
   useEffect(() => {
     if (!map) return;
 
@@ -595,12 +616,16 @@ type MarkerTooltipProps = {
   className?: string;
 } & Omit<PopupOptions, "className" | "closeButton" | "closeOnClick">;
 
-function MarkerTooltip({ children, className, ...popupOptions }: MarkerTooltipProps) {
+function MarkerTooltip({
+  children,
+  className,
+  ...popupOptions
+}: MarkerTooltipProps) {
   const { marker, map } = useMarkerContext();
   const container = useMemo(() => document.createElement("div"), []);
   const prevTooltipOptions = useRef(popupOptions);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies
+  // biome-ignore: lint/correctness/useExhaustiveDependencies
   const tooltip = useMemo(() => {
     const tooltipInstance = new MapLibreGL.Popup({
       offset: 16,
@@ -612,7 +637,7 @@ function MarkerTooltip({ children, className, ...popupOptions }: MarkerTooltipPr
     return tooltipInstance;
   }, [popupOptions]);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies
+  // biome-ignore: lint/correctness/useExhaustiveDependencies
   useEffect(() => {
     if (!map) return;
 
@@ -676,7 +701,11 @@ type MarkerLabelProps = {
   position?: "top" | "bottom";
 };
 
-function MarkerLabel({ children, className, position = "top" }: MarkerLabelProps) {
+function MarkerLabel({
+  children,
+  className,
+  position = "top",
+}: MarkerLabelProps) {
   const positionClasses = {
     top: "bottom-full mb-1",
     bottom: "top-full mt-1",
@@ -935,7 +964,7 @@ function MapPopup({
   onCloseRef.current = onClose;
   const container = useMemo(() => document.createElement("div"), []);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies
+  // biome-ignore: lint/correctness/useExhaustiveDependencies
   const popup = useMemo(() => {
     const popupInstance = new MapLibreGL.Popup({
       offset: 16,
@@ -948,7 +977,7 @@ function MapPopup({
     return popupInstance;
   }, [latitude, longitude, popupOptions]);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies
+  // biome-ignore: lint/correctness/useExhaustiveDependencies
   useEffect(() => {
     if (!map) return;
 
@@ -979,7 +1008,10 @@ function MapPopup({
   if (popup.isOpen()) {
     const prev = popupOptionsRef.current;
 
-    if (popup.getLngLat().lng !== longitude || popup.getLngLat().lat !== latitude) {
+    if (
+      popup.getLngLat().lng !== longitude ||
+      popup.getLngLat().lat !== latitude
+    ) {
       popup.setLngLat([longitude, latitude]);
     }
 
@@ -1062,7 +1094,7 @@ function MapRoute({
   const layerId = `route-layer-${id}`;
 
   // Add source and layer on mount
-  // biome-ignore lint/correctness/useExhaustiveDependencies
+  // biome-ignore: lint/correctness/useExhaustiveDependencies
   useEffect(() => {
     if (!isLoaded || !map) return;
 
@@ -1148,7 +1180,15 @@ function MapRoute({
       map.off("mouseenter", layerId, handleMouseEnter);
       map.off("mouseleave", layerId, handleMouseLeave);
     };
-  }, [isLoaded, map, layerId, onClick, onMouseEnter, onMouseLeave, interactive]);
+  }, [
+    isLoaded,
+    map,
+    layerId,
+    onClick,
+    onMouseEnter,
+    onMouseLeave,
+    interactive,
+  ]);
 
   return null;
 }
@@ -1207,7 +1247,7 @@ function MapClusterLayer<
   });
 
   // Add source and layers on mount
-  // biome-ignore lint/correctness/useExhaustiveDependencies
+  // biome-ignore: lint/correctness/useExhaustiveDependencies
   useEffect(() => {
     if (!isLoaded || !map) return;
 
@@ -1283,8 +1323,10 @@ function MapClusterLayer<
 
     return () => {
       try {
-        if (map.getLayer(clusterCountLayerId)) map.removeLayer(clusterCountLayerId);
-        if (map.getLayer(unclusteredLayerId)) map.removeLayer(unclusteredLayerId);
+        if (map.getLayer(clusterCountLayerId))
+          map.removeLayer(clusterCountLayerId);
+        if (map.getLayer(unclusteredLayerId))
+          map.removeLayer(unclusteredLayerId);
         if (map.getLayer(clusterLayerId)) map.removeLayer(clusterLayerId);
         if (map.getSource(sourceId)) map.removeSource(sourceId);
       } catch {
@@ -1408,10 +1450,9 @@ function MapClusterLayer<
       if (!onPointClick || !e.features?.length) return;
 
       const feature = e.features[0];
-      const coordinates = (feature.geometry as GeoJSON.Point).coordinates.slice() as [
-        number,
-        number,
-      ];
+      const coordinates = (
+        feature.geometry as GeoJSON.Point
+      ).coordinates.slice() as [number, number];
 
       // Handle world copies
       while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {

@@ -339,3 +339,5 @@ terraform.rc
 
 data/
 !data/**/*.dvc
+
+.claude/settings.local.json
