@@ -2,6 +2,8 @@ import { createEnv } from "@t3-oss/env-core";
 import { z } from "zod";
 
 export const env = createEnv({
+  isServer: typeof window === "undefined",
+
   server: {
     API_HOST: z.url(),
   },
