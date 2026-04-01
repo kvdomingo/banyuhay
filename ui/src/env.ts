@@ -30,8 +30,8 @@ export const env = createEnv({
    * `process.env` or `import.meta.env`.
    */
   runtimeEnv: {
-    ...process.env,
     ...import.meta.env,
+    ...process.env,
     NODE_ENV: process.env.NODE_ENV,
     DEV: import.meta.env.DEV,
     PROD: import.meta.env.PROD,
