@@ -30,11 +30,12 @@ export const env = createEnv({
    * `process.env` or `import.meta.env`.
    */
   runtimeEnv: {
-    ...import.meta.env,
-    ...process.env,
     NODE_ENV: process.env.NODE_ENV,
     DEV: import.meta.env.DEV,
     PROD: import.meta.env.PROD,
+    API_HOST: process.env.API_HOST,
+    VITE_APP_HOST: import.meta.env.VITE_APP_HOST,
+    VITE_STYTCH_PUBLIC_TOKEN: import.meta.env.VITE_STYTCH_PUBLIC_TOKEN,
   },
 
   /**

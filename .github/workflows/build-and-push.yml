@@ -94,3 +94,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha,scope=app
           cache-to: type=gha,mode=max,scope=app
+          build-args: |
+            VITE_APP_HOST=${{ secrets.VITE_APP_HOST }}
+            VITE_STYTCH_PUBLIC_TOKEN=${{ secrets.VITE_STYTCH_PUBLIC_TOKEN }}
