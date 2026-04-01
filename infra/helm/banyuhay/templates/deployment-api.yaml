@@ -4,11 +4,10 @@ metadata:
   name: '{{ include "banyuhay.fullname" . }}-api'
   labels:
     {{- include "banyuhay.apiLabels" . | nindent 4 }}
+  {{- with .Values.deploymentAnnotations }}
   annotations:
-    keel.sh/policy: "force"
-    keel.sh/match-tag: "true"
-    keel.sh/trigger: "poll"
-    keel.sh/pollSchedule: "@every 3m"
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -69,7 +68,7 @@ spec:
           {{- end }}
           envFrom:
             - secretRef:
-                name: '{{ .Release.Name }}-secrets'
+                name: "{{ .Release.Name }}-secrets"
             - configMapRef:
                 name: '{{ .Release.Name }}-configmap-api'
       {{- with .Values.volumes }}
