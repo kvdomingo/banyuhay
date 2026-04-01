@@ -28,5 +28,8 @@ metadata:
 data:
   VITE_APP_HOST: "https://banyuh.ai"
   API_HOST: 'http://{{ include "banyuhay.fullname" . }}-api:8000'
-  PORT: {{ .Values.appService.port }}
+  PORT: "{{ .Values.appService.port }}"
   ASSET_PRELOAD_VERBOSE_LOGGING: "true"
+  NODE_ENV: "production"
+  DEV: "false"
+  PROD: "true"
