@@ -48,7 +48,7 @@ kind: Ingress
 metadata:
   name: '{{ include "banyuhay.fullname" . }}-app'
   labels:
-    {{- include "banyuhay.apiLabels" . | nindent 4 }}
+    {{- include "banyuhay.appLabels" . | nindent 4 }}
   {{- with .Values.appIngress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
