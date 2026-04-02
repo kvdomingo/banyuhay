@@ -3,6 +3,10 @@ name: Build and push app
 on:
   push:
     branches: [main]
+    paths:
+      - .github/**
+      - ui/**
+      - app.Dockerfile
 
 concurrency:
   group: build-app

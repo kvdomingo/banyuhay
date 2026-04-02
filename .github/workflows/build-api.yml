@@ -3,6 +3,10 @@ name: Build and push API
 on:
   push:
     branches: [main]
+    paths:
+      - .github/**
+      - api/**
+      - api.Dockerfile
 
 concurrency:
   group: build-api
