@@ -1,4 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException, Security
+from typing import Annotated
+
+from fastapi import APIRouter, Depends, HTTPException, Query, Security
 from pydantic import UUID4
 from starlette import status
 from starlette.responses import Response
@@ -17,10 +19,36 @@ router = APIRouter(prefix="/toilets", tags=["toilets"])
 
 @router.get("", response_model=list[Toilet])
 async def list_toilets(
-    min_lng: float,
-    max_lng: float,
-    min_lat: float,
-    max_lat: float,
+    min_lng: Annotated[
+        float,
+        Query(
+            ge=-180,
+            le=180,
+            description="Longitude of the leftmost point of the bounding box",
+        ),
+    ],
+    max_lng: Annotated[
+        float,
+        Query(
+            ge=-180,
+            le=180,
+            description="Longitude of the rightmost point of the bounding box",
+        ),
+    ],
+    min_lat: Annotated[
+        float,
+        Query(
+            ge=-90,
+            le=90,
+            description="Latitude of the bottom point of the bounding box",
+        ),
+    ],
+    max_lat: Annotated[
+        float,
+        Query(
+            ge=-90, le=90, description="Latitude of the top point of the bounding box"
+        ),
+    ],
     querier: AsyncQuerier = Depends(get_toilet_async_querier),
 ):
     return [

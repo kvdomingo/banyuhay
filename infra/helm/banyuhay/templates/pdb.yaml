@@ -2,12 +2,26 @@
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: {{ include "banyuhay.fullname" . }}
+  name: '{{ include "banyuhay.fullname" . }}-api'
   labels:
-    {{- include "banyuhay.labels" . | nindent 4 }}
+    {{- include "banyuhay.apiLabels" . | nindent 4 }}
 spec:
   selector:
     matchLabels:
-      {{- include "banyuhay.selectorLabels" . | nindent 6 }}
+      {{- include "banyuhay.apiSelectorLabels" . | nindent 6 }}
+  minAvailable: {{ .Values.pdb.minAvailable }}
+{{- end }}
+---
+{{- if .Values.pdb.enabled }}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: '{{ include "banyuhay.fullname" . }}-app'
+  labels:
+    {{- include "banyuhay.appLabels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "banyuhay.appSelectorLabels" . | nindent 6 }}
   minAvailable: {{ .Values.pdb.minAvailable }}
 {{- end }}
