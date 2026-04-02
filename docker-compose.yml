@@ -43,19 +43,17 @@ services:
   ui:
     image: oven/bun:1-alpine
     restart: unless-stopped
-    init: true
     working_dir: /app
     environment:
       NODE_ENV: development
       VITE_APP_HOST: http://localhost:3000
       VITE_STYTCH_PUBLIC_TOKEN: ${STYTCH_PUBLIC_TOKEN}
       API_HOST: http://api:8000
-    entrypoint: [/bin/sh]
+    entrypoint: [ /bin/sh, '-eu' ]
     command:
-      - -eu
       - -c
-      - |
-        bun install
+      - >
+        bun install &&
         exec bun run dev
     volumes:
       - ./ui:/app
