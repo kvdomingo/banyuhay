@@ -51,6 +51,19 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{- end }}
 
 {{/*
+Labels for the shared ServiceAccount (used by API and app workloads; no -api/-app suffix).
+*/}}
+{{- define "banyuhay.serviceAccountLabels" -}}
+helm.sh/chart: {{ include "banyuhay.chart" . }}
+app.kubernetes.io/name: {{ include "banyuhay.name" . | quote }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- if .Chart.AppVersion }}
+app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
+{{- end }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end }}
+
+{{/*
 Selector labels
 */}}
 {{- define "banyuhay.apiSelectorLabels" -}}
