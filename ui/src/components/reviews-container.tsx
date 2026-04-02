@@ -1,4 +1,4 @@
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getRouteApi } from "@tanstack/react-router";
 import { MilkOff, SprayCan, Star } from "lucide-react";
 import { orpc } from "@/api";
@@ -19,7 +19,6 @@ export function ReviewsContainer() {
         min_lat: search?.min_lat ?? 0,
         max_lat: search?.max_lat ?? 0,
       },
-      placeholderData: keepPreviousData,
       enabled: search && [Object.values(search)].every(Boolean),
     }),
   );
