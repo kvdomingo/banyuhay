@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = "~=3.13.0"
 dependencies = [
     "aiofiles>=24.1.0",
-    "dagster~=1.8.11",
+    "dagster~=1.13.5",
     "dagster-postgres~=0.24.11",
     "dagster-webserver~=1.8.11",
     "googlemaps>=4.10.0",
